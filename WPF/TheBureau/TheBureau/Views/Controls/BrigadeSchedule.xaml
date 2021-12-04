@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="TheBureau.Views.Controls.BrigadeSchedule"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:TheBureau.Views.Controls"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:viewModels="clr-namespace:TheBureau.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="310" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <viewModels:BrigadeSchelduleViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <lvc:CartesianChart Grid.Row="1" DataTooltip="{x:Null}">
+            <lvc:CartesianChart.Series>
+                <lvc:HeatSeries Values="{Binding Values}" DataLabels="True">
+                    <lvc:HeatSeries.GradientStopCollection>
+                        <GradientStop Offset="0" Color="#EFF2DF"></GradientStop>
+                        <GradientStop Offset=".25" Color="#DEF4B1"></GradientStop>
+                        <GradientStop Offset=".50" Color="#C1E699"></GradientStop>
+                        <GradientStop Offset=".75" Color="#8CBB51"></GradientStop>
+                        <GradientStop Offset="1" Color="#8CB84D"></GradientStop>
+                    </lvc:HeatSeries.GradientStopCollection>
+                </lvc:HeatSeries>
+            </lvc:CartesianChart.Series>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Бригада" Labels="{Binding BrigadeList}">
+                    <lvc:Axis.Separator>
+                        <lvc:Separator Step="1"/>
+                    </lvc:Axis.Separator>
+                </lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="День недели" Labels="{Binding Days}"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+        </lvc:CartesianChart>
+    </Grid>
+</UserControl>

@@ -1,0 +1,88 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\add.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.3" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Views\" />
+    <Folder Include="Converters\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\add.png" />
+    <None Remove="Resources\Images\address.png" />
+    <Resource Include="Resources\Images\address.png" />
+    <None Remove="Resources\Images\allrequests.png" />
+    <Resource Include="Resources\Images\allrequests.png" />
+    <None Remove="Resources\Images\back.png" />
+    <Resource Include="Resources\Images\back.png" />
+    <None Remove="Resources\Images\background.png" />
+    <Resource Include="Resources\Images\background.png" />
+    <None Remove="Resources\Images\box.png" />
+    <Resource Include="Resources\Images\box.png" />
+    <None Remove="Resources\Images\brigade.png" />
+    <Resource Include="Resources\Images\brigade.png" />
+    <None Remove="Resources\Images\check.png" />
+    <Resource Include="Resources\Images\check.png" />
+    <None Remove="Resources\Images\clients.png" />
+    <Resource Include="Resources\Images\clients.png" />
+    <None Remove="Resources\Images\delete.png" />
+    <Resource Include="Resources\Images\delete.png" />
+    <None Remove="Resources\Images\done.png" />
+    <Resource Include="Resources\Images\done.png" />
+    <None Remove="Resources\Images\edit.png" />
+    <Resource Include="Resources\Images\edit.png" />
+    <None Remove="Resources\Images\employeecard.png" />
+    <Resource Include="Resources\Images\employeecard.png" />
+    <None Remove="Resources\Images\exit.png" />
+    <Resource Include="Resources\Images\exit.png" />
+    <None Remove="Resources\Images\focusedclient.png" />
+    <Resource Include="Resources\Images\focusedclient.png" />
+    <None Remove="Resources\Images\icons8-info-48.png" />
+    <Resource Include="Resources\Images\icons8-info-48.png" />
+    <None Remove="Resources\Images\list.png" />
+    <Resource Include="Resources\Images\list.png" />
+    <None Remove="Resources\Images\logo.png" />
+    <Resource Include="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\logo_dark.ico" />
+    <Resource Include="Resources\Images\logo_dark.ico" />
+    <None Remove="Resources\Images\logo_dark.jpg" />
+    <Resource Include="Resources\Images\logo_dark.jpg" />
+    <None Remove="Resources\Images\logo_light.jpg" />
+    <Resource Include="Resources\Images\logo_light.jpg" />
+    <None Remove="Resources\Images\orders.png" />
+    <Resource Include="Resources\Images\orders.png" />
+    <None Remove="Resources\Images\personal.png" />
+    <Resource Include="Resources\Images\personal.png" />
+    <None Remove="Resources\Images\radiator.png" />
+    <Resource Include="Resources\Images\radiator.png" />
+    <None Remove="Resources\Images\save.png" />
+    <Resource Include="Resources\Images\save.png" />
+    <None Remove="Resources\Images\settings.png" />
+    <Resource Include="Resources\Images\settings.png" />
+    <None Remove="Resources\Images\stat.png" />
+    <Resource Include="Resources\Images\stat.png" />
+    <None Remove="Resources\Images\tool.png" />
+    <Resource Include="Resources\Images\tool.png" />
+    <None Remove="Resources\Images\toolbox.png" />
+    <Resource Include="Resources\Images\toolbox.png" />
+    <None Remove="Resources\Images\workers.png" />
+    <Resource Include="Resources\Images\workers.png" />
+  </ItemGroup>
+
+</Project>

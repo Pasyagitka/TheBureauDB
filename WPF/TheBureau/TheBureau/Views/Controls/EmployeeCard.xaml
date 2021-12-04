@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="TheBureau.Controls.EmployeeCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:TheBureau.Controls"
+             xmlns:viewModels="clr-namespace:TheBureau.ViewModels"
+             mc:Ignorable="d" Width="192"
+             >
+    <materialDesign:Flipper Style="{StaticResource MaterialDesignCardFlipper}" VerticalAlignment="Top" Name="EmployeeFlipper" Margin="2">
+        <materialDesign:Flipper.FrontContent>
+            <Button Style="{StaticResource MaterialDesignFlatButton}" Command="{x:Static materialDesign:Flipper.FlipCommand}" Margin="8" 
+                 Content="{Binding surname}" Name="FrontButton" />
+        </materialDesign:Flipper.FrontContent>
+        <materialDesign:Flipper.BackContent>
+                <Grid Background="White" Height="175" Width="{Binding ElementName=EmployeeFlipper, Path=ActualWidth}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <materialDesign:ColorZone  Background="#cdc9c3" Mode="SecondaryMid" Padding="6">
+                        <StackPanel Orientation="Horizontal" Background="#cdc9c3">
+                            <Button  Style="{StaticResource MaterialDesignToolForegroundButton}" Command="{x:Static materialDesign:Flipper.FlipCommand}" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="ArrowLeft" HorizontalAlignment="Right" />
+                            </Button>
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Text="ИНФОРМАЦИЯ" />
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                    <Grid  Grid.Row="1"  Margin="2 6 0 0" HorizontalAlignment="Center"  VerticalAlignment="Top"  Width="172">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="1" Text="{Binding firstname}"  HorizontalAlignment="Center" FontSize="16"/>
+                        <TextBlock Grid.Row="0" Text="{Binding surname}"  HorizontalAlignment="Center" FontSize="16" FontWeight="DemiBold"/>
+                        <TextBlock Grid.Row="2" Text="{Binding patronymic}" HorizontalAlignment="Center" FontSize="16" />
+                        <TextBlock Grid.Row="3" Text="{Binding email}" HorizontalAlignment="Center" FontSize="16"/>
+                        <TextBlock Grid.Row="4" Text="{Binding contactNumber}" HorizontalAlignment="Center" FontSize="16"  />
+                    </Grid>
+                </Grid>
+        </materialDesign:Flipper.BackContent>
+    </materialDesign:Flipper>
+</UserControl>

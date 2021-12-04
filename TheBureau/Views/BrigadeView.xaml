@@ -1,0 +1,54 @@
+﻿<Page x:Class="TheBureau.Views.BrigadeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TheBureau.Views" 
+             xmlns:controls="clr-namespace:TheBureau.Controls"
+             xmlns:viewModels="clr-namespace:TheBureau.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:converters="clr-namespace:TheBureau.Converters"
+             mc:Ignorable="d" 
+             d:DesignWidth="1210" d:DesignHeight="690" >
+<Page.DataContext>
+    <viewModels:BrigadeViewModel/>
+</Page.DataContext>
+    <Page.Resources>
+        <converters:CountConverter x:Key="CountConverter"/>
+    </Page.Resources>
+    <Border Background="Transparent" CornerRadius="15">
+        <DockPanel Margin="10,10,10,5" LastChildFill="True">
+           <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar Style="{DynamicResource MaterialDesignToolBar}" ClipToBounds="False">
+                    <Button ToolTip="Добавить" Command="{Binding AddBrigade}" Cursor="Hand">
+                        <Image Source= "../../Resources/Images/add.png" Width="30"/>
+                    </Button>
+                    <Button ToolTip="Удалить" Command="{Binding DeleteBrigade}" Cursor="Hand">
+                        <Image Source="../../Resources/Images/delete.png" Width="30"/>
+                    </Button>
+                </ToolBar>
+           </ToolBarTray>
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True">
+                <TextBlock  Height="30" DockPanel.Dock="Top"  Padding="0" Text="{Binding Brigades.Count, Converter={StaticResource CountConverter}}" HorizontalAlignment="Center" FontSize="20" FontWeight="DemiBold"/>
+                <ScrollViewer DockPanel.Dock="Top" HorizontalAlignment="Center" Width="1100">
+                    <Border>
+                        <ListView  HorizontalAlignment="Center" Width="1100" HorizontalContentAlignment="Center"
+                               ItemsSource="{Binding Brigades, Mode=TwoWay}"
+                               SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+                            <ListView.Template>
+                                <ControlTemplate>
+                                    <ItemsPresenter />
+                                </ControlTemplate>
+                            </ListView.Template>
+                            <ListView.ItemTemplate>
+                                <HierarchicalDataTemplate>
+                                        <controls:BrigadeCard Margin="15" Width="900" HorizontalAlignment="Center"/>
+                                </HierarchicalDataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Border>
+                </ScrollViewer>
+            </DockPanel>
+        </DockPanel>
+    </Border>
+</Page>

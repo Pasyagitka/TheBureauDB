@@ -1,0 +1,20 @@
+﻿TheBureau
+
+
+winexe
+C#
+.cs
+D:\5 семестр\CourseProject\TheBureau\obj\Debug\netcoreapp3.1\
+TheBureau
+none
+false
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+D:\5 семестр\CourseProject\TheBureau\App.xaml
+29-592656372
+
+69-1558360896
+1941106366969
+MainWindow.xaml;Resources\Colors.xaml;Resources\Styles.xaml;Views\AddEmployeeView.xaml;Views\AuthenticationPageView.xaml;Views\BrigadeView.xaml;Views\BrigadeWindowView.xaml;Views\ClientView.xaml;Views\ClientWindowView.xaml;Views\Controls\AdminRequestPanel.xaml;Views\Controls\BrigadeCard.xaml;Views\Controls\BrigadeCardSmall.xaml;Views\Controls\ClientCard.xaml;Views\Controls\EmployeeCard.xaml;Views\Controls\EmployeeCardSmall.xaml;Views\Controls\InfoWindow.xaml;Views\Controls\RequestCard.xaml;Views\Controls\RequestForm.xaml;Views\EditClientView.xaml;Views\EditEmployeeView.xaml;Views\EditRequestFromBrigadeView.xaml;Views\EditRequestView.xaml;Views\EmployeeView.xaml;Views\HelloPageView.xaml;Views\HelloWindowView.xaml;Views\MainWindowView.xaml;Views\RequestView.xaml;Views\StatisticsView.xaml;Views\StorageView.xaml;
+
+True
+

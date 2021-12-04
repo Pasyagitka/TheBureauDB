@@ -1,0 +1,37 @@
+﻿<Window x:Class="TheBureau.Views.AddEmployeeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:TheBureau.Views"
+        xmlns:viewModels="clr-namespace:TheBureau.ViewModels"
+        mc:Ignorable="d"
+        WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True"
+        Title="Добавить Работника" Width="400" Height="455" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewModels:AddEmployeeViewModel/>
+    </Window.DataContext>
+    <Border Background="{DynamicResource LightGreenColor}" CornerRadius="10" >
+        <Border CornerRadius="10" Background="White" Margin="10">
+            <StackPanel Margin="20">
+                <TextBlock Text="Фамилия" HorizontalAlignment="Center"/>
+                <TextBox Width="300" Height="40" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxValidationTemplateDefault}"/>
+                <TextBlock Text="Имя" HorizontalAlignment="Center"/>
+                <TextBox Width="300" Height="40" Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxValidationTemplateDefault}"/>
+                <TextBlock Text="Отчество" HorizontalAlignment="Center"/>
+                <TextBox Width="300" Height="40" Text="{Binding Patronymic, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxValidationTemplateDefault}"/>
+                <TextBlock Text="Электронная почта" HorizontalAlignment="Center"/>
+                <TextBox Width="300" Height="40" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxValidationTemplateDefault}"/>
+                <TextBlock Text="Контактный телефон" HorizontalAlignment="Center"/>
+                <TextBox Width="300" Height="40" Text="{Binding ContactNumber, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxValidationTemplateDefault}" PreviewTextInput="NumericTextBox_OnPreviewTextInput"/>
+                <TextBlock Text="ID бригады" HorizontalAlignment="Center"/>
+                <ComboBox Width="300" Height="30" SelectedValue="{Binding SelectedBrigadeId, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="id" IsSynchronizedWithCurrentItem="True"  
+                          Margin="5" ItemsSource="{Binding Brigades, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="id"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Height="40" Width="160" Content="Отменить" IsCancel="True" Style="{StaticResource DefaultButtonGray}" Margin="10"></Button>
+                    <Button Content="Сохранить"  Width="160" Command="{Binding AddEmployeeCommand}" Click="Save_OnClick" Style="{StaticResource DefaultButtonGray}" Margin="10"></Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Border>
+</Window>
