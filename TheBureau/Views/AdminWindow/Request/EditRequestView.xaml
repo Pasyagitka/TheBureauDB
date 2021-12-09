@@ -1,0 +1,53 @@
+﻿<Window x:Class="TheBureau.Views.AdminWindow.EditRequestView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:TheBureau.Views"
+        xmlns:controls="clr-namespace:TheBureau.Controls"
+        xmlns:viewModels="clr-namespace:TheBureau.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" ResizeMode="NoResize"
+        Title="EditRequestView" Width="520" Height="90" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Border Background="{DynamicResource LightGreenColor}" CornerRadius="5">
+        <Border CornerRadius="5" Background="White" Margin="7" Width="665">
+        <StackPanel Orientation="Horizontal">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Отправить заявку бригаде" HorizontalAlignment="Center" Margin="2"></TextBlock>
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                    <ComboBox SelectedValue="{Binding SelectedBrigadeId}" SelectedValuePath="id" IsSynchronizedWithCurrentItem="True"  
+                              Width="150" Margin="5" Height="25" ItemsSource="{Binding Brigades}" DisplayMemberPath="id"/>
+                </StackPanel>
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="Сменить статус заявки" HorizontalAlignment="Center" Margin="2"></TextBlock>
+                <StackPanel Grid.Column="1" Grid.Row="1">
+                    <ComboBox Margin="5" Height="25" SelectedValue="{Binding RequestStatus}" IsSynchronizedWithCurrentItem="True">
+                        <ComboBoxItem Content="В обработке" Background="{DynamicResource LightOrangeColor}"/>
+                        <ComboBoxItem Content="В процессе" Background="{DynamicResource LightYellowColor}"/>
+                        <ComboBoxItem Content="Готово" Background="{DynamicResource LightGreenColor}"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" Orientation="Horizontal">
+                    <Button BorderThickness="0" Background="White" Margin="5, 0,0,0" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignIconButton}"
+                            Command="{Binding UpdateRequestCommand}" Click="Save_OnClick">
+                        <Image Source="../../../Resources/Images/check.png" Width="40"/>
+                    </Button>
+                    <Button BorderThickness="0" Background="White" Margin="0,10,10,10" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignIconButton}"
+                            Click="Exit_OnClick">
+                        <Image Source="../../../Resources/Images/delete.png" Width="40"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+</Border>
+    </Border>
+</Window>

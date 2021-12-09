@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,16 +12,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BoldReports.WPF" Version="3.1.32" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.3" />
     <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="Views\" />
+    <Folder Include="Resources\Reports\" />
     <Folder Include="Converters\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\BrigadeWindow\" />
   </ItemGroup>
 
   <ItemGroup>

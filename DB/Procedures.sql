@@ -1,9 +1,6 @@
 use TheBureau;
 go
 
-
-
-
 													--Storage
 --Accessory-----------------------------------------------------------------
 create procedure AddAccessory (@art nvarchar(15), @equipmentId nvarchar(3), @name nvarchar(150), @price decimal(6,2))
@@ -54,9 +51,6 @@ as begin
 end;
 go
 
---declare @totalPrice decimal(6,2);
---exec GetAccessoryTotalPrice @requestId = 4, @totalPrice = @totalPrice output;
---print @totalPrice
 
 --Equipment-----------------------------------------------------------------
 create procedure AddEquipment(@type nvarchar(30), @mountingId int)
@@ -243,7 +237,7 @@ create procedure DeleteClient (@clientId int) --
 as begin
 	begin try
 		begin tran 
-			--удалить клиента -> удалить все его заявки
+			--удалить клиента -> удалить все его заявки - отключить клиента, не показывать заявки
 			declare @requestId int;
 			declare cur_req cursor local for select id from [dbo].[Request] where clientId = @clientId;
 			
@@ -266,8 +260,10 @@ as begin
 end;
 go
 
+--exec LeaveRequest 'ааа', 'ааа', 'ааа', 'ааа@gg.com', '37544676384', 'Беларусь', 'Минск', 'Улица', 3, '', 1, 1, 1, '2021-12-09', 'comm'
+
 --Request-------------------------------------------------------------------
-alter procedure LeaveRequest (	--
+alter procedure LeaveRequest (
 			@client_firstname nvarchar(20),
 			@client_patronymic nvarchar(20),
 			@client_surname nvarchar(20),
@@ -289,15 +285,19 @@ alter procedure LeaveRequest (	--
 as begin
 	begin try
 		begin tran
+			declare @clientId int;
 			--клиент не дублируется, если до этого был в базе
-			declare @clientId int = (select id from [dbo].[Client] where @client_firstname = firstname and @client_patronymic = patronymic and @client_surname = surname and @client_email = email and  @client_contactNumber = contactNumber);
-			
-			if (@clientId = null) --exists
-			begin
-				insert into [dbo].[Client] (firstname, patronymic, surname, email, contactNumber)
-				values(@client_firstname, @client_patronymic, @client_surname, @client_email,  @client_contactNumber);
-				set @clientId = ident_current('Client'); 
-			end;
+			if exists(select id as existingClientId from [dbo].[Client] where @client_firstname = firstname and @client_patronymic = patronymic and @client_surname = surname and @client_email = email and  @client_contactNumber = contactNumber)
+				begin
+					set @clientId = (select id as existingClientId from [dbo].[Client] where @client_firstname = firstname and @client_patronymic = patronymic and @client_surname = surname and @client_email = email and  @client_contactNumber = contactNumber);
+				end
+			else
+				begin
+					insert into [dbo].[Client] (firstname, patronymic, surname, email, contactNumber)
+					values(@client_firstname, @client_patronymic, @client_surname, @client_email,  @client_contactNumber);
+					set @clientId = ident_current('Client'); 
+				end;
+			print @clientId;
 
 			insert into [dbo].[Address] (country, city, street, house, corpus, flat)
 			values(@address_country, @address_city, @address_street, @address_house,  @address_corpus, @address_flat);
@@ -306,9 +306,9 @@ as begin
 			declare @registerDate date = getdate(); 			
 			insert into [dbo].[Request] (clientId, addressId, stageId, statusId, registerDate, mountingDate, comment, brigadeId, proceeds)
 			values(@clientId, @addressId, @stageId, @statusId, @registerDate, @mountingDate, @comment, null, null);
+	
 			declare @requestId int = ident_current('Request'); 		
-
-			select ident_current('Request') as id;
+			select ident_current('Request') as id;	
 		commit;
 	end try
 	begin catch
@@ -318,37 +318,6 @@ as begin
 end;
 go
 
-alter procedure SetRequestAccessories(@requestId int)
-as begin
-	begin try
-		begin tran;
-		declare @cur_eqId nvarchar(3), @quantity int, @cur_accId int;
-		declare cur cursor local for select equipmentId, quantity from RequestEquipment where requestId = @requestId
-		open cur;
-		fetch cur into @cur_eqId, @quantity;
-		while @@fetch_status = 0
-			begin
-				declare cur_acc cursor local for select id from Accessory where equipmentId = @cur_eqId
-				open cur_acc;
-				fetch cur_acc into @cur_accId;
-				while @@fetch_status = 0
-					begin
-						insert into RequestAccessory values (@requestId,  @cur_accId, @quantity);
-						fetch cur_acc into @cur_accId;
-					end
-				close cur_acc;
-				deallocate cur_acc;
-				fetch cur into @cur_eqId, @quantity;
-			end
-		close cur;
-		commit;
-	end try
-	begin catch
-		if @@trancount > 0 rollback;
-		print 'Error: ' + cast(error_number() as varchar(6)) + ': ' + error_message();
-	end catch
-end;
-go
 
 --update request set proceeds (GetTotalAccessoryPrice for request) - вычисляемое
 alter procedure UpdateRequestSetProceeds(@requestId int)
@@ -365,35 +334,11 @@ end;
 go
 
 --select * from Request;
---exec UpdateRequestSetProceeds @requestId = 4
+--exec UpdateRequestSetProceeds @requestId = 32
 
-create procedure SetRequestTools(@requestId int)
-as begin
-	begin try
-		begin tran;
-		declare @cur_tId int;
-		declare cur cursor local for select id from [dbo].[Tool] where stageId = (select stageId from [dbo].[Request] where id = @requestId);
-		open cur;
-		fetch cur into @cur_tId;
-		while @@fetch_status = 0
-			begin
-				insert into [dbo].[RequestTool] values (@requestId, @cur_tId);
-				fetch cur into @cur_tId;
-			end
-		close cur;
-		commit;
-	end try
-	begin catch
-		if @@trancount > 0 rollback;
-		print 'Error: ' + cast(error_number() as varchar(6)) + ': ' + error_message();
-	end catch
-end;
-go
 
---select * from RequestTool
---exec SetRequestTools 4
---go
 
+--Admin: Change request status, brigade
 alter procedure UpdateRequestByAdmin(@id int, @statusId int, @brigadeId int)
 as begin
 	begin try
@@ -405,6 +350,7 @@ as begin
 end;
 go
 
+--Brigade: Change request status
 alter procedure UpdateRequestByBrigade(@id int, @statusId int)
 as begin
 	begin try
@@ -415,7 +361,6 @@ as begin
 	end catch
 end;
 go
-
 alter procedure DeleteRequest(@requestId int) --
 as begin
 	begin try
@@ -435,8 +380,9 @@ as begin
 end;
 go
 
+
 --RequestEquipment----------------------------------------------------------
-create procedure AddRequestEquipment (@requestId int, @equipmentId int, @quantity int)
+create or alter procedure AddRequestEquipment (@requestId int, @equipmentId nvarchar(3), @quantity int)
 as begin
 	begin try
 		insert into [dbo].[RequestEquipment] (requestId, equipmentId, quantity)
@@ -565,37 +511,3 @@ as begin
 	end catch
 end;
 go
-
-
-
-
---create function GetBrigadesId() returns table
---as return
---	select id from [dbo].[Brigade]
---go
-
---create function FindAddressId(@country nvarchar(30), @city nvarchar(30), @street nvarchar(30), @house int, @corpus nvarchar(10), @flat int) returns int
---as begin
---	declare @id int;
---	set @id = (select id from [dbo].[Address] where country=@country and city = @city
---		and street = @street and house=@house and corpus = @corpus and flat = @flat);
---	return @id;
---end;
---go
-
---create function FindClientId(@firstname nvarchar(20), @patronymic nvarchar(20), @surname nvarchar(20),
---	@email nvarchar(255), @contactNumber nvarchar(12)) returns int
---as begin
---	declare @id int;
---	set @id = (select id from [dbo].[Client] where firstname=@firstname and patronymic = @patronymic
---		and surname = @surname and email = @email and contactNumber = @contactNumber);
---	return @id;
---end;
---go
-
-
---create function FindClientsByCriteria(@firstname nvarchar(20), @patronymic nvarchar(20), @surname nvarchar(20),
---	@email nvarchar(255), @contactNumber nvarchar(12)) returns table
---as return
---	select id from [dbo].[Client] where firstname=@firstname or patronymic = @patronymic or surname = @surname or email = @email or contactNumber = @contactNumber;
---go

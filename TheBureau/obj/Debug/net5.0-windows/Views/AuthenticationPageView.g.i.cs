@@ -21,6 +21,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Controls.Ribbon;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms.Integration;
 using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Markup;
@@ -89,7 +90,7 @@ namespace TheBureau.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TheBureau;component/views/authenticationpageview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TheBureau;V1.0.0.0;component/views/authenticationpageview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AuthenticationPageView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -99,10 +99,10 @@ as begin
 end;
 go
 
-create procedure GetBrigadeByUserId(@userId int) 
+create or alter procedure GetBrigadeByUserId(@userId int) 
 as begin 
 	begin try
-		select * from [dbo].[Brigade] where userId = @userId;
+		select * from [dbo].[BrigadeView] where userId = @userId;
 	end try
 	begin catch
 		print 'Error: ' + cast(error_number() as varchar(6)) + ': ' + error_message();
@@ -257,13 +257,28 @@ alter procedure GetRequestsForClient(@clientId int)
 as begin
 	begin try
 		select * from [dbo].[Request] join [dbo].[Address] on [dbo].[Request].addressId = [dbo].[Address].id
-		where @clientId = @clientId order by  [dbo].[Request].id desc;
+		where clientId = @clientId order by  [dbo].[Request].id desc;
 	end try
 	begin catch
 		print 'Error: ' + cast(error_number() as varchar(6)) + ': ' + error_message();
 	end catch
 end;
 go
+
+--Client side
+create or alter procedure GetRequestsForClientById(@requestId int) 
+as begin
+	begin try
+		select * from RequestForClientView where requestId = @requestId order by requestId desc;
+		--select * from RequestForClientView left join [dbo].[RequestEquipment] on [dbo].[Request].id = [dbo].[RequestEquipment].requestId
+		--select * from RequestForClientView left join [dbo].[RequestAccessory] on [dbo].[Request].id = [dbo].[RequestAccessory].requestId
+	end try
+	begin catch
+		print 'Error: ' + cast(error_number() as varchar(6)) + ': ' + error_message();
+	end catch
+end;
+go
+
 
 create procedure GetRequestAccessoryByRequestId(@requestId int)
 as begin
