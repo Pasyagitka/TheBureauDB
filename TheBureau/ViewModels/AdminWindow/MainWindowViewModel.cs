@@ -75,6 +75,7 @@ namespace TheBureau.ViewModels
             }
         }
 
+        #region Properties
         public string MainTopText
         {
             get => _mainTopText;
@@ -95,7 +96,8 @@ namespace TheBureau.ViewModels
             get => _countRed;
             set { _countRed = value; OnPropertyChanged("CountRed"); }
         }
-
+        #endregion
+        
         public MainWindowViewModel()
         {
             Content = new StatisticsView();

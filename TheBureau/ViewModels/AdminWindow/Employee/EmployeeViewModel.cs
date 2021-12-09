@@ -26,42 +26,47 @@ namespace TheBureau.ViewModels
         private ICommand _deleteCommand;
         private ICommand _openEditEmployeeWindowCommand;
         private ICommand _openAddEmployeeWindowCommand;
-        
+
+        #region Properties
+
+        public Employee SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                _selectedItem = value;
+                SetEmployeeBrigade();
+                OnPropertyChanged("SelectedItem");
+            }
+        }
         public ObservableCollection<Employee> Employees
         {
             get => _employees;
             set { _employees = value; OnPropertyChanged("Employees"); }
         }
+        public Brigade EmployeeBrigade
+        {
+            get => _employeeBrigades;
+            set { _employeeBrigades = value; OnPropertyChanged("EmployeeBrigade"); }
+        }
+        public string FindEmployeeText
+        {
+            get => _findEmployeesText;
+            set
+            {
+                _findEmployeesText = value;
+                //Search(_findEmployeesText); 
+                OnPropertyChanged("FindEmployeeText");
+            }
+        }
+
+        #endregion
+        
         public EmployeeViewModel()
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_connectionString))
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("GetAllEmployees", conn) {CommandType = CommandType.StoredProcedure})
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                Employee a = new Employee
-                                {
-                                    id = (int) reader["id"],
-                                    firstname = (string) reader["firstname"],
-                                    patronymic = (string) reader["patronymic"],
-                                    surname = (string) reader["surname"],
-                                    email = reader["email"] == DBNull.Value ? null : Convert.ToString(reader["email"]),
-                                    contactNumber = reader["contactNumber"] == DBNull.Value ? null : Convert.ToString(reader["contactNumber"]),
-                                    brigadeId = reader["brigadeId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadeId"])
-                                };
-                                Employees.Add(a);
-                            }
-                            ;
-                        }
-                    }
-                }
-                if (Employees.Count != 0) SelectedItem = Employees.First();
+                GetAllEmployees();
             }
             catch (Exception)
             {
@@ -89,7 +94,7 @@ namespace TheBureau.ViewModels
                                 using (SqlCommand cmd = new SqlCommand("DeleteEmployee", conn) {CommandType = CommandType.StoredProcedure})
                                 {
                                     cmd.Parameters.AddWithValue("@id", emplId);
-                                    using (SqlDataReader reader = cmd.ExecuteReader()) { while (reader.Read()) { }; }
+                                    using (SqlDataReader reader = cmd.ExecuteReader()) { while (reader.Read()) { }; } //todo delete employee - hide!
                                 }
                                 conn.Close();
                             }
@@ -116,7 +121,7 @@ namespace TheBureau.ViewModels
                 AddEmployeeView view = new();
                 if (view.ShowDialog() == true)
                 {
-                    //Update(); - отобразить добавленного работника
+                    GetAllEmployees();
                 }
             }
             catch (Exception)
@@ -134,7 +139,6 @@ namespace TheBureau.ViewModels
                 EditEmployeeView window = new(employeeToEdit);
                 if (window.ShowDialog() == true)
                 {
-                    //Update();
                     Employee employee = new Employee();
                     using (SqlConnection conn = new SqlConnection(_connectionString))
                     {
@@ -153,6 +157,7 @@ namespace TheBureau.ViewModels
                                     employee.email = reader["email"] == DBNull.Value ? null : Convert.ToString(reader["email"]);
                                     employee.contactNumber = reader["contactNumber"] == DBNull.Value ? null : Convert.ToString(reader["contactNumber"]);
                                     employee.brigadeId = reader["brigadeId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadeId"]);
+                                    Employees[Employees.IndexOf(SelectedItem)] = employee; 
                                 }
                                 ;
                             }
@@ -169,71 +174,37 @@ namespace TheBureau.ViewModels
             }
         }
 
-        public Employee SelectedItem
-        {
-            get => _selectedItem;
-            set
-            {
-                _selectedItem = value;
-                SetEmployeeBrigade();
-                OnPropertyChanged("SelectedItem");
-            }
-        }
-        
-        // public void Update()
-        // {
-        //     try
-        //     {
-        //         using (SqlConnection conn = new SqlConnection(_connectionString))
-        //         {
-        //             conn.Open();
-        //             using (SqlCommand cmd = new SqlCommand("GetAllEmployees", conn) {CommandType = CommandType.StoredProcedure})
-        //             {
-        //                 using (SqlDataReader reader = cmd.ExecuteReader())
-        //                 {
-        //                     while (reader.Read())
-        //                     {
-        //                         Employee a = new Employee();
-        //                         a.id = (int) reader["id"];
-        //                         a.firstname = (string) reader["firstname"];
-        //                         a.patronymic = (string) reader["patronymic"];
-        //                         a.surname = (string) reader["surname"];
-        // employee.email = reader["email"] == DBNull.Value ? null : Convert.ToString(reader["email"]);
-        // employee.contactNumber = reader["contactNumber"] == DBNull.Value ? null : Convert.ToString(reader["contactNumber"]);
-        //                         Employees.Add(a);
-        //                     }
-        //                     ;
-        //                 }
-        //             }
-        //         }
-        //         
-        //         Employees = new ObservableCollection<Employee>(_employeeRepository.GetAll());
-        //         EmployeeBrigade = new ObservableCollection<Brigade>(_brigadeRepository.GetAll());
-        //         SelectedItem = Employees.First();
-        //     }
-        //     catch (Exception)
-        //     {
-        //         InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при обновлении данных");
-        //         infoWindow.ShowDialog();
-        //     }
-        // }
-        
-        public Brigade EmployeeBrigade
-        {
-            get => _employeeBrigades;
-            set { _employeeBrigades = value; OnPropertyChanged("EmployeeBrigade"); }
-        }
-        public string FindEmployeeText
-        {
-            get => _findEmployeesText;
-            set
-            {
-                _findEmployeesText = value;
-                //Search(_findEmployeesText); 
-                OnPropertyChanged("FindEmployeeText");
-            }
-        }
 
+        void GetAllEmployees()
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("GetAllEmployees", conn) {CommandType = CommandType.StoredProcedure})
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Employees.Add(new Employee
+                            {
+                                id = (int) reader["id"],
+                                firstname = (string) reader["firstname"],
+                                patronymic = (string) reader["patronymic"],
+                                surname = (string) reader["surname"],
+                                email = reader["email"] == DBNull.Value ? null : Convert.ToString(reader["email"]),
+                                contactNumber = reader["contactNumber"] == DBNull.Value ? null : Convert.ToString(reader["contactNumber"]),
+                                brigadeId = reader["brigadeId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadeId"])
+                            });
+                        }
+                        ;
+                    }
+                }
+            }
+            if (Employees.Count != 0) SelectedItem = Employees.First();
+        }
+        
+    
         void SetEmployeeBrigade()
         {
             if (SelectedItem != null)
@@ -242,8 +213,7 @@ namespace TheBureau.ViewModels
                 if (SelectedItem.brigadeId == null) return;
                 using SqlConnection conn = new SqlConnection(_connectionString);
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("GetBrigade", conn)
-                    {CommandType = CommandType.StoredProcedure})
+                using (SqlCommand cmd = new SqlCommand("GetBrigade", conn)  {CommandType = CommandType.StoredProcedure})
                 {
                     cmd.Parameters.AddWithValue("@id", SelectedItem.brigadeId);
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -280,7 +250,7 @@ namespace TheBureau.ViewModels
                     {
                         while (reader.Read())
                         {
-                            Employee a = new Employee
+                            brigade.Employees.Add(new Employee
                             {
                                 id = (int) reader["id"],
                                 firstname = (string) reader["firstname"],
@@ -288,8 +258,7 @@ namespace TheBureau.ViewModels
                                 surname = (string) reader["surname"],
                                 email = (string) reader["email"],
                                 contactNumber = (string) reader["contactNumber"]
-                            };
-                            brigade.Employees.Add(a);
+                            });
                         }
                         ;
                     }

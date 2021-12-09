@@ -18,7 +18,7 @@ namespace TheBureau.ViewModels
 {
     public class StorageViewModel : ViewModelBase
     {
-        private string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
+        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
 
         private ObservableCollection<Tool> _tools = new();
         private ObservableCollection<Accessory> _accessories = new();
@@ -42,6 +42,7 @@ namespace TheBureau.ViewModels
         private ICommand _openEditEquipmentWindowCommand;
         private ICommand _openAddEquipmentWindowCommand;
         
+        #region Properties
         public Tool SelectedToolItem
         {
             get => _selectedToolItem;
@@ -85,6 +86,7 @@ namespace TheBureau.ViewModels
             get => _equipments;
             set { _equipments = value;  OnPropertyChanged("Equipments");  }
         }
+        #endregion
 
         public StorageViewModel()
         {
@@ -96,13 +98,12 @@ namespace TheBureau.ViewModels
                 {
                     while (reader.Read())  
                     {
-                        Tool t = new Tool
+                        Tools.Add(new Tool
                         {
                             id = (int)reader["id"],
                             name = (string)reader["name"],
                             stage = (int)reader["stageId"]
-                        };
-                        Tools.Add(t);
+                        });
                     };
                 }
             }
@@ -111,15 +112,14 @@ namespace TheBureau.ViewModels
                 {
                     while (reader.Read())  
                     {
-                        Accessory a = new Accessory
+                        Accessories.Add(new Accessory
                         {
                             id = (int)reader["id"],
                             art = Convert.ToString(reader["art"]),
                             equipmentId = (string)reader["equipmentId"],
                             name = (string)reader["name"],
                             price = (decimal)reader["price"]
-                        };
-                        Accessories.Add(a);
+                        });
                     };
                 }
             }
@@ -128,13 +128,12 @@ namespace TheBureau.ViewModels
                 {
                     while (reader.Read())  
                     {
-                        Equipment a = new Equipment
+                        Equipments.Add(new Equipment
                         {
                             id = (string)reader["id"],
                             type = (string)reader["type"],
                             mounting = (int)reader["mountingId"]
-                        };
-                        Equipments.Add(a);
+                        });
                     };
                 }
             }
@@ -235,17 +234,20 @@ namespace TheBureau.ViewModels
 
 
 
-        public ICommand OpenFileCommand => _openFile ??= new RelayCommand(OpenFile);
+        public ICommand ImportCommand => _openFile ??= new RelayCommand(OpenFile);
         private void OpenFile(object sender)
         {
             try
             {
-                OpenFileDialog fileDialog = new OpenFileDialog();
-                fileDialog.Multiselect = false;
-                fileDialog.DefaultExt = ".json";
+                OpenFileDialog fileDialog = new OpenFileDialog
+                {
+                    Multiselect = false,
+                    DefaultExt = ".json",
+                    Filter = "Json files (*.json)|*.json|Text files (*.txt)|*.txt"
+                };
                 if (fileDialog.ShowDialog() == true) {
-                    
-                    InfoWindow infoWindow = new InfoWindow("ОшибкFileа", fileDialog.FileName);
+                    ImportTools(fileDialog.FileName);
+                    InfoWindow infoWindow = new InfoWindow("Импортировано из файла", fileDialog.FileName);
                     infoWindow.ShowDialog();
                 }
             }
@@ -254,6 +256,22 @@ namespace TheBureau.ViewModels
                 InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при отрытии диалогового окна для выбора файла");
                 infoWindow.ShowDialog();
             }
+        }
+
+        private void ImportTools(string filename)
+        {
+            using var conn = new SqlConnection(_connectionString);
+            conn.Open();
+            using (var cmd = new SqlCommand("ImportTools", conn)  { CommandType = CommandType.StoredProcedure }) {
+                cmd.Parameters.AddWithValue("@filename", filename);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                    };
+                }
+            }
+            conn.Close();
         }
     }
 }

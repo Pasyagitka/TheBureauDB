@@ -15,13 +15,13 @@ namespace TheBureau.ViewModels
 {
     public class AddEmployeeViewModel : ViewModelBase, INotifyDataErrorInfo
     {
-        private string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
+        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
 
         private readonly ErrorsViewModel _errorsViewModel = new ErrorsViewModel();
-        
+
         private ObservableCollection<Brigade> _brigades = new();
         int _selectedBrigadeId;
-        
+
         private int _id;
         private string _surname;
         private string _firstname;
@@ -30,44 +30,77 @@ namespace TheBureau.ViewModels
         private string _contactNumber;
         private int? _brigadeid;
         private Employee _employee;
-        
+
         private ICommand _addEmployeeCommand;
-        
+
+        #region Properties
         public int SelectedBrigadeId
         {
             get => _selectedBrigadeId;
-            set { _selectedBrigadeId = value; OnPropertyChanged("SelectedBrigadeId"); }
-        }
-        
-        public ObservableCollection<Brigade> Brigades 
-        { 
-            get => _brigades; 
-            set { _brigades = value; OnPropertyChanged("Brigades"); } 
+            set
+            {
+                _selectedBrigadeId = value;
+                OnPropertyChanged("SelectedBrigadeId");
+            }
         }
 
+        public ObservableCollection<Brigade> Brigades
+        {
+            get => _brigades;
+            set
+            {
+                _brigades = value;
+                OnPropertyChanged("Brigades");
+            }
+        }
+        public Employee Employee
+        {
+            get => _employee;
+            set
+            {
+                _employee = value;
+                Id = Employee.id;
+                Firstname = Employee.firstname;
+                Surname = Employee.surname;
+                Patronymic = Employee.patronymic;
+                Email = Employee.email;
+                ContactNumber = Employee.contactNumber;
+                BrigadeId = Employee.brigadeId;
+                OnPropertyChanged("Employee");
+            }
+        }
+        #endregion
+
         #region EmployeePropetries
+
         public int Id
         {
             get => _id;
-            set { _id = value; OnPropertyChanged("Id"); }
+            set
+            {
+                _id = value;
+                OnPropertyChanged("Id");
+            }
         }
-        
+
         public string Surname
         {
             get => _surname;
             set
-            { 
-                _surname = value; 
+            {
+                _surname = value;
                 _errorsViewModel.ClearErrors("Surname");
-                
+
                 if (string.IsNullOrWhiteSpace(_surname))
                 {
                     _errorsViewModel.AddError("Surname", ValidationConst.FieldCannotBeEmpty);
                 }
+
                 if (_surname?.Length is > 20 or < 2)
                 {
                     _errorsViewModel.AddError("Surname", ValidationConst.NameLengthExceeded);
                 }
+
                 if (_surname != null)
                 {
                     var regex = new Regex(ValidationConst.LettersHyphenRegex);
@@ -76,9 +109,9 @@ namespace TheBureau.ViewModels
                         _errorsViewModel.AddError("Surname", ValidationConst.IncorrectSurname);
                     }
                 }
+
                 OnPropertyChanged("Surname");
             }
-
         }
 
         public string Firstname
@@ -88,15 +121,17 @@ namespace TheBureau.ViewModels
             {
                 _firstname = value;
                 _errorsViewModel.ClearErrors("Firstname");
-                
+
                 if (string.IsNullOrWhiteSpace(_firstname))
                 {
                     _errorsViewModel.AddError("Firstname", ValidationConst.FieldCannotBeEmpty);
                 }
+
                 if (_firstname?.Length is > 20 or < 2)
                 {
                     _errorsViewModel.AddError("Firstname", ValidationConst.NameLengthExceeded);
                 }
+
                 if (_firstname != null)
                 {
                     var regex = new Regex(ValidationConst.LettersHyphenRegex);
@@ -105,6 +140,7 @@ namespace TheBureau.ViewModels
                         _errorsViewModel.AddError("Firstname", ValidationConst.IncorrectFirstname);
                     }
                 }
+
                 OnPropertyChanged("Firstname");
             }
         }
@@ -114,17 +150,19 @@ namespace TheBureau.ViewModels
             get => _patronymic;
             set
             {
-                _patronymic = value; 
+                _patronymic = value;
                 _errorsViewModel.ClearErrors("Patronymic");
-                
+
                 if (string.IsNullOrWhiteSpace(_patronymic))
                 {
                     _errorsViewModel.AddError("Patronymic", ValidationConst.FieldCannotBeEmpty);
                 }
+
                 if (_patronymic?.Length is > 20 or < 2)
                 {
                     _errorsViewModel.AddError("Patronymic", ValidationConst.NameLengthExceeded);
                 }
+
                 if (_patronymic != null)
                 {
                     var regex = new Regex(ValidationConst.LettersHyphenRegex);
@@ -133,6 +171,7 @@ namespace TheBureau.ViewModels
                         _errorsViewModel.AddError("Patronymic", ValidationConst.IncorrectPatronymic);
                     }
                 }
+
                 OnPropertyChanged("Patronymic");
             }
         }
@@ -142,12 +181,13 @@ namespace TheBureau.ViewModels
             get => _email;
             set
             {
-                _email = value; 
+                _email = value;
                 _errorsViewModel.ClearErrors("Email");
                 if (string.IsNullOrWhiteSpace(_email))
                 {
                     _errorsViewModel.AddError("Email", ValidationConst.FieldCannotBeEmpty);
                 }
+
                 if (_email?.Length > 255)
                 {
                     _errorsViewModel.AddError("Email", ValidationConst.EmailLengthExceeded);
@@ -161,6 +201,7 @@ namespace TheBureau.ViewModels
                         _errorsViewModel.AddError("Email", ValidationConst.IncorrectEmailStructure);
                     }
                 }
+
                 OnPropertyChanged("Email");
             }
         }
@@ -170,9 +211,9 @@ namespace TheBureau.ViewModels
             get => _contactNumber;
             set
             {
-                _contactNumber = value; 
+                _contactNumber = value;
                 _errorsViewModel.ClearErrors("ContactNumber");
-                
+
                 if (string.IsNullOrWhiteSpace(_contactNumber.ToString()))
                 {
                     _errorsViewModel.AddError("ContactNumber", ValidationConst.FieldCannotBeEmpty);
@@ -186,32 +227,23 @@ namespace TheBureau.ViewModels
                         _errorsViewModel.AddError("ContactNumber", ValidationConst.IncorrectNumberStructure);
                     }
                 }
+
                 OnPropertyChanged("ContactNumber");
             }
         }
+
         public int? BrigadeId
         {
             get => _brigadeid;
-            set { _brigadeid = value; OnPropertyChanged("BrigadeId"); }
-        }
-        #endregion
-
-        public Employee Employee
-        {
-            get => _employee;
             set
-            { 
-                _employee = value;
-                Id = Employee.id;
-                Firstname = Employee.firstname;
-                Surname = Employee.surname;
-                Patronymic = Employee.patronymic;
-                Email = Employee.email;
-                ContactNumber = Employee.contactNumber;
-                BrigadeId = Employee.brigadeId;
-                OnPropertyChanged("Employee");
+            {
+                _brigadeid = value;
+                OnPropertyChanged("BrigadeId");
             }
         }
+
+        #endregion
+        
         public AddEmployeeViewModel()
         {
             _errorsViewModel.ErrorsChanged += ErrorsViewModel_ErrorsChanged;
@@ -224,14 +256,13 @@ namespace TheBureau.ViewModels
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("GetAllBrigades", conn)
-                    {CommandType = CommandType.StoredProcedure})
+                using (SqlCommand cmd = new SqlCommand("GetAllBrigades", conn) {CommandType = CommandType.StoredProcedure})
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Brigade a = new Brigade
+                            Brigades.Add(new Brigade
                             {
                                 id = (int) reader["id"],
                                 userId = reader["userId"] == DBNull.Value
@@ -241,8 +272,7 @@ namespace TheBureau.ViewModels
                                     ? (Int32?) null
                                     : Convert.ToInt32(reader["brigadierId"]),
                                 creationDate = (DateTime) reader["creationDate"]
-                            };
-                            Brigades.Add(a);
+                            });
                         }
                         ;
                     }
@@ -250,38 +280,39 @@ namespace TheBureau.ViewModels
                 conn.Close();
             }
             Brigades.Add(new Brigade {id = 0});
-            //Brigades = new ObservableCollection<Brigade>(_brigadeRepository.GetAll()) {new Brigade {id = 0}};
         }
-        
+
         public ICommand AddEmployeeCommand => _addEmployeeCommand ??= new RelayCommand(AddEmployee, CanAddEmployee);
         private bool CanAddEmployee(object sender) => !HasErrors;
+
         private void AddEmployee(object sender)
         {
             try
             {
                 //decimal newEmployeeId = 0;
-                using (SqlConnection conn = new SqlConnection(_connectionString))
+                using SqlConnection conn = new SqlConnection(_connectionString);
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("AddEmployee", conn)
+                    {CommandType = CommandType.StoredProcedure})
                 {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("AddEmployee", conn) {CommandType = CommandType.StoredProcedure})
-                    {
-                        cmd.Parameters.AddWithValue("@firstname", Firstname);
-                        cmd.Parameters.AddWithValue("@patronymic", Patronymic);
-                        cmd.Parameters.AddWithValue("@surname", Surname);
-                        cmd.Parameters.AddWithValue("@email", Email);
-                        cmd.Parameters.AddWithValue("@contactNumber", ContactNumber);
-                        cmd.Parameters.AddWithValue("@brigadeId", SelectedBrigadeId == 0 ? DBNull.Value : SelectedBrigadeId);
+                    cmd.Parameters.AddWithValue("@firstname", Firstname);
+                    cmd.Parameters.AddWithValue("@patronymic", Patronymic);
+                    cmd.Parameters.AddWithValue("@surname", Surname);
+                    cmd.Parameters.AddWithValue("@email", Email);
+                    cmd.Parameters.AddWithValue("@contactNumber", ContactNumber);
+                    cmd.Parameters.AddWithValue("@brigadeId",
+                        SelectedBrigadeId == 0 ? DBNull.Value : SelectedBrigadeId);
 
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                //newEmployeeId = (decimal)reader["id"];
-                            };
+                            //newEmployeeId = (decimal)reader["id"];
                         }
+                        ;
                     }
-                    conn.Close();
                 }
+                conn.Close();
             }
             catch (Exception)
             {
@@ -289,17 +320,19 @@ namespace TheBureau.ViewModels
                 infoWindow.ShowDialog();
             }
         }
-        
-        #region  Validation
+
+        #region Validation
+
         public IEnumerable GetErrors(string propertyName) => _errorsViewModel.GetErrors(propertyName);
         public bool HasErrors => _errorsViewModel.HasErrors;
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
         private void ErrorsViewModel_ErrorsChanged(object sender, DataErrorsChangedEventArgs e)
         {
             ErrorsChanged?.Invoke(this, e);
             OnPropertyChanged("CanAddEmployee");
         }
-        
+
         #endregion
     }
 }

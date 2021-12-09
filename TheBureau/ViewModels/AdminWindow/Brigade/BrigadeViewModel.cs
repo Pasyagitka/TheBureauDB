@@ -14,27 +14,29 @@ namespace TheBureau.ViewModels
     public class BrigadeViewModel : ViewModelBase
     {
         private const string BrigadePassword = "brigade";
-        private string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
+        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
 
-        
         private ObservableCollection<Brigade> _brigades = new();
-        private ObservableCollection<Employee> _employees = new();
-        
         private ICommand _addBrigade;
         private ICommand _deleteBrigade;
-        
         private Brigade _selectedItem;
 
-        public ObservableCollection<Employee> Employees
-        {
-            get => _employees;
-            set { _employees = value; OnPropertyChanged("Employees"); } 
-        }
+        #region Properties 
         public Brigade SelectedItem
         {
             get => _selectedItem;
             set { _selectedItem = value; OnPropertyChanged("SelectedItem"); }
         }
+        public ObservableCollection<Brigade> Brigades 
+        { 
+            get => _brigades; 
+            set 
+            { 
+                _brigades = value; 
+                OnPropertyChanged("Brigades"); 
+            } 
+        }
+        #endregion
         public ICommand AddBrigade
         {
             get
@@ -43,29 +45,26 @@ namespace TheBureau.ViewModels
                 {
                     try
                     {
-                        using (SqlConnection conn = new SqlConnection(_connectionString))
+                        using SqlConnection conn = new SqlConnection(_connectionString);
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand("AddBrigade", conn) {CommandType = CommandType.StoredProcedure})
                         {
-                            conn.Open();
-                            using (SqlCommand cmd = new SqlCommand("AddBrigade", conn) {CommandType = CommandType.StoredProcedure})
+                            cmd.Parameters.AddWithValue("@password", PasswordHash.CreateHash(BrigadePassword));
+                            using (SqlDataReader reader = cmd.ExecuteReader())
                             {
-                                cmd.Parameters.AddWithValue("@password", PasswordHash.CreateHash(BrigadePassword));
-                                using (SqlDataReader reader = cmd.ExecuteReader())
+                                while (reader.Read())
                                 {
-                                    while (reader.Read())
+                                    Brigades.Add(new Brigade
                                     {
-                                        Brigade a = new Brigade
-                                        {
-                                            id = (int)reader["id"],
-                                            userId = reader["userId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["userId"]),
-                                            brigadierId = reader["brigadierId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadierId"]),
-                                            creationDate = (DateTime)reader["creationDate"]
-                                        };
-                                        Brigades.Add(a);
-                                    };
-                                }
+                                        id = (int)reader["id"],
+                                        userId = reader["userId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["userId"]),
+                                        brigadierId = reader["brigadierId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadierId"]),
+                                        creationDate = (DateTime)reader["creationDate"]
+                                    });
+                                };
                             }
-                            conn.Close();
                         }
+                        conn.Close();
                     }
                     catch (Exception)
                     {
@@ -110,16 +109,6 @@ namespace TheBureau.ViewModels
                 });
             }
         }
-        
-        public ObservableCollection<Brigade> Brigades 
-        { 
-            get => _brigades; 
-            set 
-            { 
-                _brigades = value; 
-                OnPropertyChanged("Brigades"); 
-            } 
-        }
 
         public BrigadeViewModel()
         {
@@ -133,21 +122,11 @@ namespace TheBureau.ViewModels
                         {
                             while (reader.Read())  
                             {
-                                Brigade a = new Brigade
+                                Brigades.Add(new Brigade
                                 {
                                     id = (int)reader["id"],
                                     brigadierId = reader["brigadierId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadierId"])
-                                };
-
-                                // Employee e = new Employee();
-                                // e.firstname = (string) reader["firstname"];
-                                // e.patronymic = (string) reader["patronymic"];
-                                // e.surname = (string) reader["surname"];
-                                // e.email = (string) reader["email"];
-                                // e.contactNumber = (string)reader["contactNumber"];
-                                
-                                //a.Employees.Add(e);
-                                Brigades.Add(a);
+                                });
                             };
                         }
                     }
@@ -166,37 +145,29 @@ namespace TheBureau.ViewModels
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_connectionString))
+                using SqlConnection conn = new SqlConnection(_connectionString);
+                conn.Open();
+                foreach (Brigade brigade in Brigades)
                 {
-                    conn.Open();
-                    foreach (Brigade brigade in Brigades)
+                    using SqlCommand cmd = new SqlCommand("GetEmployeesForBrigade", conn)  {CommandType = CommandType.StoredProcedure};
+                    cmd.Parameters.AddWithValue("@brigadeId", brigade.id);
+                    using SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
                     {
-                        using (SqlCommand cmd = new SqlCommand("GetEmployeesForBrigade", conn)
-                            {CommandType = CommandType.StoredProcedure})
+                        Employee a = new Employee
                         {
-                            cmd.Parameters.AddWithValue("@brigadeId", brigade.id);
-                            using (SqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    Employee a = new Employee
-                                    {
-                                        id = (int) reader["id"],
-                                        firstname = (string) reader["firstname"],
-                                        patronymic = (string) reader["patronymic"],
-                                        surname = (string) reader["surname"],
-                                        email = (string) reader["email"],
-                                        contactNumber = (string) reader["contactNumber"]
-                                    };
-                                    brigade.Employees.Add(a);
-                                    //Employees.Add(a);
-                                }
-                                ;
-                            }
-                        }
+                            id = (int) reader["id"],
+                            firstname = (string) reader["firstname"],
+                            patronymic = (string) reader["patronymic"],
+                            surname = (string) reader["surname"],
+                            email = (string) reader["email"],
+                            contactNumber = (string) reader["contactNumber"]
+                        };
+                        brigade.Employees.Add(a);
                     }
-                    conn.Close();
+                    ;
                 }
+                conn.Close();
             }
             catch (Exception)
             {

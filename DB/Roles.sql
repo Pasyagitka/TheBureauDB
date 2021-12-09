@@ -7,6 +7,7 @@ create role thebureau_brigade_role;
 go
 
 alter role thebureau_admin_role add member thebureau_admin_user;
+alter server role bulkadmin add member admin_login;		--bulk insert!
 alter role thebureau_client_role add member thebureau_client_user;
 alter role thebureau_brigade_role add member thebureau_brigade_user;
 go

@@ -25,6 +25,40 @@ namespace TheBureau.ViewModels
         private ICommand _deleteCommand;
         private ICommand _openEditClientWindowCommand;
 
+        #region Properties
+        public ObservableCollection<Client> Clients
+        {
+            get => _clients;
+            set { _clients = value; OnPropertyChanged("Clients"); }
+        }
+        public Client SelectedItem
+        {
+            get => _selectedItem;
+            set
+            {
+                _selectedItem = value;
+                SetClientsRequests();
+                OnPropertyChanged("SelectedItem");
+            }
+        }
+        public ObservableCollection<Request> ClientRequests
+        {
+            get => _clientsRequests;
+            set {_clientsRequests = value; OnPropertyChanged("ClientRequests"); }
+        }
+        public string FindClientText
+        {
+            get => _findClientsText;
+            set
+            {
+                _findClientsText = value;
+                OnPropertyChanged("FindClientText");
+            }
+        }
+        
+
+        #endregion
+
         public ICommand DeleteCommand
         {
             get
@@ -42,43 +76,12 @@ namespace TheBureau.ViewModels
                                 cmd.Parameters.AddWithValue("@clientId", SelectedItem.id);
                                 using (SqlDataReader reader = cmd.ExecuteReader())
                                 {
-                                    while (reader.Read())
-                                    {
-                                    };
+                                    while (reader.Read())  { }; //todo delete client - hide!
                                 }
                                 conn.Close();
                             }
                             Clients.Remove(SelectedItem);
                             SelectedItem = Clients.First();
-                            //int clientid = SelectedItem.id;
-                            //var clientRequests = _requestRepository.FindByClientId(clientid);
-                            //var addresses = clientRequests.Select(x => x.addressId).ToList();
-                            //var requestsid = clientRequests.Select(x => x.id).ToList();
-
-                            //foreach (var id in requestsid)
-                            //{
-                            //    _requestEquipmentRepository.DeleteByRequestId(id);
-                            //}
-                            //_requestEquipmentRepository.Save();
-
-                            //foreach (var request in clientRequests.ToList())
-                            //{
-                            //    _requestRepository.Delete(request.id);
-                            //}
-                            //_requestRepository.Save();
-
-                            //foreach (var id in addresses)
-                            //{
-                            //    _addressRepository.Delete(id);
-                            //}
-                            //_addressRepository.Save();
-
-                            //_clientRepository.Delete(clientid);
-                            //_clientRepository.Save();
-
-
-                            //Clients = new ObservableCollection<Client>(_clientRepository.GetAll());
-                            //SelectedItem = Clients.First();
                         }
                     }
                     catch (Exception)
@@ -118,7 +121,7 @@ namespace TheBureau.ViewModels
                                         client.surname = (string) reader["surname"];
                                         client.email = (string) reader["email"];
                                         client.contactNumber = (string)reader["contactNumber"];
-                                        Clients.Add(client);
+                                        Clients[Clients.IndexOf(SelectedItem)] = client; //todo update observable collection
                                     }
                                     ;
                                 }
@@ -135,35 +138,7 @@ namespace TheBureau.ViewModels
                 infoWindow.ShowDialog();
             }
         }
-        public ObservableCollection<Client> Clients
-        {
-            get => _clients;
-            set { _clients = value; OnPropertyChanged("Clients"); }
-        }
-        public Client SelectedItem
-        {
-            get => _selectedItem;
-            set
-            {
-                _selectedItem = value;
-                SetClientsRequests();
-                OnPropertyChanged("SelectedItem");
-            }
-        }
-        public ObservableCollection<Request> ClientRequests
-        {
-            get => _clientsRequests;
-            set {_clientsRequests = value; OnPropertyChanged("ClientRequests"); }
-        }
-        public string FindClientText
-        {
-            get => _findClientsText;
-            set
-            {
-                _findClientsText = value;
-                OnPropertyChanged("FindClientText");
-            }
-        }
+     
         public ClientViewModel()
         {
             try
@@ -177,7 +152,7 @@ namespace TheBureau.ViewModels
                         {
                             while (reader.Read())
                             {
-                                Client client = new Client
+                                Clients.Add( new Client
                                 {
                                     id = (int) reader["id"],
                                     firstname = (string) reader["firstname"],
@@ -185,8 +160,7 @@ namespace TheBureau.ViewModels
                                     surname = (string) reader["surname"],
                                     email = (string) reader["email"],
                                     contactNumber = (string)reader["contactNumber"]
-                                };
-                                Clients.Add(client);
+                                });
                             }
                             ;
                         }
@@ -216,7 +190,7 @@ namespace TheBureau.ViewModels
                     {
                         while (reader.Read())
                         {
-                           Request a = new Request
+                           ClientRequests.Add(new Request
                            {
                                id = (int)reader["id"],
                                clientId = (int)reader["clientId"],
@@ -228,21 +202,18 @@ namespace TheBureau.ViewModels
                                comment = (string)reader["comment"],
                                brigadeId = reader["brigadeId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadeId"]),
                                proceeds = reader["proceeds"] == DBNull.Value ? (Int32?) null : Convert.ToDecimal(reader["proceeds"]),
-                               Client = SelectedItem
-                           };
-
-                           Address address = new Address
-                           {
-                               id = (int) reader["addressId"],
-                               country = (string) reader["country"],
-                               city = (string) reader["city"],
-                               street = (string) reader["street"],
-                               house = (int) reader["house"],
-                               corpus = reader["corpus"] == DBNull.Value ? null : Convert.ToString(reader["corpus"]),
-                               flat = reader["flat"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["flat"])
-                           };
-                           a.Address = address;
-                                ClientRequests.Add(a);
+                               Client = SelectedItem,
+                               Address = new Address
+                               {
+                                   id = (int) reader["addressId"],
+                                   country = (string) reader["country"],
+                                   city = (string) reader["city"],
+                                   street = (string) reader["street"],
+                                   house = (int) reader["house"],
+                                   corpus = reader["corpus"] == DBNull.Value ? null : Convert.ToString(reader["corpus"]),
+                                   flat = reader["flat"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["flat"])
+                               }
+                           });
                         }
                         ;
                     }

@@ -180,12 +180,13 @@ end;
 go
 
 --Employee-----------------------------------------------------------------
-create procedure AddEmployee (@firstname nvarchar(20), @patronymic nvarchar(20), @surname nvarchar(20), 
+create or alter procedure AddEmployee (@firstname nvarchar(20), @patronymic nvarchar(20), @surname nvarchar(20), 
 									@email nvarchar(255), @contactNumber nvarchar(12), @brigadeId int)
 as begin
 	begin try
 		insert into [dbo].[Employee] (firstname, patronymic, surname, email, contactNumber, brigadeId)
 		values(@firstname, @patronymic, @surname, @email, @contactNumber, @brigadeId);
+		select * from [dbo].[Employee] where id = ident_current('Employee');
 	end try
 	begin catch
 		print 'Error: ' + cast(error_number() as varchar(6)) + ': ' + error_message();

@@ -28,8 +28,11 @@
                                     <Button ToolTip="Удалить" Command="{Binding DeleteToolCommand}" Cursor="Hand">
                                         <Image Source="../../../Resources/Images/delete.png" Width="30"/>
                                     </Button>
-                                    <Button ToolTip="Импорт" Command="{Binding OpenFileCommand}" Cursor="Hand">
-                                        <Image Source="../../../Resources/Images/delete.png" Width="30"/>
+                                    <Button  ToolTip="Импорт" Command="{Binding ImportCommand}" Cursor="Hand">
+                                        <Image Source="../../../Resources/Images/import.png" Width="30"/>
+                                    </Button>
+                                    <Button ToolTip="Экспорт" Command="{Binding ImportCommand}" Cursor="Hand">
+                                        <Image Source="../../../Resources/Images/export.png" Width="30"/>
                                     </Button>
                                 </ToolBar>
                             </ToolBarTray>

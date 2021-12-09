@@ -15,7 +15,7 @@ namespace TheBureau.ViewModels
 {
     public class EmployeeEditViewModel : ViewModelBase, INotifyDataErrorInfo
     {
-        private string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
+        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
         private readonly ErrorsViewModel _errorsViewModel = new();
        
         private int _id;
@@ -31,6 +31,8 @@ namespace TheBureau.ViewModels
         private int _selectedBrigadeId;
         
         private ICommand _editEmployeeCommand;
+
+        #region Properties
         public ObservableCollection<Brigade> Brigades 
         { 
             get => _brigades; 
@@ -42,7 +44,7 @@ namespace TheBureau.ViewModels
             get => _selectedBrigadeId;
             set { _selectedBrigadeId = value; OnPropertyChanged("SelectedBrigadeId"); }
         }
-        
+        #endregion
 
         #region EmployeeProperties
         
@@ -205,25 +207,23 @@ namespace TheBureau.ViewModels
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(_connectionString))
+                using SqlConnection conn = new SqlConnection(_connectionString);
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("UpdateEmployee", conn) {CommandType = CommandType.StoredProcedure})
                 {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("UpdateEmployee", conn) {CommandType = CommandType.StoredProcedure})
+                    cmd.Parameters.AddWithValue("@id", Id);
+                    cmd.Parameters.AddWithValue("@firstname", Firstname);
+                    cmd.Parameters.AddWithValue("@patronymic", Patronymic);
+                    cmd.Parameters.AddWithValue("@surname", Surname);
+                    cmd.Parameters.AddWithValue("@email", Email == null? DBNull.Value : Email);
+                    cmd.Parameters.AddWithValue("@contactNumber", ContactNumber == null ? DBNull.Value : ContactNumber);
+                    cmd.Parameters.AddWithValue("@brigadeId", SelectedBrigadeId == 0 ? DBNull.Value : SelectedBrigadeId);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.Parameters.AddWithValue("@id", Id);
-                        cmd.Parameters.AddWithValue("@firstname", Firstname);
-                        cmd.Parameters.AddWithValue("@patronymic", Patronymic);
-                        cmd.Parameters.AddWithValue("@surname", Surname);
-                        cmd.Parameters.AddWithValue("@email", Email == null? DBNull.Value : Email);
-                        cmd.Parameters.AddWithValue("@contactNumber", ContactNumber == null ? DBNull.Value : ContactNumber);
-                        cmd.Parameters.AddWithValue("@brigadeId", SelectedBrigadeId == 0 ? DBNull.Value : SelectedBrigadeId);
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read()) { };
-                        }
+                        while (reader.Read()) { };
                     }
-                    conn.Close();
                 }
+                conn.Close();
             }
             catch (Exception)
             {
@@ -245,14 +245,13 @@ namespace TheBureau.ViewModels
                     {
                         while (reader.Read())  
                         {
-                            Brigade a = new Brigade
+                            Brigades.Add(new Brigade
                             {
                                 id = (int)reader["id"],
                                 userId = reader["userId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["userId"]),
                                 brigadierId = reader["brigadierId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadierId"]),
                                 creationDate = (DateTime)reader["creationDate"]
-                            };
-                            Brigades.Add(a);
+                            });
                         };
                     }
                 }

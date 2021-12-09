@@ -6,26 +6,7 @@ EXEC sp_configure 'xp_cmdshell', 1;
 GO  
 RECONFIGURE; 
 go
---выбор пути файла!
---BULK INSERT loads data from a data file into a table
-create or alter procedure ImportTools(@filepath nvarchar(200))
-as begin
-	begin try
-	--The OPENROWSET(BULK...) function allows to access remote data by connecting to a remote data source, such as a data file, through an OLE DB provider.
-		declare @json varchar(max) select @json = BulkColumn
-		--SINGLE_NCLOB reads a file as nvarchar(max) 
-		from openrowset (BULK 'D:\JsonTest.json', SINGLE_CLOB) Imported --correlation name is required by OPENROWSET. 
-		insert into [dbo].[Tool] 
-		select * from openjson(@json) with ([name] nvarchar(30), [stageId] int)
-	end try
-	begin catch
-		print 'Error: ' + cast(error_number() as varchar(6)) + ': ' + error_message();
-	end catch
-end;
-go
 
---exec ImportTools;
---select * from Tool
 
 create or alter procedure ExportTools
 as begin
@@ -46,3 +27,23 @@ go
 --t specifies the field terminator, the default is \t
 --k empty columns should retain a null value during the operation
 --T integrated security - trusted connection
+
+
+
+create or alter procedure ImportTools(@filename nvarchar(max))
+as begin
+	begin try
+		declare @json varchar(max)  
+		declare @command nvarchar(max)= N'select @json = bulkcolumn from openrowset(BULK ''' + @filename + ''', SINGLE_CLOB) Imported 
+			insert into [dbo].[Tool] 
+			select * from openjson(@json) with ([name] nvarchar(30), [stageId] int)';
+		exec sp_executesql @command,  N'@filename nvarchar(max), @json varchar(max) output', @filename, @json output;
+		select @json
+	end try
+	begin catch
+		print 'Error: ' + cast(error_number() as varchar(6)) + ': ' + error_message();
+	end catch
+end;
+go
+
+--exec ImportTools 'D:\JsonTest.json'

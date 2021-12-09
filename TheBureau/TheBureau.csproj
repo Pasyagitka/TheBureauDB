@@ -85,6 +85,10 @@
     <Resource Include="Resources\Images\toolbox.png" />
     <None Remove="Resources\Images\workers.png" />
     <Resource Include="Resources\Images\workers.png" />
+    <None Remove="Resources\Images\import.png" />
+    <Resource Include="Resources\Images\import.png" />
+    <None Remove="Resources\Images\export.png" />
+    <Resource Include="Resources\Images\export.png" />
   </ItemGroup>
 
 </Project>

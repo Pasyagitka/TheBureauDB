@@ -19,6 +19,7 @@ namespace TheBureau.ViewModels
         private int _countYellow;
         private int _countGreen;
 
+        #region Properties
         public ObservableCollection<Client> Clients
         {
             get => _clients;
@@ -54,17 +55,18 @@ namespace TheBureau.ViewModels
             get => _countGreen;
             set { _countGreen = value; OnPropertyChanged("CountGreen"); }
         }
+        #endregion
 
         public StatisticsViewModel()
         {
-            using SqlConnection conn = new SqlConnection(_connectionString);
+            using var conn = new SqlConnection(_connectionString);
             conn.Open();
-            using (SqlCommand cmd = new SqlCommand("GetAllClients", conn)  { CommandType = CommandType.StoredProcedure }) {
-                using (SqlDataReader reader = cmd.ExecuteReader())
+            using (var cmd = new SqlCommand("GetAllClients", conn)  { CommandType = CommandType.StoredProcedure }) {
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())  
                     {
-                        Client a = new Client
+                        Clients.Add(new Client
                         {
                             id = (int)reader["id"],
                             firstname = (string)reader["firstname"],
@@ -72,17 +74,16 @@ namespace TheBureau.ViewModels
                             surname = (string)reader["surname"],
                             email = (string)reader["email"],
                             contactNumber = (string)reader["contactNumber"]
-                        };
-                        Clients.Add(a);
+                        });
                     };
                 }
             }
-            using (SqlCommand cmd = new SqlCommand("GetAllRequests", conn)  { CommandType = CommandType.StoredProcedure }) {
-                using (SqlDataReader reader = cmd.ExecuteReader())
+            using (var cmd = new SqlCommand("GetAllRequests", conn)  { CommandType = CommandType.StoredProcedure }) {
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())  
                     {
-                        Request a = new Request
+                        Requests.Add(new Request
                         {
                             id = (int)reader["id"],
                             clientId = (int)reader["clientId"],
@@ -94,30 +95,28 @@ namespace TheBureau.ViewModels
                             comment = (string)reader["comment"],
                             brigadeId = reader["brigadeId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadeId"]),
                             proceeds = reader["proceeds"] == DBNull.Value ? (Int32?) null : Convert.ToDecimal(reader["proceeds"])
-                        };
-                        Requests.Add(a);
+                        });
                     };
                 }
             }
-            using (SqlCommand cmd = new SqlCommand("GetAllBrigades", conn)  { CommandType = CommandType.StoredProcedure }) {
-                using (SqlDataReader reader = cmd.ExecuteReader())
+            using (var cmd = new SqlCommand("GetAllBrigades", conn)  { CommandType = CommandType.StoredProcedure }) {
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())  
                     {
-                        Brigade a = new Brigade
+                        Brigades.Add( new Brigade
                         {
                             id = (int)reader["id"],
                             userId = reader["userId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["userId"]),
                             brigadierId = reader["brigadierId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadierId"]),
                             creationDate = (DateTime)reader["creationDate"]
-                        };
-                        Brigades.Add(a);
+                        });
                     };
                 }
             }
-            using (SqlCommand cmd = new SqlCommand("GetRequestsCountByStatusId", conn)  { CommandType = CommandType.StoredProcedure }) {
+            using (var cmd = new SqlCommand("GetRequestsCountByStatusId", conn)  { CommandType = CommandType.StoredProcedure }) {
                 cmd.Parameters.AddWithValue("@statusId", 1); //Red - In processing
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())  
                     {
@@ -125,9 +124,9 @@ namespace TheBureau.ViewModels
                     };
                 }
             }
-            using (SqlCommand cmd = new SqlCommand("GetRequestsCountByStatusId", conn)  { CommandType = CommandType.StoredProcedure }) {
+            using (var cmd = new SqlCommand("GetRequestsCountByStatusId", conn)  { CommandType = CommandType.StoredProcedure }) {
                 cmd.Parameters.AddWithValue("@statusId", 2); //Yellow - In progress
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())  
                     {
@@ -135,9 +134,9 @@ namespace TheBureau.ViewModels
                     };
                 }
             }
-            using (SqlCommand cmd = new SqlCommand("GetRequestsCountByStatusId", conn)  { CommandType = CommandType.StoredProcedure }) {
+            using (var cmd = new SqlCommand("GetRequestsCountByStatusId", conn)  { CommandType = CommandType.StoredProcedure }) {
                 cmd.Parameters.AddWithValue("@statusId", 3); //Green - Done
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())  
                     {
