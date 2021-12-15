@@ -28,13 +28,13 @@
                         <GradientStop Color="{DynamicResource LightGreen}" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <StackPanel Orientation="Horizontal">
-                    <Border Background="White" CornerRadius="5" Margin="20, 10, 0, 10" Width="320">
-                            <TextBox  VerticalAlignment="Center"  Padding="5" BorderThickness="0" materialDesign:HintAssist.Hint="Найти клиента (ФИО, почта, телефон, ID)" materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                      Text="{Binding FindClientText, UpdateSourceTrigger=PropertyChanged}"/>
-                    </Border>
-                    <materialDesign:PackIcon Kind="Search" Foreground="White"  Width="29" Height="Auto" Margin="0,16,0,10.6"/>
-                </StackPanel>
+                <!-- <StackPanel Orientation="Horizontal"> -->
+                <!--     <Border Background="White" CornerRadius="5" Margin="20, 10, 0, 10" Width="320"> -->
+                <!--             <TextBox  VerticalAlignment="Center"  Padding="5" BorderThickness="0" materialDesign:HintAssist.Hint="Найти клиента (ФИО, почта, телефон, ID)" materialDesign:TextFieldAssist.DecorationVisibility="Hidden" -->
+                <!--                       Text="{Binding FindClientText, UpdateSourceTrigger=PropertyChanged}"/> -->
+                <!--     </Border> -->
+                <!--     <materialDesign:PackIcon Kind="Search" Foreground="White"  Width="29" Height="Auto" Margin="0,16,0,10.6"/> -->
+                <!-- </StackPanel> -->
             </Border>
             <ScrollViewer Grid.Column="0" Grid.Row="1" Margin="0,0,0,15">
                 <Border Background="{DynamicResource PrimaryLightGrayColor}">

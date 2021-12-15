@@ -28,10 +28,10 @@
                                     <Button ToolTip="Удалить" Command="{Binding DeleteToolCommand}" Cursor="Hand">
                                         <Image Source="../../../Resources/Images/delete.png" Width="30"/>
                                     </Button>
-                                    <Button  ToolTip="Импорт" Command="{Binding ImportCommand}" Cursor="Hand">
+                                    <Button  ToolTip="Импорт" Command="{Binding ImportCommandTool}" Cursor="Hand">
                                         <Image Source="../../../Resources/Images/import.png" Width="30"/>
                                     </Button>
-                                    <Button ToolTip="Экспорт" Command="{Binding ImportCommand}" Cursor="Hand">
+                                    <Button ToolTip="Экспорт" Command="{Binding ExportCommandTool}" Cursor="Hand">
                                         <Image Source="../../../Resources/Images/export.png" Width="30"/>
                                     </Button>
                                 </ToolBar>
@@ -68,6 +68,12 @@
                                     </Button>
                                     <Button ToolTip="Удалить" Command="{Binding DeleteAccessoryCommand}" Cursor="Hand">
                                         <Image Source="../../../Resources/Images/delete.png" Width="30"/>
+                                    </Button>
+                                    <Button  ToolTip="Импорт" Command="{Binding ImportCommandAccessory}" Cursor="Hand">
+                                        <Image Source="../../../Resources/Images/import.png" Width="30"/>
+                                    </Button>
+                                    <Button ToolTip="Экспорт" Command="{Binding ExportCommandAccessory}" Cursor="Hand">
+                                        <Image Source="../../../Resources/Images/export.png" Width="30"/>
                                     </Button>
                                 </ToolBar>
                             </ToolBarTray>

@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TheBureau.Models
+﻿namespace TheBureau.Models
 {
-    class Mounting
+    public class Mounting
     {
+        public int id { get; set; }
+        public string mounting { get; set; }
+  
     }
 }

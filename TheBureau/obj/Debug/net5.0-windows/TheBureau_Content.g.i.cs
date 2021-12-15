@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/reports/report1.rdl")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/schedule.png")]
 
 

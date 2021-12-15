@@ -12,6 +12,5 @@ namespace TheBureau.Models
 
         public int requestId { get; set; }
         
-        public bool attend { get; set; }
     }
 }

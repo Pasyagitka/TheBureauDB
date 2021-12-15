@@ -1,0 +1,33 @@
+﻿
+FD:\5 семестр\CourseProject\TheBureau\App.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Resources\Styles.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Brigade\BrigadeView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Brigade\EditBrigadeView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Client\ClientView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Employee\AddEmployeeView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Employee\EditEmployeeView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Employee\EmployeeView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\MainWindowView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Request\EditRequestView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Request\RequestView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\StatisticsView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Storage\AddAccessoryView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Storage\AddEquipmentView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Storage\AddToolView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AdminWindow\Storage\StorageView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AuthWindow\AuthenticationPageView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AuthWindow\HelloPageView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\AuthWindow\HelloWindowView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\BrigadeWindow\BrigadeScheduleView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\BrigadeWindow\BrigadeWindowView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\BrigadeWindow\EditRequestFromBrigadeView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\ClientWindow\ClientWindowView.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\Controls\BrigadeCard.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\Controls\BrigadeCardSmall.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\Controls\ClientCard.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\Controls\EmployeeCard.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\Controls\EmployeeCardSmall.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\Controls\InfoWindow.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\Controls\RequestCard.xaml;;
+FD:\5 семестр\CourseProject\TheBureau\Views\Controls\RequestForm.xaml;;
+

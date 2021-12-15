@@ -9,20 +9,20 @@
 
   <ItemGroup>
     <None Remove="Resources\Images\add.png" />
+    <None Remove="Resources\Images\schedule.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BoldReports.WPF" Version="3.1.32" />
+    <PackageReference Include="BlackPearl.Controls.Library" Version="2.0.1" />
+    <PackageReference Include="BoldReports.WPF" Version="3.3.23" />
+    <PackageReference Include="C1.Xaml.WPF.FlexViewer" Version="4.5.20213.755" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.3" />
     <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Reports\" />
     <Folder Include="Converters\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\BrigadeWindow\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -76,6 +76,7 @@
     <None Remove="Resources\Images\save.png" />
     <Resource Include="Resources\Images\save.png" />
     <None Remove="Resources\Images\settings.png" />
+    <Resource Include="Resources\Images\schedule.png" />
     <Resource Include="Resources\Images\settings.png" />
     <None Remove="Resources\Images\stat.png" />
     <Resource Include="Resources\Images\stat.png" />
@@ -89,6 +90,15 @@
     <Resource Include="Resources\Images\import.png" />
     <None Remove="Resources\Images\export.png" />
     <Resource Include="Resources\Images\export.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\AdminWindow\Storage\AddToolView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Views\AdminWindow\Storage\AddAccessoryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@ namespace TheBureau.ViewModels
         private ObservableCollection<Brigade> _brigades = new();
         
         private int _selectedBrigadeId;
-        private int _requestStatus; 
+        private string _requestStatus; 
         
         private Request _requestForEdit;
         
@@ -64,9 +64,21 @@ namespace TheBureau.ViewModels
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     conn.Open();
+                    int statusId = 1;
+                    using (SqlCommand cmd = new SqlCommand("GetStatusIdByName", conn) { CommandType = CommandType.StoredProcedure })
+                    {
+                        cmd.Parameters.AddWithValue("@status", _requestStatus);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                statusId = (int)reader["id"];
+                            };
+                        }
+                    }
                     using (SqlCommand cmd = new SqlCommand("UpdateRequestByAdmin", conn)  { CommandType = CommandType.StoredProcedure }) {
                         cmd.Parameters.AddWithValue("@id", RequestForEdit.id);
-                        cmd.Parameters.AddWithValue("@statusId", _requestStatus);
+                        cmd.Parameters.AddWithValue("@statusId", statusId);
                         cmd.Parameters.AddWithValue("@brigadeId", SelectedBrigadeId == 0? DBNull.Value : SelectedBrigadeId);
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
@@ -97,12 +109,12 @@ namespace TheBureau.ViewModels
         
         public string RequestStatus
         {
-            get => _requestStatus.ToString();
+            get => _requestStatus;
             set
             { //1 - В обработке, 2 - в Процессе, 3 - Готово
-                if (value.Contains("Готово")) _requestStatus = 3; 
-                else if (value.Contains("В процессе")) _requestStatus = 2;
-                else _requestStatus = 1;
+                if (value.Contains("Готово")) _requestStatus = "Done"; 
+                else if (value.Contains("В процессе")) _requestStatus = "InProgress";
+                else _requestStatus = "InProcessing";
                 OnPropertyChanged("RequestStatus");
             }
         }

@@ -26,6 +26,9 @@
                     <Button ToolTip="Удалить" Command="{Binding DeleteBrigade}" Cursor="Hand">
                         <Image Source="../../../Resources/Images/delete.png" Width="30"/>
                     </Button>
+                    <Button ToolTip="Назначить бригадира" Command="{Binding OpenSetBrigadierCommand}" Cursor="Hand">
+                        <Image Source="../../../Resources/Images/edit.png" Width="30"/>
+                    </Button>
                 </ToolBar>
            </ToolBarTray>
             <DockPanel DockPanel.Dock="Top" LastChildFill="True">

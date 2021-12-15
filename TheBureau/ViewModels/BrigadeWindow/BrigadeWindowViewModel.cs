@@ -20,6 +20,7 @@ namespace TheBureau.ViewModels
         
         private ObservableCollection<Request> _brigadeRequests = new();
         private ObservableCollection<RequestEquipment> _requestEquipments = new();
+        private ObservableCollection<Employee> _employeesAttend = new();
         private Brigade _currentBrigade;
         private Request _selectedItem;
         private string _findRequestText;
@@ -30,6 +31,8 @@ namespace TheBureau.ViewModels
         private ICommand _updateRequest;
         private ICommand _closeWindowCommand;
         private ICommand _minimizeWindowCommand;
+        private ICommand _openScheduleCommand;
+        public ICommand OpenScheduleCommand => _openScheduleCommand ??= new RelayCommand(OpenSchedule);
         public ICommand UpdateRequestCommand => _updateRequest ??= new RelayCommand(OpenEditRequest);
         public ICommand CloseWindowCommand => _closeWindowCommand ??= new RelayCommand(obj => { Application.Current.Shutdown(); });
         public ICommand MinimizeWindowCommand => _minimizeWindowCommand ??= new RelayCommand(obj => { WindowState = WindowState.Minimized; });
@@ -87,6 +90,11 @@ namespace TheBureau.ViewModels
         {
             get => _brigadeRequests;
             set { _brigadeRequests = value; OnPropertyChanged("BrigadeRequests"); }
+        }
+        public ObservableCollection<Employee> EmployyeesAttend
+        {
+            get => _employeesAttend;
+            set { _employeesAttend = value; OnPropertyChanged("EmployyeesAttend"); }
         }
         public Request SelectedItem
         {
@@ -196,6 +204,7 @@ namespace TheBureau.ViewModels
                                 contactNumber = (string) reader["contactNumber"]
                             };
                             brigade.Employees.Add(a);
+                            //EmployyeesAttend.Add(a);
                         }
                         ;
                     }
@@ -277,6 +286,49 @@ namespace TheBureau.ViewModels
             catch (Exception)
             {
                 InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при открытии окна изменения заявки");
+                infoWindow.ShowDialog();
+            }
+        }
+    
+        private void OpenSchedule(object o)
+        {
+            try
+            {
+                BrigadeScheduleView window = new(CurrentBrigade.id);
+                window.ShowDialog();
+            }
+            catch (Exception)
+            {
+                InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при открытии окна расписания бригады");
+                infoWindow.ShowDialog();
+            }
+        }
+
+
+        public void SetEmployeesSchedule(ObservableCollection<Employee> employeesAttend)
+        {
+            try
+            {
+                using SqlConnection conn = new SqlConnection(_connectionString);
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("ClearRequestSchedule", conn)  {CommandType = CommandType.StoredProcedure})
+                {
+                    cmd.Parameters.AddWithValue("@requestId", SelectedItem.id);
+                    using (SqlDataReader reader = cmd.ExecuteReader()) { while (reader.Read()) {  }  }
+                }
+                foreach (Employee item in employeesAttend)
+                {
+                    using SqlCommand cmd = new SqlCommand("SetScheduleRecord", conn) { CommandType = CommandType.StoredProcedure };
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@employeeId", item.id);
+                    cmd.Parameters.AddWithValue("@requestId", SelectedItem.id);
+                    using (SqlDataReader reader = cmd.ExecuteReader()) { while (reader.Read()) {  }  }
+                }
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при смене работающих на заявке работников");
                 infoWindow.ShowDialog();
             }
         }

@@ -76,12 +76,12 @@ namespace TheBureau.ViewModels
                                 cmd.Parameters.AddWithValue("@clientId", SelectedItem.id);
                                 using (SqlDataReader reader = cmd.ExecuteReader())
                                 {
-                                    while (reader.Read())  { }; //todo delete client - hide!
+                                    while (reader.Read())  { };
                                 }
                                 conn.Close();
                             }
                             Clients.Remove(SelectedItem);
-                            SelectedItem = Clients.First();
+                            if (Clients.Count!=0) SelectedItem = Clients.First();
                         }
                     }
                     catch (Exception)
@@ -167,10 +167,9 @@ namespace TheBureau.ViewModels
                     }
                     conn.Close();
                 }
-                //todo selected item -> collection.count
                 if (Clients.Count!=0) SelectedItem = Clients.First();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при открытии страницы клиента");
                 infoWindow.ShowDialog();
@@ -197,11 +196,9 @@ namespace TheBureau.ViewModels
                                addressId = (int)reader["addressId"],
                                stage = (int)reader["stageId"],
                                status = (int)reader["statusId"],
-                               registerDate = (DateTime)reader["registerDate"],
                                mountingDate = (DateTime)reader["mountingDate"],
                                comment = (string)reader["comment"],
                                brigadeId = reader["brigadeId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadeId"]),
-                               proceeds = reader["proceeds"] == DBNull.Value ? (Int32?) null : Convert.ToDecimal(reader["proceeds"]),
                                Client = SelectedItem,
                                Address = new Address
                                {

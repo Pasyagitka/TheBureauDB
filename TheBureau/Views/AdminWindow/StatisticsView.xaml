@@ -17,12 +17,12 @@
         <Grid Background="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
-                <RowDefinition Height="220"/>
+                <RowDefinition Height="150"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="0" Grid.ColumnSpan="2">
                 <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}" Background="{DynamicResource LightGreenColor}" BorderThickness="0" materialDesign:ButtonAssist.CornerRadius="0 0 25 25" Height="Auto" Margin="379,0,379.6,0">
@@ -31,9 +31,9 @@
                     </StackPanel>
                 </Button>
             </Grid>
-            <StackPanel Grid.Row="1" Grid.Column="0">
-                <Border Background="{DynamicResource PrimaryLightGrayColor}" CornerRadius="10" Margin="100, 32, 20, 10">
-                    <StackPanel Margin="10">
+            <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <Border Background="{DynamicResource PrimaryLightGrayColor}" CornerRadius="10" Margin="100, 32, 100, 10">
+                    <StackPanel Margin="10" Orientation="Horizontal">
                         <materialDesign:Card Height="50" Background="White" Padding="8" UniformCornerRadius="5" Margin="10">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <TextBlock Text="Количество клиентов: "  FontSize="18"/>
@@ -46,9 +46,19 @@
                                 <TextBlock Text="{Binding Requests.Count}"  FontSize="18"/>
                             </StackPanel>
                         </materialDesign:Card>
+                        <Button ToolTip="Экспортировать расписание сотрудников" Command="{Binding ExportCommand}" Style="{DynamicResource MaterialDesignIconButton}" Cursor="Hand">
+                            <Image Source="../../../Resources/Images/export.png" Width="30"/>
+                        </Button>
                     </StackPanel>
                 </Border>
-              
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <WebBrowser x:Name="Browser" Height="460" Panel.ZIndex="0" Width="840" Margin="10"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="0">
+                <Button Content="Расписание бригад" x:Name="GetAllBrigadesReport" Click="GetAllBrigadesReport_Click"  Cursor="Hand" Style="{StaticResource DefaultButtonGray}"  Margin="10"  Width="250" Height="50"></Button>
+                <Button Content="Расписание бригады" x:Name="GetShedule" Click="GetShedule_Click" Cursor="Hand" Style="{StaticResource DefaultButtonGray}" Margin="10" Width="250" Height="50"></Button>
+                <Button Content="Отчет для заявки" x:Name="GetReport" Click="GetReport_Click" Cursor="Hand" Style="{StaticResource DefaultButtonGray}"  Margin="10"  Width="250" Height="50"></Button>
             </StackPanel>
         </Grid>
     </Border>

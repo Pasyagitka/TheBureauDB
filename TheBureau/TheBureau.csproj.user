@@ -6,4 +6,23 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\AdminWindow\Brigade\EditBrigadeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BrigadeWindow\BrigadeScheduleView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\AdminWindow\Brigade\EditBrigadeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminWindow\Storage\AddToolView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\BrigadeWindow\BrigadeScheduleView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
 </Project>

@@ -4,9 +4,12 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Windows.Forms;
 using System.Windows.Input;
 using TheBureau.Models;
 using TheBureau.Services;
+using TheBureau.ViewModels;
+using TheBureau.Views.AdminWindow.Brigade;
 using TheBureau.Views.Controls;
 
 namespace TheBureau.ViewModels
@@ -17,8 +20,10 @@ namespace TheBureau.ViewModels
         private readonly string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
 
         private ObservableCollection<Brigade> _brigades = new();
+        private ICommand _openSetBrigadierCommand;
         private ICommand _addBrigade;
         private ICommand _deleteBrigade;
+
         private Brigade _selectedItem;
 
         #region Properties 
@@ -37,6 +42,8 @@ namespace TheBureau.ViewModels
             } 
         }
         #endregion
+
+        public ICommand OpenSetBrigadierCommand => _openSetBrigadierCommand ??= new RelayCommand(OpenSetBrigadier);
         public ICommand AddBrigade
         {
             get
@@ -98,7 +105,7 @@ namespace TheBureau.ViewModels
                                 conn.Close();
                             }
                             Brigades.Remove(SelectedItem);
-                            if (SelectedItem!= null )SelectedItem = Brigades.First();
+                            if (Brigades.Count!=0) SelectedItem = Brigades.First();
                         }
                     }
                     catch (Exception)
@@ -175,5 +182,25 @@ namespace TheBureau.ViewModels
                 infoWindow.ShowDialog();
             }
         }
+
+
+        private void OpenSetBrigadier(object commandParameter)
+        {
+            try
+            {
+                if (SelectedItem != null)
+                {
+                    EditBrigadeView window = new(SelectedItem);
+                    window.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+                InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при редактировании заявки");
+                infoWindow.ShowDialog();
+            }
+        }
+        
+        
     }
 }

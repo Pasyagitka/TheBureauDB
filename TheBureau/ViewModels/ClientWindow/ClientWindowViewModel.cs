@@ -242,27 +242,27 @@ namespace TheBureau.ViewModels
            set { _isClean = value; OnPropertyChanged("IsClean"); }
        }
 
-       // public int Stage
-       // {
-       //     get
-       //     {
-       //         if (IsRough)
-       //         {
-       //             return IsClean ?  (int)Stages.both: (int)Stages.rough;
-       //             //Черновая + чистовая - 3, черновая - 1
-       //         }
-       //         if (IsClean) return (int)Stages.clean; //только чистовая
-       //         return (int)Stages.both;
-       //     }
-       // }
-        
+        public string Stage
+        {
+            get
+            {
+                if (IsRough)
+                {
+                    return IsClean ? "Both" : "Rough";
+                    //Черновая + чистовая - 3, черновая - 1
+                }
+                if (IsClean) return "Clean"; //2 = clean
+                return "Both"; //3 = both
+            }
+        }
+
        public ICommand SendRequestCommand => _sendRequestCommand ??= new RelayCommand(SendRequest, CanSendRequest);
        private bool CanSendRequest(object sender) => !HasErrors;
        private void SendRequest(object sender)
        {
             try
             {
-                decimal newRequestId = 0;
+                int newRequestId = 0;
 
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
@@ -271,6 +271,20 @@ namespace TheBureau.ViewModels
 
                     try
                     {
+                        int stage = 3;
+                        using (SqlCommand cmd = new SqlCommand("GetStageIdByName", conn) { Transaction = transaction, CommandType = CommandType.StoredProcedure })
+                        {
+                            cmd.Parameters.AddWithValue("@stage", Stage);
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    stage = (int)reader["id"];
+                                };
+                            }
+                        }
+
+
                         using (SqlCommand cmd = new SqlCommand("LeaveRequest", conn) { Transaction = transaction, CommandType = CommandType.StoredProcedure })
                         {
                             cmd.Parameters.AddWithValue("@client_firstname", Firstname);
@@ -286,8 +300,8 @@ namespace TheBureau.ViewModels
                             cmd.Parameters.AddWithValue("@address_corpus", Corpus);
                             cmd.Parameters.AddWithValue("@address_flat", Flat);
 
-                            cmd.Parameters.AddWithValue("@stageId", 1); //todo set stage
-                            cmd.Parameters.AddWithValue("@statusId", 1);
+                            cmd.Parameters.AddWithValue("@stageId", stage);
+                            cmd.Parameters.AddWithValue("@statusId", 1);//1 = InProcessing
                             cmd.Parameters.AddWithValue("@mountingDate", MountingDate);
                             cmd.Parameters.AddWithValue("@comment", Comment);
 
@@ -295,7 +309,7 @@ namespace TheBureau.ViewModels
                             {
                                 while (reader.Read())
                                 {
-                                    newRequestId = (decimal)reader["id"];
+                                    newRequestId = (int)reader["id"];
                                 };
                             }
                         }

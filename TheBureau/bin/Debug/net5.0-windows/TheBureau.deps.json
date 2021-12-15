@@ -8,7 +8,9 @@
     ".NETCoreApp,Version=v5.0": {
       "TheBureau/1.0.0": {
         "dependencies": {
-          "BoldReports.WPF": "3.1.32",
+          "BlackPearl.Controls.Library": "2.0.1",
+          "BoldReports.WPF": "3.3.23",
+          "C1.Xaml.WPF.FlexViewer": "4.5.20213.755",
           "MaterialDesignColors": "2.0.3",
           "MaterialDesignThemes": "4.2.1",
           "System.Data.SqlClient": "4.8.3"
@@ -17,30 +19,43 @@
           "TheBureau.dll": {}
         }
       },
-      "Bold.Licensing/3.1.32": {
+      "BlackPearl.Controls.Library/2.0.1": {
+        "runtime": {
+          "lib/netcoreapp3.1/BlackPearl.Controls.Common.dll": {
+            "assemblyVersion": "2.0.1.0",
+            "fileVersion": "2.0.1.0"
+          },
+          "lib/netcoreapp3.1/BlackPearl.Controls.CoreLibrary.dll": {
+            "assemblyVersion": "2.0.1.0",
+            "fileVersion": "2.0.1.0"
+          }
+        }
+      },
+      "Bold.Licensing/3.3.23": {
         "dependencies": {
           "Newtonsoft.Json": "10.0.2"
         },
         "runtime": {
           "lib/netcoreapp3.0/Bold.Licensing.dll": {
-            "assemblyVersion": "3.1.32.0",
-            "fileVersion": "3.1.32.0"
+            "assemblyVersion": "3.3.23.0",
+            "fileVersion": "3.3.23.0"
           }
         }
       },
-      "BoldReports.WPF/3.1.32": {
+      "BoldReports.WPF/3.3.23": {
         "dependencies": {
-          "Bold.Licensing": "3.1.32",
-          "Microsoft.CodeAnalysis.VisualBasic": "3.6.0",
-          "Syncfusion.DocIO.Wpf": "18.3.0.35",
-          "Syncfusion.Grid.WPF": "18.3.0.35",
-          "Syncfusion.GridCommon.Wpf": "18.3.0.35",
-          "Syncfusion.Linq.Base": "18.3.0.35",
-          "Syncfusion.Pdf.Wpf": "18.3.0.35",
-          "Syncfusion.Presentation.Wpf": "18.3.0.35",
-          "Syncfusion.SfMaps.WPF": "18.3.0.35",
-          "Syncfusion.Shared.WPF": "18.3.0.35",
-          "Syncfusion.XlsIO.Wpf": "18.3.0.35",
+          "Bold.Licensing": "3.3.23",
+          "Microsoft.CodeAnalysis.VisualBasic": "3.8.0",
+          "Syncfusion.DocIO.Wpf": "19.2.0.44",
+          "Syncfusion.Grid.WPF": "19.2.0.44",
+          "Syncfusion.GridCommon.Wpf": "19.2.0.44",
+          "Syncfusion.Linq.Base": "19.2.0.44",
+          "Syncfusion.Pdf.Wpf": "19.2.0.44",
+          "Syncfusion.Presentation.Wpf": "19.2.0.44",
+          "Syncfusion.SfMaps.WPF": "19.2.0.44",
+          "Syncfusion.Shared.WPF": "19.2.0.44",
+          "Syncfusion.Shared.WPF.Classic": "19.2.0.44",
+          "Syncfusion.XlsIO.Wpf": "19.2.0.44",
           "System.CodeDom": "5.0.0",
           "System.Configuration.ConfigurationManager": "4.7.0",
           "System.Data.Common": "4.3.0",
@@ -52,8 +67,331 @@
         },
         "runtime": {
           "lib/netcoreapp5.0/BoldReports.WPF.dll": {
-            "assemblyVersion": "3.1500.32.0",
-            "fileVersion": "3.1500.32.0"
+            "assemblyVersion": "3.3500.23.0",
+            "fileVersion": "3.3500.23.0"
+          }
+        }
+      },
+      "C1.Xaml.WPF/4.5.20213.755": {
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/ar/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/netcoreapp3.0/cs/C1.WPF.4.5.2.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netcoreapp3.0/da/C1.WPF.4.5.2.resources.dll": {
+            "locale": "da"
+          },
+          "lib/netcoreapp3.0/de/C1.WPF.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/el/C1.WPF.4.5.2.resources.dll": {
+            "locale": "el"
+          },
+          "lib/netcoreapp3.0/es/C1.WPF.4.5.2.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/fi/C1.WPF.4.5.2.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/netcoreapp3.0/fr/C1.WPF.4.5.2.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.0/he/C1.WPF.4.5.2.resources.dll": {
+            "locale": "he"
+          },
+          "lib/netcoreapp3.0/it/C1.WPF.4.5.2.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/nl/C1.WPF.4.5.2.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/netcoreapp3.0/no/C1.WPF.4.5.2.resources.dll": {
+            "locale": "no"
+          },
+          "lib/netcoreapp3.0/pl/C1.WPF.4.5.2.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.0/pt/C1.WPF.4.5.2.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netcoreapp3.0/ro/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/netcoreapp3.0/ru/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/sk/C1.WPF.4.5.2.resources.dll": {
+            "locale": "sk"
+          },
+          "lib/netcoreapp3.0/sv/C1.WPF.4.5.2.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/netcoreapp3.0/tr/C1.WPF.4.5.2.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netcoreapp3.0/zh-Hans/C1.WPF.4.5.2.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hant/C1.WPF.4.5.2.resources.dll": {
+            "locale": "zh-Hant"
+          },
+          "lib/netcoreapp3.0/zh/C1.WPF.4.5.2.resources.dll": {
+            "locale": "zh"
+          }
+        }
+      },
+      "C1.Xaml.WPF.BarCode/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.BarCode.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/de/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/es/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/ru/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/zh-Hans/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hant/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "zh-Hant"
+          },
+          "lib/netcoreapp3.0/zh/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "zh"
+          }
+        }
+      },
+      "C1.Xaml.WPF.Bitmap/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF.DX": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Bitmap.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        }
+      },
+      "C1.Xaml.WPF.DateTimeEditors/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.DateTimeEditors.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        }
+      },
+      "C1.Xaml.WPF.Document/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF": "4.5.20213.755",
+          "C1.Xaml.WPF.BarCode": "4.5.20213.755",
+          "C1.Xaml.WPF.Bitmap": "4.5.20213.755",
+          "C1.Xaml.WPF.DX": "4.5.20213.755",
+          "C1.Xaml.WPF.Excel": "4.5.20213.755",
+          "C1.Xaml.WPF.FlexChart": "4.5.20213.755",
+          "C1.Xaml.WPF.ImportServices": "4.5.20213.755",
+          "C1.Xaml.WPF.Pdf": "4.5.20213.755",
+          "C1.Xaml.WPF.Word": "4.5.20213.755",
+          "C1.Xaml.WPF.Zip": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Document.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/de/C1.WPF.Document.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.Document.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.Document.4.5.2.resources.dll": {
+            "locale": "ko"
+          }
+        }
+      },
+      "C1.Xaml.WPF.DX/4.5.20213.755": {
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.DX.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        }
+      },
+      "C1.Xaml.WPF.Excel/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF": "4.5.20213.755",
+          "C1.Xaml.WPF.Bitmap": "4.5.20213.755",
+          "C1.Xaml.WPF.DX": "4.5.20213.755",
+          "C1.Xaml.WPF.Zip": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Excel.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/ja/C1.WPF.Excel.4.5.2.resources.dll": {
+            "locale": "ja"
+          }
+        }
+      },
+      "C1.Xaml.WPF.FlexChart/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF": "4.5.20213.755",
+          "C1.Xaml.WPF.DX": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.FlexChart.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/de/C1.WPF.FlexChart.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.FlexChart.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.FlexChart.4.5.2.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/zh/C1.WPF.FlexChart.4.5.2.resources.dll": {
+            "locale": "zh"
+          }
+        }
+      },
+      "C1.Xaml.WPF.FlexViewer/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF": "4.5.20213.755",
+          "C1.Xaml.WPF.BarCode": "4.5.20213.755",
+          "C1.Xaml.WPF.Bitmap": "4.5.20213.755",
+          "C1.Xaml.WPF.DX": "4.5.20213.755",
+          "C1.Xaml.WPF.DateTimeEditors": "4.5.20213.755",
+          "C1.Xaml.WPF.Document": "4.5.20213.755",
+          "C1.Xaml.WPF.Excel": "4.5.20213.755",
+          "C1.Xaml.WPF.FlexChart": "4.5.20213.755",
+          "C1.Xaml.WPF.ImportServices": "4.5.20213.755",
+          "C1.Xaml.WPF.Pdf": "4.5.20213.755",
+          "C1.Xaml.WPF.Word": "4.5.20213.755",
+          "C1.Xaml.WPF.Zip": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.FlexViewer.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/de/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/ru/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/zh/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "zh"
+          }
+        }
+      },
+      "C1.Xaml.WPF.ImportServices/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.ImportServices.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/de/C1.WPF.ImportServices.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.ImportServices.4.5.2.resources.dll": {
+            "locale": "ko"
+          }
+        }
+      },
+      "C1.Xaml.WPF.Pdf/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF": "4.5.20213.755",
+          "C1.Xaml.WPF.DX": "4.5.20213.755",
+          "C1.Xaml.WPF.Zip": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Pdf.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        }
+      },
+      "C1.Xaml.WPF.Word/4.5.20213.755": {
+        "dependencies": {
+          "C1.Xaml.WPF": "4.5.20213.755",
+          "C1.Xaml.WPF.Bitmap": "4.5.20213.755",
+          "C1.Xaml.WPF.DX": "4.5.20213.755",
+          "C1.Xaml.WPF.Zip": "4.5.20213.755"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Word.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        }
+      },
+      "C1.Xaml.WPF.Zip/4.5.20213.755": {
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Zip.4.5.2.dll": {
+            "assemblyVersion": "4.5.20213.755",
+            "fileVersion": "4.5.20213.755"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.0/ja/C1.WPF.Zip.4.5.2.resources.dll": {
+            "locale": "ja"
           }
         }
       },
@@ -77,20 +415,20 @@
         }
       },
       "Microsoft.CodeAnalysis.Analyzers/3.0.0": {},
-      "Microsoft.CodeAnalysis.Common/3.6.0": {
+      "Microsoft.CodeAnalysis.Common/3.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.0.0",
-          "System.Collections.Immutable": "1.5.0",
-          "System.Memory": "4.5.3",
-          "System.Reflection.Metadata": "1.6.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.0",
+          "System.Collections.Immutable": "5.0.0",
+          "System.Memory": "4.5.4",
+          "System.Reflection.Metadata": "5.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
           "System.Text.Encoding.CodePages": "4.5.1",
-          "System.Threading.Tasks.Extensions": "4.5.3"
+          "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.CodeAnalysis.dll": {
-            "assemblyVersion": "3.6.0.0",
-            "fileVersion": "3.600.20.26904"
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.800.20.56202"
           }
         },
         "resources": {
@@ -135,54 +473,54 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.VisualBasic/3.6.0": {
+      "Microsoft.CodeAnalysis.VisualBasic/3.8.0": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "3.6.0"
+          "Microsoft.CodeAnalysis.Common": "3.8.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.dll": {
-            "assemblyVersion": "3.6.0.0",
-            "fileVersion": "3.600.20.26904"
+          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.VisualBasic.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.800.20.56202"
           }
         },
         "resources": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "cs"
           },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "de"
           },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "es"
           },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "fr"
           },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "it"
           },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "ja"
           },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "ko"
           },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "pl"
           },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "pt-BR"
           },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "ru"
           },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "tr"
           },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "zh-Hans"
           },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "zh-Hant"
           }
         }
@@ -373,133 +711,144 @@
           }
         }
       },
-      "Syncfusion.Compression.Base/18.3.0.35": {
+      "Syncfusion.Compression.Base/19.2.0.44": {
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Compression.Base.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0/Syncfusion.Compression.Base.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.DocIO.Wpf/18.3.0.35": {
+      "Syncfusion.DocIO.Wpf/19.2.0.44": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35",
-          "Syncfusion.OfficeChart.Base": "18.3.0.35"
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44",
+          "Syncfusion.OfficeChart.Base": "19.2.0.44"
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.DocIO.Base.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0-windows/Syncfusion.DocIO.Base.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.Grid.WPF/18.3.0.35": {
+      "Syncfusion.Grid.WPF/19.2.0.44": {
         "dependencies": {
-          "Syncfusion.GridCommon.Wpf": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35",
-          "Syncfusion.Linq.Base": "18.3.0.35",
-          "Syncfusion.Shared.WPF": "18.3.0.35"
+          "Syncfusion.GridCommon.Wpf": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44",
+          "Syncfusion.Linq.Base": "19.2.0.44",
+          "Syncfusion.Shared.WPF": "19.2.0.44"
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Grid.WPF.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0-windows/Syncfusion.Grid.WPF.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.GridCommon.Wpf/18.3.0.35": {
+      "Syncfusion.GridCommon.Wpf/19.2.0.44": {
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.GridCommon.WPF.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0-windows/Syncfusion.GridCommon.WPF.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.Licensing/18.3.0.35": {
+      "Syncfusion.Licensing/19.2.0.44": {
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Licensing.dll": {
-            "assemblyVersion": "18.3.0.35",
-            "fileVersion": "18.3.0.35"
+          "lib/net5.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "19.2.0.44",
+            "fileVersion": "19.2.0.44"
           }
         }
       },
-      "Syncfusion.Linq.Base/18.3.0.35": {
+      "Syncfusion.Linq.Base/19.2.0.44": {
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Linq.Base.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0-windows/Syncfusion.Linq.Base.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.OfficeChart.Base/18.3.0.35": {
+      "Syncfusion.OfficeChart.Base/19.2.0.44": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35"
+          "Syncfusion.Compression.Base": "19.2.0.44"
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.OfficeChart.Base.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0/Syncfusion.OfficeChart.Base.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.Pdf.Wpf/18.3.0.35": {
+      "Syncfusion.Pdf.Wpf/19.2.0.44": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35"
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44"
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Pdf.Base.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0-windows/Syncfusion.Pdf.Base.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.Presentation.Wpf/18.3.0.35": {
+      "Syncfusion.Presentation.Wpf/19.2.0.44": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35",
-          "Syncfusion.OfficeChart.Base": "18.3.0.35"
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44",
+          "Syncfusion.OfficeChart.Base": "19.2.0.44"
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Presentation.Base.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0-windows/Syncfusion.Presentation.Base.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.SfMaps.WPF/18.3.0.35": {
+      "Syncfusion.SfMaps.WPF/19.2.0.44": {
         "dependencies": {
-          "Syncfusion.Licensing": "18.3.0.35",
-          "Syncfusion.Shared.WPF": "18.3.0.35"
+          "Syncfusion.Licensing": "19.2.0.44",
+          "Syncfusion.Shared.WPF": "19.2.0.44"
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.SfMaps.WPF.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0-windows/Syncfusion.SfMaps.WPF.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.Shared.WPF/18.3.0.35": {
+      "Syncfusion.Shared.WPF/19.2.0.44": {
         "dependencies": {
-          "Syncfusion.Licensing": "18.3.0.35"
+          "Syncfusion.Licensing": "19.2.0.44"
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Shared.WPF.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0-windows/Syncfusion.Shared.WPF.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
-      "Syncfusion.XlsIO.Wpf/18.3.0.35": {
+      "Syncfusion.Shared.WPF.Classic/19.2.0.44": {
         "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35"
+          "Syncfusion.Shared.WPF": "19.2.0.44"
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.XlsIO.Base.dll": {
-            "assemblyVersion": "18.3500.0.35",
-            "fileVersion": "18.3500.0.35"
+          "lib/net5.0-windows/Syncfusion.Shared.WPF.Classic.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
+          }
+        }
+      },
+      "Syncfusion.XlsIO.Wpf/19.2.0.44": {
+        "dependencies": {
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44"
+        },
+        "runtime": {
+          "lib/net5.0-windows/Syncfusion.XlsIO.Base.dll": {
+            "assemblyVersion": "19.2500.0.44",
+            "fileVersion": "19.2500.0.44"
           }
         }
       },
@@ -539,7 +888,7 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Collections.Immutable/1.5.0": {},
+      "System.Collections.Immutable/5.0.0": {},
       "System.Collections.NonGeneric/4.3.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.3.0",
@@ -880,7 +1229,7 @@
           "System.Threading": "4.3.0"
         }
       },
-      "System.Memory/4.5.3": {},
+      "System.Memory/4.5.4": {},
       "System.Net.Http/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -979,7 +1328,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Reflection.Metadata/1.6.0": {},
+      "System.Reflection.Metadata/5.0.0": {},
       "System.Reflection.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1008,7 +1357,7 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.7.0": {},
+      "System.Runtime.CompilerServices.Unsafe/4.7.1": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1214,7 +1563,7 @@
       "System.Text.Encoding.CodePages/4.5.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.0"
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
         }
       },
       "System.Text.Encoding.Extensions/4.3.0": {
@@ -1243,7 +1592,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.3": {},
+      "System.Threading.Tasks.Extensions/4.5.4": {},
       "System.Threading.Timer/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1272,7 +1621,7 @@
           "System.Text.Encoding.Extensions": "4.3.0",
           "System.Text.RegularExpressions": "4.3.0",
           "System.Threading.Tasks": "4.3.0",
-          "System.Threading.Tasks.Extensions": "4.5.3"
+          "System.Threading.Tasks.Extensions": "4.5.4"
         }
       },
       "System.Xml.XDocument/4.3.0": {
@@ -1346,19 +1695,117 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Bold.Licensing/3.1.32": {
+    "BlackPearl.Controls.Library/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uZhzoax3IfxbET9uw+UUCqVWlWusQdZzj8M5KBtaBKtBSchM5P1Ppkt3koDbxtpx/holYakjyQ3HnXsjsvB9wg==",
-      "path": "bold.licensing/3.1.32",
-      "hashPath": "bold.licensing.3.1.32.nupkg.sha512"
+      "sha512": "sha512-ikFQYrXebw+hw/STvt4hMlH4321YIT4KdxAHJVPPZk+a0CTW/fDVjZ9dpVLmBO8JQjbhh+g3NGfXF2qBLEa+Sg==",
+      "path": "blackpearl.controls.library/2.0.1",
+      "hashPath": "blackpearl.controls.library.2.0.1.nupkg.sha512"
     },
-    "BoldReports.WPF/3.1.32": {
+    "Bold.Licensing/3.3.23": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hzO0CTR1Ulb4+hVkC9OQY7sjmrIuEK5Z6N8Gsra0NUAyyi1Kn48CIWVdyAyKAXY1If7FOCaNEfR83bfGli3q2Q==",
-      "path": "boldreports.wpf/3.1.32",
-      "hashPath": "boldreports.wpf.3.1.32.nupkg.sha512"
+      "sha512": "sha512-iNcgXN3kf0Tl+XGuaJ3UIyz4tlX41rGw3JP37z4cujXc6GKcLWmvgav8ePYD0eff66CWaZooZQtijzzPgKnalQ==",
+      "path": "bold.licensing/3.3.23",
+      "hashPath": "bold.licensing.3.3.23.nupkg.sha512"
+    },
+    "BoldReports.WPF/3.3.23": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QyF+nxzPAbkRg7vN72MzSv0DlCZ5X7ZPhHrvI8Yv5aq0UW0afmhXzQJSK6r/OJ6mHT2RpPSoSu9rcpR+OTQPyA==",
+      "path": "boldreports.wpf/3.3.23",
+      "hashPath": "boldreports.wpf.3.3.23.nupkg.sha512"
+    },
+    "C1.Xaml.WPF/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Fk98ixP4q1roS0Fj16FG+1FCAWvDPWj3qTADg2MYsw3XkXlQbkAab5otUJlQ6ssR5Oretz6LuQ7qhJPxXAxclw==",
+      "path": "c1.xaml.wpf/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.BarCode/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fRxLynA4xqFkAt9xrg3cj+efLGj7BthfHiAxzLxxLyrAyEA1L92TpIl1eUDwttxKA6i+bPLOeRnsmrVswYLS0g==",
+      "path": "c1.xaml.wpf.barcode/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.barcode.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.Bitmap/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6jMKzLa+Sj3f8PRiE2w5CPcdkyyrX5RPQhKDc5HjJEDcxDPs3G/IqtDlzgBOVWTq9oQlxsRpm+xqrrwvXpIJ4A==",
+      "path": "c1.xaml.wpf.bitmap/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.bitmap.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.DateTimeEditors/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C5+O5/Q5N0B0mwv3YbELK8Fnwr7zXtHPY+f4u+SKFlh6M+6V98+hHx7RdT82oyZg2A+bMusJS1JjlPISPcZJVQ==",
+      "path": "c1.xaml.wpf.datetimeeditors/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.datetimeeditors.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.Document/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7u0JfxRLN8N2dI8NiZQkaRzEqfLsFyodbbhmTnyxuniQBvHB0a/wxuk+3nuaTnEJ3X6/ttpa5ZsBqZ9iXp6gJA==",
+      "path": "c1.xaml.wpf.document/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.document.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.DX/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0H0+xI8g74bqFYQIJEMPCKxSnTBosj72mKVgKFsVxkO9V+abG3WN5C51s2QGLQnhp0LrV5jJKQp8P10Eu2h5pQ==",
+      "path": "c1.xaml.wpf.dx/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.dx.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.Excel/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H3zQqz1yAWftzRYzjqg4HrRrT6J7NcAcqFI0P9tnU8+D4hG09iI8c8B1pfxeFuj6hLznrgrTc29MO1pfARx/9w==",
+      "path": "c1.xaml.wpf.excel/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.excel.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.FlexChart/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3z2+Ym1D1eqgcLwbyxftNSajY2Jo0YLe4csK+vmEgcIpi9quUlDnHj0JWb/JXLxHDi5NVOA1WSQn3T0qxdGKHw==",
+      "path": "c1.xaml.wpf.flexchart/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.flexchart.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.FlexViewer/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8VpYt8Jvt9Rb9Zjw6Y+YfWeEzr7fe4lb2pmLqVdnUw+2jaOb5vOnOBaM7T5ekxBURlgNLPyjH3zhfhTkzb5gYg==",
+      "path": "c1.xaml.wpf.flexviewer/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.flexviewer.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.ImportServices/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y9ovefp06C8KfvaT+ZbeX81Feko1gmoaz+Ju/VKEshWjg+SzlKsY/6EITfIulphVyh5d4jMkirjxjglzqAgoLw==",
+      "path": "c1.xaml.wpf.importservices/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.importservices.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.Pdf/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tRRArZw6YbUQum6HVALUT8Su26tlLI4FY4OGYzhbcIMoU2sc94NbioqMiVaaw9Ly/x94Vpto4sdYMlcun/96LA==",
+      "path": "c1.xaml.wpf.pdf/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.pdf.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.Word/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BZO30o2g9lVy/hoLbbPLFTYQkts1tlTOl4cfa/FvAuT9EjGkiVMdtdaytUZpvpczNBn61zlrfA2gaOkJuhWpPQ==",
+      "path": "c1.xaml.wpf.word/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.word.4.5.20213.755.nupkg.sha512"
+    },
+    "C1.Xaml.WPF.Zip/4.5.20213.755": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wgbPlvfvPKFXlwB+TcsuYaj+zEAZQHEzpMQvChrfPOZNC6kug+6TgSELq8R7ba2ZytcOkpHvVQqrz4TcigdWhQ==",
+      "path": "c1.xaml.wpf.zip/4.5.20213.755",
+      "hashPath": "c1.xaml.wpf.zip.4.5.20213.755.nupkg.sha512"
     },
     "MaterialDesignColors/2.0.3": {
       "type": "package",
@@ -1381,19 +1828,19 @@
       "path": "microsoft.codeanalysis.analyzers/3.0.0",
       "hashPath": "microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512"
     },
-    "Microsoft.CodeAnalysis.Common/3.6.0": {
+    "Microsoft.CodeAnalysis.Common/3.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jQxDeYyQbNZwx/9O8hiyApTqZ7+KR3xVA6Ogbb50qsODfjAKRWuH7z3lGkU/62PYUz4yiDtgXlRtntWNdhFPfQ==",
-      "path": "microsoft.codeanalysis.common/3.6.0",
-      "hashPath": "microsoft.codeanalysis.common.3.6.0.nupkg.sha512"
+      "sha512": "sha512-8YTZ7GpsbTdC08DITx7/kwV0k4SC6cbBAFqc13cOm5vKJZcEIAh51tNSyGSkWisMgYCr96B2wb5Zri1bsla3+g==",
+      "path": "microsoft.codeanalysis.common/3.8.0",
+      "hashPath": "microsoft.codeanalysis.common.3.8.0.nupkg.sha512"
     },
-    "Microsoft.CodeAnalysis.VisualBasic/3.6.0": {
+    "Microsoft.CodeAnalysis.VisualBasic/3.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZS9FhxIut643uKyf9gOjTdwJNENa4pqcbUSS4herYjp8lvYsXOa7QgazySHcNCAut4/SlYgvydpGZgwoasD7vw==",
-      "path": "microsoft.codeanalysis.visualbasic/3.6.0",
-      "hashPath": "microsoft.codeanalysis.visualbasic.3.6.0.nupkg.sha512"
+      "sha512": "sha512-G3/0o6sb9ZZQjBD+6bHj7GaxyeMZbBJXNtBC6YGmbSodMup9A1QPgCSrSn/ktbxWjKI8AMlJHP6CHCwfBXTmpg==",
+      "path": "microsoft.codeanalysis.visualbasic/3.8.0",
+      "hashPath": "microsoft.codeanalysis.visualbasic.3.8.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.3.0": {
       "type": "package",
@@ -1591,89 +2038,96 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
-    "Syncfusion.Compression.Base/18.3.0.35": {
+    "Syncfusion.Compression.Base/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-K2rcyJoetTjuiIZ9WhSXD7gC8FRUKeIFYI1k8aIvH4aCaroLADCRFBaBIvqeGzApusUCFfWvdkxp8uPhO0U9JQ==",
-      "path": "syncfusion.compression.base/18.3.0.35",
-      "hashPath": "syncfusion.compression.base.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-V/sklQviCUXkiyJqtXZ4errVwscZt9F53hYWTha+Kc7PMkv8WwYHd5SRlnBeefQ1qHiQhp7PWIEsVdxm+/tWsQ==",
+      "path": "syncfusion.compression.base/19.2.0.44",
+      "hashPath": "syncfusion.compression.base.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.DocIO.Wpf/18.3.0.35": {
+    "Syncfusion.DocIO.Wpf/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/sKvXXkuMgEVRMkgxyJbXq45hlAKMDwKyMeC/HqnWGQSgj9w7N5gldTC5/xobDCLyTGibo5zJ6ebPduqA1/EQQ==",
-      "path": "syncfusion.docio.wpf/18.3.0.35",
-      "hashPath": "syncfusion.docio.wpf.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-Ck4i7+jPr0Zt5PGozGdKeZqf+9mtmuWhtScPd830qxLSnqhIW4bmKXwEn4Q5z5ju1StDJXAMxnM7ouZkgddeTg==",
+      "path": "syncfusion.docio.wpf/19.2.0.44",
+      "hashPath": "syncfusion.docio.wpf.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.Grid.WPF/18.3.0.35": {
+    "Syncfusion.Grid.WPF/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QkW6hIU4pMnTjULUeMWJA0HQWh5TIyqrBYhVlRKo+4Esm1hzFnDMYGUAO6b4jeNbNJ8VqHOIu2HJRPfqXgzQXw==",
-      "path": "syncfusion.grid.wpf/18.3.0.35",
-      "hashPath": "syncfusion.grid.wpf.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-Y1iYWcqM31RBB17e3zdtzmQzuD2rVb0wD7CJiiPnC43kPzttX6R3eQjr+/ETqrPNIMA6mf0N50wkcAVSE9x8Zg==",
+      "path": "syncfusion.grid.wpf/19.2.0.44",
+      "hashPath": "syncfusion.grid.wpf.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.GridCommon.Wpf/18.3.0.35": {
+    "Syncfusion.GridCommon.Wpf/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1hDAT7Bau2VnpCNlP2xiFqwyMA+p+po6YsPglhHubkmF8FBfv3WRLPgknX1J7devguOYcZ8yZ80bLTdTeR+Sfg==",
-      "path": "syncfusion.gridcommon.wpf/18.3.0.35",
-      "hashPath": "syncfusion.gridcommon.wpf.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-SZetQpPjbS0hte1cOX63cq3mVUuvDHxX2/y160hayYYR/QNrRFgUpN07Kt3RWOmVZVysq0D2uUNDoKwlfxkgwg==",
+      "path": "syncfusion.gridcommon.wpf/19.2.0.44",
+      "hashPath": "syncfusion.gridcommon.wpf.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.Licensing/18.3.0.35": {
+    "Syncfusion.Licensing/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kdDvMRwDokblGzus/HxTo6FtTNgBdy5nG1iEFHQEy2JGIC5iJG/Wj9+lYljpRKgHcgPxEccZqX38ugf2aYt3dQ==",
-      "path": "syncfusion.licensing/18.3.0.35",
-      "hashPath": "syncfusion.licensing.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-XekMdME0qXUzX3uJSxVV6FgeC3ydgxpETMmtjck8enzpjKhlAU692uAVtyqAkecqa4YFJmXiKV/zEkKfjdLVWA==",
+      "path": "syncfusion.licensing/19.2.0.44",
+      "hashPath": "syncfusion.licensing.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.Linq.Base/18.3.0.35": {
+    "Syncfusion.Linq.Base/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+e4QKx2uI+1Kmr/ngG1aW/L68q6EnsRyy6NuJ4k2TUP9Y1lxhRFo5MGPMh1TWP9EwICuNvxUvFqdFO7+Ej1avw==",
-      "path": "syncfusion.linq.base/18.3.0.35",
-      "hashPath": "syncfusion.linq.base.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-pwEzy67f8rXVemc8iHgNcujGLU2G4/ltbVnDu7h+wjipeqV1SnYppqBei0hlfrDqhb5v2CepAmNkk2JI3W3f/Q==",
+      "path": "syncfusion.linq.base/19.2.0.44",
+      "hashPath": "syncfusion.linq.base.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.OfficeChart.Base/18.3.0.35": {
+    "Syncfusion.OfficeChart.Base/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2/SJ/ebSpf2Uh5xiu9SYNwvC4ovfd0yFkwKXdFn/0SpchO7hepk6dJSznR3naiJfwHcc44BRkbmBxluGAMNasg==",
-      "path": "syncfusion.officechart.base/18.3.0.35",
-      "hashPath": "syncfusion.officechart.base.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-SNslhF+MCKfHRxYbqQT3hgOgmkVkb/s3xZz8RSD6MvqGu+nl8nXMG0buvk0KK646Z3ZNTOTnKgUNN2R5gT9EEw==",
+      "path": "syncfusion.officechart.base/19.2.0.44",
+      "hashPath": "syncfusion.officechart.base.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.Pdf.Wpf/18.3.0.35": {
+    "Syncfusion.Pdf.Wpf/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1oRUgXrFBKTtSjtbn2u4SyhBblSVgC0kV4nPevGsT1pEEyodROkcQSUFLHONFlaS48v8HPAdTycD0TUBobX+pA==",
-      "path": "syncfusion.pdf.wpf/18.3.0.35",
-      "hashPath": "syncfusion.pdf.wpf.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-4AxOde9239F+8k/vjJzvKPmTe90IWoTT2h/neQDX92VhsrnXsPpa28/q+ITsT6Ux7BRdtcnTDiS2yATpxe40+A==",
+      "path": "syncfusion.pdf.wpf/19.2.0.44",
+      "hashPath": "syncfusion.pdf.wpf.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.Presentation.Wpf/18.3.0.35": {
+    "Syncfusion.Presentation.Wpf/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/kMJo4bDU/DkK4IaBCQ/SNrgET6BoBy+iBexFeSMkQwLFWgkkVuifcXuYSO2zn4hXL6OhO3bvXJ/RFJHNJx/1Q==",
-      "path": "syncfusion.presentation.wpf/18.3.0.35",
-      "hashPath": "syncfusion.presentation.wpf.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-8ZnEmPE/lsxWRmW7slPQD62LjEuqsy55EE83gegh4psqKYZnARyQXC/8z+8GAY4N6MgnPW7PCv5Z8P1jfxAC/w==",
+      "path": "syncfusion.presentation.wpf/19.2.0.44",
+      "hashPath": "syncfusion.presentation.wpf.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.SfMaps.WPF/18.3.0.35": {
+    "Syncfusion.SfMaps.WPF/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-y2g1e4pFrJ54F/4Trq75lqC22HLR9GH5H5oQShvbR65BiEMdJAFtzFyI94LbEK5715xoJMtk7STGbIFUe+rHig==",
-      "path": "syncfusion.sfmaps.wpf/18.3.0.35",
-      "hashPath": "syncfusion.sfmaps.wpf.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-MOC9zgglUXU0gCHOYHAy+pNlDEu0oncuC+xU7P5BCn6QbvxhZVsgGR43mNUV92U6ST385NUKt9nZvfugfOfAxQ==",
+      "path": "syncfusion.sfmaps.wpf/19.2.0.44",
+      "hashPath": "syncfusion.sfmaps.wpf.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.Shared.WPF/18.3.0.35": {
+    "Syncfusion.Shared.WPF/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AnzKrnJuM0RrsqpzAqjFc7++XRQu0feDzhDnOX3eaIJNZvvVVQYzivl9nA0/ZEAG7OENaQfEBtKB7Ivx2fjtVg==",
-      "path": "syncfusion.shared.wpf/18.3.0.35",
-      "hashPath": "syncfusion.shared.wpf.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-0k4FWUo42ZmHJV47DVTBkXqQgYSNNNEmCEwi4t4tZmrKr/oqiI8UAgpoiHeqkkUrdeSlK5MDZPjWWsfuQG9dxw==",
+      "path": "syncfusion.shared.wpf/19.2.0.44",
+      "hashPath": "syncfusion.shared.wpf.19.2.0.44.nupkg.sha512"
     },
-    "Syncfusion.XlsIO.Wpf/18.3.0.35": {
+    "Syncfusion.Shared.WPF.Classic/19.2.0.44": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7i/L0aKLqsclo6NcSBkdSdzNYufEx8q0gzi0Irhu0PRJJy8w74IsBJaNfCaA23m2YI8U4lUi/Y63qP86B9FlOA==",
-      "path": "syncfusion.xlsio.wpf/18.3.0.35",
-      "hashPath": "syncfusion.xlsio.wpf.18.3.0.35.nupkg.sha512"
+      "sha512": "sha512-InlrY9Hdk3tJRvas2KnNq4ErGr2RjwJOVjde/t9oNN3aqeHJfWx/KJcESMb8EvqDM4ANrqpF6Evt0inEkE86vg==",
+      "path": "syncfusion.shared.wpf.classic/19.2.0.44",
+      "hashPath": "syncfusion.shared.wpf.classic.19.2.0.44.nupkg.sha512"
+    },
+    "Syncfusion.XlsIO.Wpf/19.2.0.44": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OldGiwx0CjVwhey58p8ai+bI9dhs5Yk7VkYHu42qlrR/ahbN8H4blS91Wf13LSD0hpJzAOlwo+l7qTpuVyrSdg==",
+      "path": "syncfusion.xlsio.wpf/19.2.0.44",
+      "hashPath": "syncfusion.xlsio.wpf.19.2.0.44.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
@@ -1710,12 +2164,12 @@
       "path": "system.collections.concurrent/4.3.0",
       "hashPath": "system.collections.concurrent.4.3.0.nupkg.sha512"
     },
-    "System.Collections.Immutable/1.5.0": {
+    "System.Collections.Immutable/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
-      "path": "system.collections.immutable/1.5.0",
-      "hashPath": "system.collections.immutable.1.5.0.nupkg.sha512"
+      "sha512": "sha512-FXkLXiK0sVVewcso0imKQoOxjoPAj42R8HtjjbSjVPAzwDfzoyoznWxgA3c38LDbN9SJux1xXoXYAhz98j7r2g==",
+      "path": "system.collections.immutable/5.0.0",
+      "hashPath": "system.collections.immutable.5.0.0.nupkg.sha512"
     },
     "System.Collections.NonGeneric/4.3.0": {
       "type": "package",
@@ -1913,12 +2367,12 @@
       "path": "system.linq.expressions/4.3.0",
       "hashPath": "system.linq.expressions.4.3.0.nupkg.sha512"
     },
-    "System.Memory/4.5.3": {
+    "System.Memory/4.5.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
-      "path": "system.memory/4.5.3",
-      "hashPath": "system.memory.4.5.3.nupkg.sha512"
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
     },
     "System.Net.Http/4.3.0": {
       "type": "package",
@@ -1983,12 +2437,12 @@
       "path": "system.reflection.extensions/4.3.0",
       "hashPath": "system.reflection.extensions.4.3.0.nupkg.sha512"
     },
-    "System.Reflection.Metadata/1.6.0": {
+    "System.Reflection.Metadata/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
-      "path": "system.reflection.metadata/1.6.0",
-      "hashPath": "system.reflection.metadata.1.6.0.nupkg.sha512"
+      "sha512": "sha512-5NecZgXktdGg34rh1OenY1rFNDCI8xSjFr+Z4OU4cU06AQHUdRnIIEeWENu3Wl4YowbzkymAIMvi3WyK9U53pQ==",
+      "path": "system.reflection.metadata/5.0.0",
+      "hashPath": "system.reflection.metadata.5.0.0.nupkg.sha512"
     },
     "System.Reflection.Primitives/4.3.0": {
       "type": "package",
@@ -2018,12 +2472,12 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/4.7.0": {
+    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IpU1lcHz8/09yDr9N+Juc7SCgNUz+RohkCQI+KsWKR67XxpFr8Z6c8t1iENCXZuRuNCc4HBwme/MDHNVCwyAKg==",
-      "path": "system.runtime.compilerservices.unsafe/4.7.0",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.7.0.nupkg.sha512"
+      "sha512": "sha512-zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.7.1",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
@@ -2193,12 +2647,12 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-    "System.Threading.Tasks.Extensions/4.5.3": {
+    "System.Threading.Tasks.Extensions/4.5.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-+MvhNtcvIbqmhANyKu91jQnvIRVSTiaOiFNfKWwXGHG48YAb4I/TyH8spsySiPYla7gKal5ZnF3teJqZAximyQ==",
-      "path": "system.threading.tasks.extensions/4.5.3",
-      "hashPath": "system.threading.tasks.extensions.4.5.3.nupkg.sha512"
+      "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
     "System.Threading.Timer/4.3.0": {
       "type": "package",

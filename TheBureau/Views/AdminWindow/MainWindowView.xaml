@@ -75,7 +75,7 @@
             </StackPanel>
             <TextBlock Name="MainTopName" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="White" Text="{Binding MainTopText}"></TextBlock>
         </Grid>
-        <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="{DynamicResource DarkMainGrayColor}">
+        <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="{DynamicResource DarkMainGrayColor}" Panel.ZIndex="10">
             <StackPanel>
                 <Grid Height="150" Background="White" RenderTransformOrigin="0.5,0.5">
                     <Grid.RenderTransform>

@@ -32,13 +32,13 @@
                     </LinearGradientBrush>
                 </Border.Background>
                 <StackPanel   Orientation="Horizontal">
-                    <Border Background="White" CornerRadius="5" Margin="20, 10, 0, 10" Width="320">
-                            <TextBox Padding="5" wpf:HintAssist.Hint="Найти работника (ФИО, почта, телефон, ID, бригада)"
-                                            wpf:TextFieldAssist.DecorationVisibility="Hidden"
-                                            BorderThickness="0"
-                                            VerticalAlignment="Center" Text="{Binding FindEmployeeText, UpdateSourceTrigger=PropertyChanged}"/>
-                    </Border>
-                    <wpf:PackIcon Kind="Search" Foreground="White"  Width="29" Height="Auto" Margin="0,16,0,10.6"/>
+                    <!-- <Border Background="White" CornerRadius="5" Margin="20, 10, 0, 10" Width="320"> -->
+                    <!--         <TextBox Padding="5" wpf:HintAssist.Hint="Найти работника (ФИО, почта, телефон, ID, бригада)" -->
+                    <!--                         wpf:TextFieldAssist.DecorationVisibility="Hidden" -->
+                    <!--                         BorderThickness="0" -->
+                    <!--                         VerticalAlignment="Center" Text="{Binding FindEmployeeText, UpdateSourceTrigger=PropertyChanged}"/> -->
+                    <!-- </Border> -->
+                    <!-- <wpf:PackIcon Kind="Search" Foreground="White"  Width="29" Height="Auto" Margin="0,16,0,10.6"/> -->
                 </StackPanel>
             </Border>
             <ScrollViewer Grid.Column="0" Grid.Row="1" Margin="0,0,0,15">
@@ -65,6 +65,9 @@
                                 </Button>
                                 <Button ToolTip="Удалить" Command="{Binding DeleteCommand}" Cursor="Hand">
                                     <Image Source="../../../Resources/Images/delete.png" Width="30"/>
+                                </Button>
+                                <Button ToolTip="Экспорт" Command="{Binding ExportCommand}" Cursor="Hand">
+                                    <Image Source="../../../Resources/Images/export.png" Width="30"/>
                                 </Button>
                             </ToolBar>
                         </ToolBarTray>

@@ -4,13 +4,17 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Data;
+using System.Windows.Forms;
 using TheBureau.Models;
+using System.Windows.Input;
+using TheBureau.Views.Controls;
 
 namespace TheBureau.ViewModels
 {
     public class StatisticsViewModel : ViewModelBase
     {
         private readonly string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
+        private readonly string _exportConnectionString = ConfigurationManager.ConnectionStrings["ExportConnection"].ConnectionString;
 
         private ObservableCollection<Client> _clients = new ObservableCollection<Client>();
         private ObservableCollection<Request> _requests = new ObservableCollection<Request>();
@@ -18,6 +22,7 @@ namespace TheBureau.ViewModels
         private int _countRed;
         private int _countYellow;
         private int _countGreen;
+        private ICommand _openFolder;
 
         #region Properties
         public ObservableCollection<Client> Clients
@@ -146,5 +151,66 @@ namespace TheBureau.ViewModels
             }
             conn.Close();
         }
+    
+        
+         
+             #region Export
+        
+        public ICommand ExportCommand => _openFolder ??= new RelayCommand(OpenFolder);
+          private void OpenFolder(object sender)
+        {
+            try
+            {
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog
+                {
+                    RootFolder = Environment.SpecialFolder.Desktop,
+                };
+                if (folderBrowserDialog.ShowDialog() != DialogResult.OK) return;
+                if (ExportSchedule(folderBrowserDialog.SelectedPath))
+                {
+                    InfoWindow infoWindow =
+                        new InfoWindow("Экспортировано в файл", folderBrowserDialog.SelectedPath);
+                    infoWindow.ShowDialog();
+                }
+                else
+                {
+                    InfoWindow infoWindow = new InfoWindow("Данные не были экспортированы в файл",
+                        folderBrowserDialog.SelectedPath);
+                    infoWindow.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+                InfoWindow infoWindow =
+                    new InfoWindow("Ошибка", "Ошибка при отрытии диалогового окна для выбора файла");
+                infoWindow.ShowDialog();
+            }
+        }
+
+  
+        private bool ExportSchedule(string path)
+        {
+            var success = 1;
+            string filename;
+            using var conn = new SqlConnection(_exportConnectionString);
+            conn.Open();
+            using (var cmd = new SqlCommand("ExportTable", conn) {CommandType = CommandType.StoredProcedure})
+            {
+                cmd.Parameters.AddWithValue("@table", "Schedule");
+                cmd.Parameters.AddWithValue("@path", path);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        filename = (string) reader["filename"];
+                        success = (int) reader["success"];
+                    }
+                    ;
+                }
+            }
+            conn.Close();
+            return success == 0; //@result = 0 - success, otherwise failure
+        }
+        #endregion
     }
 }

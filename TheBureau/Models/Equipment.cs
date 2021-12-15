@@ -13,7 +13,7 @@ namespace TheBureau.Models
             RequestEquipments = new HashSet<RequestEquipment>();
         }
 
-        [StringLength(2)]
+        [StringLength(3)]
         public string id { get; set; }
 
         [Required]

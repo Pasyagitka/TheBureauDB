@@ -27,10 +27,7 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </Expander>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Height="24" HorizontalAlignment="Center">
-                <TextBlock Text="Заявок у бригады: " VerticalAlignment="Top"/>
-                <TextBlock Text="{Binding Requests.Count }"  VerticalAlignment="Top"/>
-            </StackPanel>
+           
         </Grid>  
     </Border>
 </UserControl>

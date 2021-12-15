@@ -14,7 +14,7 @@ namespace TheBureau.ViewModels
     {
         private readonly string _connectionString = ConfigurationManager.ConnectionStrings["BrigadeConnection"].ConnectionString;
 
-        private int _requestStatus;
+        private string _requestStatus;
         private ICommand _updateRequest;
         private Request _requestForEdit;
         private ObservableCollection<Employee> _brigadeEmployees;
@@ -50,9 +50,20 @@ namespace TheBureau.ViewModels
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     conn.Open();
+                    int statusId = 1;
+                    using (SqlCommand cmd = new SqlCommand("GetStatusIdByName", conn) { CommandType = CommandType.StoredProcedure })
+                    {
+                        cmd.Parameters.AddWithValue("@status", _requestStatus);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read()) {
+                                statusId = (int)reader["id"];
+                            };
+                        }
+                    }
                     using (SqlCommand cmd = new SqlCommand("UpdateRequestByBrigade", conn)  { CommandType = CommandType.StoredProcedure }) {
                         cmd.Parameters.AddWithValue("@id", RequestForEdit.id);
-                        cmd.Parameters.AddWithValue("@statusId", Convert.ToInt32(RequestStatus));
+                        cmd.Parameters.AddWithValue("@statusId", statusId);
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read()) { };
@@ -61,7 +72,7 @@ namespace TheBureau.ViewModels
                     conn.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при редактировании заявки");
                 infoWindow.ShowDialog();
@@ -70,13 +81,12 @@ namespace TheBureau.ViewModels
 
         public string RequestStatus
         {
-            get => _requestStatus.ToString();
+            get => _requestStatus;
             set
             {
-                //todo set status from db
-                if (value.Contains("Готово")) _requestStatus = 3; 
-                else if (value.Contains("В процессе")) _requestStatus = 2;
-                else _requestStatus = 1;
+                if (value.Contains("Готово")) _requestStatus = "Done"; 
+                else if (value.Contains("В процессе")) _requestStatus = "InProgress";
+                else _requestStatus = "InProcessing";
                 OnPropertyChanged("RequestStatus");
             }
         }

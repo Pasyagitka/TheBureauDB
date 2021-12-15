@@ -54,7 +54,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
 
     <HierarchicalDataTemplate x:Key="RequestListForBrigadeTemplate">
         <Border CornerRadius="10" Background="White" Margin="10" Width="800">
@@ -120,7 +119,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-    
+
     <Style x:Key="TextBoxValidationTemplateDefault" TargetType="TextBox">
         <Setter Property="Background" Value="Transparent"></Setter>
         <Setter Property="FontSize" Value="16"></Setter>
@@ -169,6 +168,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
     
 
 </ResourceDictionary>

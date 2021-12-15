@@ -23,7 +23,11 @@
         public const string CommentLengthExceeded = "Максимальное количество символов в комментарии к заявке - 200";
         public const string QuantityExceeded = "Количество оборудования не может превышать 100";
         public const string IncorrectExceeded = "Номер корпуса не может быть содержать более 10 символов";
-        public const string MaxLength30 = "Максимальная длина поля- 30 символов";
+        public const string MaxLength30 = "Максимальная длина поля - 30 символов";
+        public const string MaxLength150 = "Максимальная длина поля - 150 символов";
+        public const string MaxLength15 = "Максимальная длина поля - 15 символов";
+        public const string MaxLength3 = "Максимальная длина поля - 3 символа";
+        
         
         public const string IncorrectEmailStructure = "Некорректная структура адреса электронной почты";
         public const string IncorrectNumberStructure = "Номер телефона должен начинаться с 375, иметь один из зональных кодов: 17, 25, 29, 33, 44 и содержать 12 цифр";

@@ -1,0 +1,12 @@
+[
+    {
+        "name": "шуруповерт новый",
+        "stageId": 3,
+        "isDeleted": false
+    },
+    {
+        "name": "щипцы новые",
+        "stageId": 2,
+        "isDeleted": false
+    }
+]

@@ -2,7 +2,18 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
-      "Bold.Licensing/3.1.32": {
+      "BlackPearl.Controls.Library/2.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/BlackPearl.Controls.Common.dll": {},
+          "lib/netcoreapp3.1/BlackPearl.Controls.CoreLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/BlackPearl.Controls.Common.dll": {},
+          "lib/netcoreapp3.1/BlackPearl.Controls.CoreLibrary.dll": {}
+        }
+      },
+      "Bold.Licensing/3.3.23": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "10.0.2"
@@ -14,20 +25,21 @@
           "lib/netcoreapp3.0/Bold.Licensing.dll": {}
         }
       },
-      "BoldReports.WPF/3.1.32": {
+      "BoldReports.WPF/3.3.23": {
         "type": "package",
         "dependencies": {
-          "Bold.Licensing": "3.1.32",
-          "Microsoft.CodeAnalysis.VisualBasic": "3.6.0",
-          "Syncfusion.DocIO.WPF": "18.3.0.35",
-          "Syncfusion.Grid.WPF": "18.3.0.35",
-          "Syncfusion.GridCommon.Wpf": "18.3.0.35",
-          "Syncfusion.Linq.Base": "18.3.0.35",
-          "Syncfusion.PDF.WPF": "18.3.0.35",
-          "Syncfusion.Presentation.Wpf": "18.3.0.35",
-          "Syncfusion.SfMaps.WPF": "18.3.0.35",
-          "Syncfusion.Shared.WPF": "18.3.0.35",
-          "Syncfusion.XlsIO.WPF": "18.3.0.35",
+          "Bold.Licensing": "3.3.23",
+          "Microsoft.CodeAnalysis.VisualBasic": "3.8.0",
+          "Syncfusion.DocIO.WPF": "19.2.0.44",
+          "Syncfusion.Grid.WPF": "19.2.0.44",
+          "Syncfusion.GridCommon.Wpf": "19.2.0.44",
+          "Syncfusion.Linq.Base": "19.2.0.44",
+          "Syncfusion.PDF.WPF": "19.2.0.44",
+          "Syncfusion.Presentation.Wpf": "19.2.0.44",
+          "Syncfusion.SfMaps.WPF": "19.2.0.44",
+          "Syncfusion.Shared.WPF": "19.2.0.44",
+          "Syncfusion.Shared.WPF.Classic": "19.2.0.44",
+          "Syncfusion.XlsIO.WPF": "19.2.0.44",
           "System.CodeDom": "5.0.0",
           "System.Configuration.ConfigurationManager": "4.7.0",
           "System.Data.Common": "4.3.0",
@@ -42,6 +54,381 @@
         },
         "runtime": {
           "lib/netcoreapp5.0/BoldReports.WPF.dll": {}
+        }
+      },
+      "C1.Xaml.WPF/4.5.20213.755": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.4.5.2.dll": {}
+        },
+        "resource": {
+          "lib/netcoreapp3.0/ar/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/netcoreapp3.0/cs/C1.WPF.4.5.2.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netcoreapp3.0/da/C1.WPF.4.5.2.resources.dll": {
+            "locale": "da"
+          },
+          "lib/netcoreapp3.0/de/C1.WPF.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/el/C1.WPF.4.5.2.resources.dll": {
+            "locale": "el"
+          },
+          "lib/netcoreapp3.0/es/C1.WPF.4.5.2.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/fi/C1.WPF.4.5.2.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/netcoreapp3.0/fr/C1.WPF.4.5.2.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.0/he/C1.WPF.4.5.2.resources.dll": {
+            "locale": "he"
+          },
+          "lib/netcoreapp3.0/it/C1.WPF.4.5.2.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/nl/C1.WPF.4.5.2.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/netcoreapp3.0/no/C1.WPF.4.5.2.resources.dll": {
+            "locale": "no"
+          },
+          "lib/netcoreapp3.0/pl/C1.WPF.4.5.2.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.0/pt/C1.WPF.4.5.2.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netcoreapp3.0/ro/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/netcoreapp3.0/ru/C1.WPF.4.5.2.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/sk/C1.WPF.4.5.2.resources.dll": {
+            "locale": "sk"
+          },
+          "lib/netcoreapp3.0/sv/C1.WPF.4.5.2.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/netcoreapp3.0/tr/C1.WPF.4.5.2.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netcoreapp3.0/zh-Hans/C1.WPF.4.5.2.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hant/C1.WPF.4.5.2.resources.dll": {
+            "locale": "zh-Hant"
+          },
+          "lib/netcoreapp3.0/zh/C1.WPF.4.5.2.resources.dll": {
+            "locale": "zh"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.BarCode/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.BarCode.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.BarCode.4.5.2.dll": {}
+        },
+        "resource": {
+          "lib/netcoreapp3.0/de/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/es/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/ru/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/zh-Hans/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.0/zh-Hant/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "zh-Hant"
+          },
+          "lib/netcoreapp3.0/zh/C1.WPF.BarCode.4.5.2.resources.dll": {
+            "locale": "zh"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.BarCode.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.Bitmap/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF.DX": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.Bitmap.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Bitmap.4.5.2.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Bitmap.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.DateTimeEditors/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.DateTimeEditors.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.DateTimeEditors.4.5.2.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.DateTimeEditors.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.Document/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF": "[4.5.20213.755]",
+          "C1.Xaml.WPF.BarCode": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Bitmap": "[4.5.20213.755]",
+          "C1.Xaml.WPF.DX": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Excel": "[4.5.20213.755]",
+          "C1.Xaml.WPF.FlexChart": "[4.5.20213.755]",
+          "C1.Xaml.WPF.ImportServices": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Pdf": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Word": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Zip": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.Document.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Document.4.5.2.dll": {}
+        },
+        "resource": {
+          "lib/netcoreapp3.0/de/C1.WPF.Document.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.Document.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.Document.4.5.2.resources.dll": {
+            "locale": "ko"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Document.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.DX/4.5.20213.755": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.DX.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.DX.4.5.2.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.DX.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.Excel/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Bitmap": "[4.5.20213.755]",
+          "C1.Xaml.WPF.DX": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Zip": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.Excel.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Excel.4.5.2.dll": {}
+        },
+        "resource": {
+          "lib/netcoreapp3.0/ja/C1.WPF.Excel.4.5.2.resources.dll": {
+            "locale": "ja"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Excel.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.FlexChart/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF": "[4.5.20213.755]",
+          "C1.Xaml.WPF.DX": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.FlexChart.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.FlexChart.4.5.2.dll": {}
+        },
+        "resource": {
+          "lib/netcoreapp3.0/de/C1.WPF.FlexChart.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.FlexChart.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.FlexChart.4.5.2.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/zh/C1.WPF.FlexChart.4.5.2.resources.dll": {
+            "locale": "zh"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.FlexChart.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.FlexViewer/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF": "[4.5.20213.755]",
+          "C1.Xaml.WPF.BarCode": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Bitmap": "[4.5.20213.755]",
+          "C1.Xaml.WPF.DX": "[4.5.20213.755]",
+          "C1.Xaml.WPF.DateTimeEditors": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Document": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Excel": "[4.5.20213.755]",
+          "C1.Xaml.WPF.FlexChart": "[4.5.20213.755]",
+          "C1.Xaml.WPF.ImportServices": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Pdf": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Word": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Zip": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.FlexViewer.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.FlexViewer.4.5.2.dll": {}
+        },
+        "resource": {
+          "lib/netcoreapp3.0/de/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/ja/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.0/ru/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.0/zh/C1.WPF.FlexViewer.4.5.2.resources.dll": {
+            "locale": "zh"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.FlexViewer.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.ImportServices/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.ImportServices.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.ImportServices.4.5.2.dll": {}
+        },
+        "resource": {
+          "lib/netcoreapp3.0/de/C1.WPF.ImportServices.4.5.2.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.0/ko/C1.WPF.ImportServices.4.5.2.resources.dll": {
+            "locale": "ko"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.ImportServices.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.Pdf/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF": "[4.5.20213.755]",
+          "C1.Xaml.WPF.DX": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Zip": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.Pdf.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Pdf.4.5.2.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Pdf.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.Word/4.5.20213.755": {
+        "type": "package",
+        "dependencies": {
+          "C1.Xaml.WPF": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Bitmap": "[4.5.20213.755]",
+          "C1.Xaml.WPF.DX": "[4.5.20213.755]",
+          "C1.Xaml.WPF.Zip": "[4.5.20213.755]"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.Word.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Word.4.5.2.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Word.targets": {}
+        }
+      },
+      "C1.Xaml.WPF.Zip/4.5.20213.755": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/C1.WPF.Zip.4.5.2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/C1.WPF.Zip.4.5.2.dll": {}
+        },
+        "resource": {
+          "lib/netcoreapp3.0/ja/C1.WPF.Zip.4.5.2.resources.dll": {
+            "locale": "ja"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Zip.targets": {}
         }
       },
       "MaterialDesignColors/2.0.3": {
@@ -74,16 +461,16 @@
           "build/_._": {}
         }
       },
-      "Microsoft.CodeAnalysis.Common/3.6.0": {
+      "Microsoft.CodeAnalysis.Common/3.8.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.0.0",
-          "System.Collections.Immutable": "1.5.0",
-          "System.Memory": "4.5.3",
-          "System.Reflection.Metadata": "1.6.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.0",
+          "System.Collections.Immutable": "5.0.0",
+          "System.Memory": "4.5.4",
+          "System.Reflection.Metadata": "5.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
           "System.Text.Encoding.CodePages": "4.5.1",
-          "System.Threading.Tasks.Extensions": "4.5.3"
+          "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
           "lib/netcoreapp3.1/Microsoft.CodeAnalysis.dll": {}
@@ -133,55 +520,55 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.VisualBasic/3.6.0": {
+      "Microsoft.CodeAnalysis.VisualBasic/3.8.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "[3.6.0]"
+          "Microsoft.CodeAnalysis.Common": "[3.8.0]"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.dll": {}
+          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.VisualBasic.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.dll": {}
+          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.VisualBasic.dll": {}
         },
         "resource": {
-          "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "cs"
           },
-          "lib/netstandard2.0/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "de"
           },
-          "lib/netstandard2.0/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "es"
           },
-          "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "fr"
           },
-          "lib/netstandard2.0/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "it"
           },
-          "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "ja"
           },
-          "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "ko"
           },
-          "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "pl"
           },
-          "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "pt-BR"
           },
-          "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "ru"
           },
-          "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "tr"
           },
-          "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "zh-Hans"
           },
-          "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+          "lib/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
             "locale": "zh-Hant"
           }
         }
@@ -555,146 +942,158 @@
           }
         }
       },
-      "Syncfusion.Compression.Base/18.3.0.35": {
+      "Syncfusion.Compression.Base/19.2.0.44": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.Compression.Base.dll": {}
+          "lib/net5.0/Syncfusion.Compression.Base.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Compression.Base.dll": {}
+          "lib/net5.0/Syncfusion.Compression.Base.dll": {}
         }
       },
-      "Syncfusion.DocIO.Wpf/18.3.0.35": {
+      "Syncfusion.DocIO.Wpf/19.2.0.44": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35",
-          "Syncfusion.OfficeChart.Base": "18.3.0.35"
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44",
+          "Syncfusion.OfficeChart.Base": "19.2.0.44"
         },
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.DocIO.Base.dll": {}
+          "lib/net5.0-windows/Syncfusion.DocIO.Base.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.DocIO.Base.dll": {}
+          "lib/net5.0-windows/Syncfusion.DocIO.Base.dll": {}
         }
       },
-      "Syncfusion.Grid.WPF/18.3.0.35": {
+      "Syncfusion.Grid.WPF/19.2.0.44": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.GridCommon.Wpf": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35",
-          "Syncfusion.Linq.Base": "18.3.0.35",
-          "Syncfusion.Shared.WPF": "18.3.0.35"
+          "Syncfusion.GridCommon.Wpf": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44",
+          "Syncfusion.Linq.Base": "19.2.0.44",
+          "Syncfusion.Shared.WPF": "19.2.0.44"
         },
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.Grid.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.Grid.WPF.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Grid.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.Grid.WPF.dll": {}
         }
       },
-      "Syncfusion.GridCommon.Wpf/18.3.0.35": {
+      "Syncfusion.GridCommon.Wpf/19.2.0.44": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.GridCommon.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.GridCommon.WPF.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.GridCommon.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.GridCommon.WPF.dll": {}
         }
       },
-      "Syncfusion.Licensing/18.3.0.35": {
+      "Syncfusion.Licensing/19.2.0.44": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.Licensing.dll": {}
+          "lib/net5.0/Syncfusion.Licensing.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Licensing.dll": {}
+          "lib/net5.0/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Linq.Base/18.3.0.35": {
+      "Syncfusion.Linq.Base/19.2.0.44": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.Linq.Base.dll": {}
+          "lib/net5.0-windows/Syncfusion.Linq.Base.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Linq.Base.dll": {}
+          "lib/net5.0-windows/Syncfusion.Linq.Base.dll": {}
         }
       },
-      "Syncfusion.OfficeChart.Base/18.3.0.35": {
-        "type": "package",
-        "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35"
-        },
-        "compile": {
-          "lib/netcoreapp5.0/Syncfusion.OfficeChart.Base.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.OfficeChart.Base.dll": {}
-        }
-      },
-      "Syncfusion.Pdf.Wpf/18.3.0.35": {
+      "Syncfusion.OfficeChart.Base/19.2.0.44": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35"
+          "Syncfusion.Compression.Base": "19.2.0.44"
         },
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.Pdf.Base.dll": {}
+          "lib/net5.0/Syncfusion.OfficeChart.Base.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Pdf.Base.dll": {}
+          "lib/net5.0/Syncfusion.OfficeChart.Base.dll": {}
         }
       },
-      "Syncfusion.Presentation.Wpf/18.3.0.35": {
+      "Syncfusion.Pdf.Wpf/19.2.0.44": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35",
-          "Syncfusion.OfficeChart.Base": "18.3.0.35"
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44"
         },
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.Presentation.Base.dll": {}
+          "lib/net5.0-windows/Syncfusion.Pdf.Base.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Presentation.Base.dll": {}
+          "lib/net5.0-windows/Syncfusion.Pdf.Base.dll": {}
         }
       },
-      "Syncfusion.SfMaps.WPF/18.3.0.35": {
+      "Syncfusion.Presentation.Wpf/19.2.0.44": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "18.3.0.35",
-          "Syncfusion.Shared.WPF": "18.3.0.35"
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44",
+          "Syncfusion.OfficeChart.Base": "19.2.0.44"
         },
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.SfMaps.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.Presentation.Base.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.SfMaps.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.Presentation.Base.dll": {}
         }
       },
-      "Syncfusion.Shared.WPF/18.3.0.35": {
+      "Syncfusion.SfMaps.WPF/19.2.0.44": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "18.3.0.35"
+          "Syncfusion.Licensing": "19.2.0.44",
+          "Syncfusion.Shared.WPF": "19.2.0.44"
         },
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.Shared.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.SfMaps.WPF.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.Shared.WPF.dll": {}
+          "lib/net5.0-windows/Syncfusion.SfMaps.WPF.dll": {}
         }
       },
-      "Syncfusion.XlsIO.Wpf/18.3.0.35": {
+      "Syncfusion.Shared.WPF/19.2.0.44": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Compression.Base": "18.3.0.35",
-          "Syncfusion.Licensing": "18.3.0.35"
+          "Syncfusion.Licensing": "19.2.0.44"
         },
         "compile": {
-          "lib/netcoreapp5.0/Syncfusion.XlsIO.Base.dll": {}
+          "lib/net5.0-windows/Syncfusion.Shared.WPF.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp5.0/Syncfusion.XlsIO.Base.dll": {}
+          "lib/net5.0-windows/Syncfusion.Shared.WPF.dll": {}
+        }
+      },
+      "Syncfusion.Shared.WPF.Classic/19.2.0.44": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Shared.WPF": "19.2.0.44"
+        },
+        "compile": {
+          "lib/net5.0-windows/Syncfusion.Shared.WPF.Classic.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows/Syncfusion.Shared.WPF.Classic.dll": {}
+        }
+      },
+      "Syncfusion.XlsIO.Wpf/19.2.0.44": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44"
+        },
+        "compile": {
+          "lib/net5.0-windows/Syncfusion.XlsIO.Base.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows/Syncfusion.XlsIO.Base.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -766,7 +1165,7 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
-      "System.Collections.Immutable/1.5.0": {
+      "System.Collections.Immutable/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
@@ -1285,7 +1684,7 @@
           "lib/netstandard1.6/System.Linq.Expressions.dll": {}
         }
       },
-      "System.Memory/4.5.3": {
+      "System.Memory/4.5.4": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/_._": {}
@@ -1450,7 +1849,7 @@
           "ref/netstandard1.0/System.Reflection.Extensions.dll": {}
         }
       },
-      "System.Reflection.Metadata/1.6.0": {
+      "System.Reflection.Metadata/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/System.Reflection.Metadata.dll": {}
@@ -1506,7 +1905,7 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.7.0": {
+      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -1984,7 +2383,7 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.3": {
+      "System.Threading.Tasks.Extensions/4.5.4": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/_._": {}
@@ -2136,14 +2535,29 @@
     }
   },
   "libraries": {
-    "Bold.Licensing/3.1.32": {
-      "sha512": "uZhzoax3IfxbET9uw+UUCqVWlWusQdZzj8M5KBtaBKtBSchM5P1Ppkt3koDbxtpx/holYakjyQ3HnXsjsvB9wg==",
+    "BlackPearl.Controls.Library/2.0.1": {
+      "sha512": "ikFQYrXebw+hw/STvt4hMlH4321YIT4KdxAHJVPPZk+a0CTW/fDVjZ9dpVLmBO8JQjbhh+g3NGfXF2qBLEa+Sg==",
       "type": "package",
-      "path": "bold.licensing/3.1.32",
+      "path": "blackpearl.controls.library/2.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "bold.licensing.3.1.32.nupkg.sha512",
+        "blackpearl.controls.library.2.0.1.nupkg.sha512",
+        "blackpearl.controls.library.nuspec",
+        "lib/net461/BlackPearl.Controls.Common.dll",
+        "lib/net461/BlackPearl.Controls.CoreLibrary.dll",
+        "lib/netcoreapp3.1/BlackPearl.Controls.Common.dll",
+        "lib/netcoreapp3.1/BlackPearl.Controls.CoreLibrary.dll"
+      ]
+    },
+    "Bold.Licensing/3.3.23": {
+      "sha512": "iNcgXN3kf0Tl+XGuaJ3UIyz4tlX41rGw3JP37z4cujXc6GKcLWmvgav8ePYD0eff66CWaZooZQtijzzPgKnalQ==",
+      "type": "package",
+      "path": "bold.licensing/3.3.23",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bold.licensing.3.3.23.nupkg.sha512",
         "bold.licensing.nuspec",
         "lib/MonoAndroid10/Bold.Licensing.dll",
         "lib/Xamarin.Mac/Bold.Licensing.dll",
@@ -2161,14 +2575,14 @@
         "lib/uap10.0/Bold.Licensing.dll"
       ]
     },
-    "BoldReports.WPF/3.1.32": {
-      "sha512": "hzO0CTR1Ulb4+hVkC9OQY7sjmrIuEK5Z6N8Gsra0NUAyyi1Kn48CIWVdyAyKAXY1If7FOCaNEfR83bfGli3q2Q==",
+    "BoldReports.WPF/3.3.23": {
+      "sha512": "QyF+nxzPAbkRg7vN72MzSv0DlCZ5X7ZPhHrvI8Yv5aq0UW0afmhXzQJSK6r/OJ6mHT2RpPSoSu9rcpR+OTQPyA==",
       "type": "package",
-      "path": "boldreports.wpf/3.1.32",
+      "path": "boldreports.wpf/3.3.23",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "boldreports.wpf.3.1.32.nupkg.sha512",
+        "boldreports.wpf.3.3.23.nupkg.sha512",
         "boldreports.wpf.nuspec",
         "lib/net40/BoldReports.WPF.dll",
         "lib/net40/BoldReports.WPF.xml",
@@ -2182,6 +2596,587 @@
         "lib/netcoreapp3.1/BoldReports.WPF.xml",
         "lib/netcoreapp5.0/BoldReports.WPF.dll",
         "lib/netcoreapp5.0/BoldReports.WPF.xml"
+      ]
+    },
+    "C1.Xaml.WPF/4.5.20213.755": {
+      "sha512": "Fk98ixP4q1roS0Fj16FG+1FCAWvDPWj3qTADg2MYsw3XkXlQbkAab5otUJlQ6ssR5Oretz6LuQ7qhJPxXAxclw==",
+      "type": "package",
+      "path": "c1.xaml.wpf/4.5.20213.755",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.targets",
+        "c1.xaml.wpf.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.4.5.2.dll",
+        "lib/net452/C1.WPF.4.5.2.xml",
+        "lib/net452/Design/C1.WPF.4.5.2.DesignTools.16.10.dll",
+        "lib/net452/Design/C1.WPF.4.5.2.DesignTools.dll",
+        "lib/net452/Design/C1.WPF.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/net452/Design/C1.WPF.4.5.2.Expression.Design.dll",
+        "lib/net452/Design/C1.WPF.4.5.2.VisualStudio.Design.4.0.3.dll",
+        "lib/net452/Design/C1.WPF.4.5.2.VisualStudio.Design.dll",
+        "lib/net452/ar/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/cs/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/da/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/de/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/el/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/es/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/fi/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/fr/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/he/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/it/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/ja/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/ko/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/nl/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/no/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/pl/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/pt/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/ro/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/ru/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/sk/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/sv/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/tr/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/zh-Hans/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/zh-Hant/C1.WPF.4.5.2.resources.dll",
+        "lib/net452/zh/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/C1.WPF.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.4.5.2.xml",
+        "lib/netcoreapp3.0/Design/C1.WPF.4.5.2.DesignTools.16.10.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.4.5.2.DesignTools.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.4.5.2.Expression.Design.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.4.5.2.VisualStudio.Design.4.0.3.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.4.5.2.VisualStudio.Design.dll",
+        "lib/netcoreapp3.0/ar/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/cs/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/da/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/de/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/el/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/es/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/fi/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/fr/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/he/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/it/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ja/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ko/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/nl/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/no/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/pl/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/pt/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ro/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ru/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/sk/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/sv/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/tr/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/zh-Hans/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/zh-Hant/C1.WPF.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/zh/C1.WPF.4.5.2.resources.dll",
+        "license_EN.txt",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "C1.Xaml.WPF.BarCode/4.5.20213.755": {
+      "sha512": "fRxLynA4xqFkAt9xrg3cj+efLGj7BthfHiAxzLxxLyrAyEA1L92TpIl1eUDwttxKA6i+bPLOeRnsmrVswYLS0g==",
+      "type": "package",
+      "path": "c1.xaml.wpf.barcode/4.5.20213.755",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.BarCode.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.BarCode.targets",
+        "c1.xaml.wpf.barcode.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.barcode.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.BarCode.4.5.2.dll",
+        "lib/net452/C1.WPF.BarCode.4.5.2.xml",
+        "lib/net452/Design/C1.WPF.BarCode.4.5.2.Design.dll",
+        "lib/net452/Design/C1.WPF.BarCode.4.5.2.DesignTools.dll",
+        "lib/net452/Design/C1.WPF.BarCode.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/net452/de/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/net452/es/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/net452/ja/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/net452/ko/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/net452/ru/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/net452/zh-Hans/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/net452/zh-Hant/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/net452/zh/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/C1.WPF.BarCode.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.BarCode.4.5.2.xml",
+        "lib/netcoreapp3.0/Design/C1.WPF.BarCode.4.5.2.Design.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.BarCode.4.5.2.DesignTools.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.BarCode.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/netcoreapp3.0/de/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/es/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ja/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ko/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ru/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/zh-Hans/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/zh-Hant/C1.WPF.BarCode.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/zh/C1.WPF.BarCode.4.5.2.resources.dll",
+        "license_EN.txt",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "C1.Xaml.WPF.Bitmap/4.5.20213.755": {
+      "sha512": "6jMKzLa+Sj3f8PRiE2w5CPcdkyyrX5RPQhKDc5HjJEDcxDPs3G/IqtDlzgBOVWTq9oQlxsRpm+xqrrwvXpIJ4A==",
+      "type": "package",
+      "path": "c1.xaml.wpf.bitmap/4.5.20213.755",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.Bitmap.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Bitmap.targets",
+        "c1.xaml.wpf.bitmap.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.bitmap.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.Bitmap.4.5.2.dll",
+        "lib/net452/C1.WPF.Bitmap.4.5.2.xml",
+        "lib/netcoreapp3.0/C1.WPF.Bitmap.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.Bitmap.4.5.2.xml",
+        "license_EN.txt"
+      ]
+    },
+    "C1.Xaml.WPF.DateTimeEditors/4.5.20213.755": {
+      "sha512": "C5+O5/Q5N0B0mwv3YbELK8Fnwr7zXtHPY+f4u+SKFlh6M+6V98+hHx7RdT82oyZg2A+bMusJS1JjlPISPcZJVQ==",
+      "type": "package",
+      "path": "c1.xaml.wpf.datetimeeditors/4.5.20213.755",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.DateTimeEditors.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.DateTimeEditors.targets",
+        "c1.xaml.wpf.datetimeeditors.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.datetimeeditors.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.DateTimeEditors.4.5.2.dll",
+        "lib/net452/C1.WPF.DateTimeEditors.4.5.2.xml",
+        "lib/net452/Design/C1.WPF.DateTimeEditors.4.5.2.DesignTools.16.10.dll",
+        "lib/net452/Design/C1.WPF.DateTimeEditors.4.5.2.DesignTools.dll",
+        "lib/net452/Design/C1.WPF.DateTimeEditors.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/net452/Design/C1.WPF.DateTimeEditors.4.5.2.Expression.Design.dll",
+        "lib/net452/Design/C1.WPF.DateTimeEditors.4.5.2.VisualStudio.Design.4.0.3.dll",
+        "lib/net452/Design/C1.WPF.DateTimeEditors.4.5.2.VisualStudio.Design.dll",
+        "lib/netcoreapp3.0/C1.WPF.DateTimeEditors.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.DateTimeEditors.4.5.2.xml",
+        "lib/netcoreapp3.0/Design/C1.WPF.DateTimeEditors.4.5.2.DesignTools.16.10.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.DateTimeEditors.4.5.2.DesignTools.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.DateTimeEditors.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.DateTimeEditors.4.5.2.Expression.Design.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.DateTimeEditors.4.5.2.VisualStudio.Design.4.0.3.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.DateTimeEditors.4.5.2.VisualStudio.Design.dll",
+        "license_EN.txt",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "C1.Xaml.WPF.Document/4.5.20213.755": {
+      "sha512": "7u0JfxRLN8N2dI8NiZQkaRzEqfLsFyodbbhmTnyxuniQBvHB0a/wxuk+3nuaTnEJ3X6/ttpa5ZsBqZ9iXp6gJA==",
+      "type": "package",
+      "path": "c1.xaml.wpf.document/4.5.20213.755",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.Document.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Document.targets",
+        "c1.xaml.wpf.document.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.document.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.Document.4.5.2.dll",
+        "lib/net452/C1.WPF.Document.4.5.2.xml",
+        "lib/net452/de/C1.WPF.Document.4.5.2.resources.dll",
+        "lib/net452/ja/C1.WPF.Document.4.5.2.resources.dll",
+        "lib/net452/ko/C1.WPF.Document.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/C1.WPF.Document.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.Document.4.5.2.xml",
+        "lib/netcoreapp3.0/de/C1.WPF.Document.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ja/C1.WPF.Document.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ko/C1.WPF.Document.4.5.2.resources.dll",
+        "license_EN.txt"
+      ]
+    },
+    "C1.Xaml.WPF.DX/4.5.20213.755": {
+      "sha512": "0H0+xI8g74bqFYQIJEMPCKxSnTBosj72mKVgKFsVxkO9V+abG3WN5C51s2QGLQnhp0LrV5jJKQp8P10Eu2h5pQ==",
+      "type": "package",
+      "path": "c1.xaml.wpf.dx/4.5.20213.755",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.DX.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.DX.targets",
+        "c1.xaml.wpf.dx.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.dx.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.DX.4.5.2.dll",
+        "lib/net452/C1.WPF.DX.4.5.2.xml",
+        "lib/netcoreapp3.0/C1.WPF.DX.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.DX.4.5.2.xml",
+        "license_EN.txt"
+      ]
+    },
+    "C1.Xaml.WPF.Excel/4.5.20213.755": {
+      "sha512": "H3zQqz1yAWftzRYzjqg4HrRrT6J7NcAcqFI0P9tnU8+D4hG09iI8c8B1pfxeFuj6hLznrgrTc29MO1pfARx/9w==",
+      "type": "package",
+      "path": "c1.xaml.wpf.excel/4.5.20213.755",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.Excel.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Excel.targets",
+        "c1.xaml.wpf.excel.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.excel.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.Excel.4.5.2.dll",
+        "lib/net452/C1.WPF.Excel.4.5.2.xml",
+        "lib/net452/ja/C1.WPF.Excel.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/C1.WPF.Excel.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.Excel.4.5.2.xml",
+        "lib/netcoreapp3.0/ja/C1.WPF.Excel.4.5.2.resources.dll",
+        "license_EN.txt"
+      ]
+    },
+    "C1.Xaml.WPF.FlexChart/4.5.20213.755": {
+      "sha512": "3z2+Ym1D1eqgcLwbyxftNSajY2Jo0YLe4csK+vmEgcIpi9quUlDnHj0JWb/JXLxHDi5NVOA1WSQn3T0qxdGKHw==",
+      "type": "package",
+      "path": "c1.xaml.wpf.flexchart/4.5.20213.755",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.FlexChart.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.FlexChart.targets",
+        "c1.xaml.wpf.flexchart.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.flexchart.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.FlexChart.4.5.2.dll",
+        "lib/net452/C1.WPF.FlexChart.4.5.2.xml",
+        "lib/net452/Design/C1.WPF.FlexChart.4.5.2.Design.dll",
+        "lib/net452/Design/C1.WPF.FlexChart.4.5.2.DesignTools.16.10.dll",
+        "lib/net452/Design/C1.WPF.FlexChart.4.5.2.DesignTools.dll",
+        "lib/net452/Design/C1.WPF.FlexChart.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/net452/de/C1.WPF.FlexChart.4.5.2.resources.dll",
+        "lib/net452/ja/C1.WPF.FlexChart.4.5.2.resources.dll",
+        "lib/net452/ko/C1.WPF.FlexChart.4.5.2.resources.dll",
+        "lib/net452/zh/C1.WPF.FlexChart.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/C1.WPF.FlexChart.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.FlexChart.4.5.2.xml",
+        "lib/netcoreapp3.0/Design/C1.WPF.FlexChart.4.5.2.Design.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.FlexChart.4.5.2.DesignTools.16.10.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.FlexChart.4.5.2.DesignTools.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.FlexChart.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/netcoreapp3.0/de/C1.WPF.FlexChart.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ja/C1.WPF.FlexChart.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ko/C1.WPF.FlexChart.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/zh/C1.WPF.FlexChart.4.5.2.resources.dll",
+        "license_EN.txt",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "C1.Xaml.WPF.FlexViewer/4.5.20213.755": {
+      "sha512": "8VpYt8Jvt9Rb9Zjw6Y+YfWeEzr7fe4lb2pmLqVdnUw+2jaOb5vOnOBaM7T5ekxBURlgNLPyjH3zhfhTkzb5gYg==",
+      "type": "package",
+      "path": "c1.xaml.wpf.flexviewer/4.5.20213.755",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.FlexViewer.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.FlexViewer.targets",
+        "c1.xaml.wpf.flexviewer.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.flexviewer.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.FlexViewer.4.5.2.dll",
+        "lib/net452/C1.WPF.FlexViewer.4.5.2.xml",
+        "lib/net452/Design/C1.WPF.FlexViewer.4.5.2.Design.dll",
+        "lib/net452/Design/C1.WPF.FlexViewer.4.5.2.DesignTools.16.10.dll",
+        "lib/net452/Design/C1.WPF.FlexViewer.4.5.2.DesignTools.dll",
+        "lib/net452/Design/C1.WPF.FlexViewer.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/net452/de/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "lib/net452/ja/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "lib/net452/ko/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "lib/net452/ru/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "lib/net452/zh/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/C1.WPF.FlexViewer.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.FlexViewer.4.5.2.xml",
+        "lib/netcoreapp3.0/Design/C1.WPF.FlexViewer.4.5.2.Design.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.FlexViewer.4.5.2.DesignTools.16.10.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.FlexViewer.4.5.2.DesignTools.dll",
+        "lib/netcoreapp3.0/Design/C1.WPF.FlexViewer.4.5.2.Expression.Design.4.0.3.dll",
+        "lib/netcoreapp3.0/de/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ja/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ko/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ru/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/zh/C1.WPF.FlexViewer.4.5.2.resources.dll",
+        "license_EN.txt",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "C1.Xaml.WPF.ImportServices/4.5.20213.755": {
+      "sha512": "Y9ovefp06C8KfvaT+ZbeX81Feko1gmoaz+Ju/VKEshWjg+SzlKsY/6EITfIulphVyh5d4jMkirjxjglzqAgoLw==",
+      "type": "package",
+      "path": "c1.xaml.wpf.importservices/4.5.20213.755",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.ImportServices.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.ImportServices.targets",
+        "c1.xaml.wpf.importservices.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.importservices.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.ImportServices.4.5.2.dll",
+        "lib/net452/C1.WPF.ImportServices.4.5.2.xml",
+        "lib/net452/de/C1.WPF.ImportServices.4.5.2.resources.dll",
+        "lib/net452/ko/C1.WPF.ImportServices.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/C1.WPF.ImportServices.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.ImportServices.4.5.2.xml",
+        "lib/netcoreapp3.0/de/C1.WPF.ImportServices.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/ko/C1.WPF.ImportServices.4.5.2.resources.dll",
+        "license_EN.txt"
+      ]
+    },
+    "C1.Xaml.WPF.Pdf/4.5.20213.755": {
+      "sha512": "tRRArZw6YbUQum6HVALUT8Su26tlLI4FY4OGYzhbcIMoU2sc94NbioqMiVaaw9Ly/x94Vpto4sdYMlcun/96LA==",
+      "type": "package",
+      "path": "c1.xaml.wpf.pdf/4.5.20213.755",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.Pdf.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Pdf.targets",
+        "c1.xaml.wpf.pdf.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.pdf.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.Pdf.4.5.2.dll",
+        "lib/net452/C1.WPF.Pdf.4.5.2.xml",
+        "lib/netcoreapp3.0/C1.WPF.Pdf.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.Pdf.4.5.2.xml",
+        "license_EN.txt"
+      ]
+    },
+    "C1.Xaml.WPF.Word/4.5.20213.755": {
+      "sha512": "BZO30o2g9lVy/hoLbbPLFTYQkts1tlTOl4cfa/FvAuT9EjGkiVMdtdaytUZpvpczNBn61zlrfA2gaOkJuhWpPQ==",
+      "type": "package",
+      "path": "c1.xaml.wpf.word/4.5.20213.755",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.Word.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Word.targets",
+        "c1.xaml.wpf.word.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.word.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.Word.4.5.2.dll",
+        "lib/net452/C1.WPF.Word.4.5.2.xml",
+        "lib/netcoreapp3.0/C1.WPF.Word.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.Word.4.5.2.xml",
+        "license_EN.txt"
+      ]
+    },
+    "C1.Xaml.WPF.Zip/4.5.20213.755": {
+      "sha512": "wgbPlvfvPKFXlwB+TcsuYaj+zEAZQHEzpMQvChrfPOZNC6kug+6TgSELq8R7ba2ZytcOkpHvVQqrz4TcigdWhQ==",
+      "type": "package",
+      "path": "c1.xaml.wpf.zip/4.5.20213.755",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Third party licenses/CMap.txt",
+        "Third party licenses/FJCore.txt",
+        "Third party licenses/Independent JPEG Group.txt",
+        "Third party licenses/Java Advanced Imaging IO.txt",
+        "Third party licenses/Java Pdf Extraction Decoding Access Library.txt",
+        "Third party licenses/Managed JPEG2000 Codec.txt",
+        "Third party licenses/Okapi Barcode.txt",
+        "Third party licenses/Prologue.txt",
+        "Third party licenses/SharpDX.txt",
+        "Third party licenses/Silverlight Toolkit.txt",
+        "Third party licenses/Validator.nu HTML Parser.txt",
+        "Third party licenses/WriteableBitmapEx.txt",
+        "Third party licenses/Zebra Crossing.txt",
+        "buildTransitive/net452/C1.Xaml.WPF.Zip.targets",
+        "buildTransitive/netcoreapp3.0/C1.Xaml.WPF.Zip.targets",
+        "c1.xaml.wpf.zip.4.5.20213.755.nupkg.sha512",
+        "c1.xaml.wpf.zip.nuspec",
+        "docs/README.md",
+        "images/icon.png",
+        "lib/net452/C1.WPF.Zip.4.5.2.dll",
+        "lib/net452/C1.WPF.Zip.4.5.2.xml",
+        "lib/net452/ja/C1.WPF.Zip.4.5.2.resources.dll",
+        "lib/netcoreapp3.0/C1.WPF.Zip.4.5.2.dll",
+        "lib/netcoreapp3.0/C1.WPF.Zip.4.5.2.xml",
+        "lib/netcoreapp3.0/ja/C1.WPF.Zip.4.5.2.resources.dll",
+        "license_EN.txt"
       ]
     },
     "MaterialDesignColors/2.0.3": {
@@ -2340,10 +3335,10 @@
         "tools/uninstall.ps1"
       ]
     },
-    "Microsoft.CodeAnalysis.Common/3.6.0": {
-      "sha512": "jQxDeYyQbNZwx/9O8hiyApTqZ7+KR3xVA6Ogbb50qsODfjAKRWuH7z3lGkU/62PYUz4yiDtgXlRtntWNdhFPfQ==",
+    "Microsoft.CodeAnalysis.Common/3.8.0": {
+      "sha512": "8YTZ7GpsbTdC08DITx7/kwV0k4SC6cbBAFqc13cOm5vKJZcEIAh51tNSyGSkWisMgYCr96B2wb5Zri1bsla3+g==",
       "type": "package",
-      "path": "microsoft.codeanalysis.common/3.6.0",
+      "path": "microsoft.codeanalysis.common/3.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2381,19 +3376,35 @@
         "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll",
         "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "microsoft.codeanalysis.common.3.6.0.nupkg.sha512",
+        "microsoft.codeanalysis.common.3.8.0.nupkg.sha512",
         "microsoft.codeanalysis.common.nuspec"
       ]
     },
-    "Microsoft.CodeAnalysis.VisualBasic/3.6.0": {
-      "sha512": "ZS9FhxIut643uKyf9gOjTdwJNENa4pqcbUSS4herYjp8lvYsXOa7QgazySHcNCAut4/SlYgvydpGZgwoasD7vw==",
+    "Microsoft.CodeAnalysis.VisualBasic/3.8.0": {
+      "sha512": "G3/0o6sb9ZZQjBD+6bHj7GaxyeMZbBJXNtBC6YGmbSodMup9A1QPgCSrSn/ktbxWjKI8AMlJHP6CHCwfBXTmpg==",
       "type": "package",
-      "path": "microsoft.codeanalysis.visualbasic/3.6.0",
+      "path": "microsoft.codeanalysis.visualbasic/3.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "ThirdPartyNotices.rtf",
+        "lib/netcoreapp3.1/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "lib/netcoreapp3.1/Microsoft.CodeAnalysis.VisualBasic.pdb",
+        "lib/netcoreapp3.1/Microsoft.CodeAnalysis.VisualBasic.xml",
+        "lib/netcoreapp3.1/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "lib/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.dll",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.pdb",
         "lib/netstandard2.0/Microsoft.CodeAnalysis.VisualBasic.xml",
@@ -2410,7 +3421,7 @@
         "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
         "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
-        "microsoft.codeanalysis.visualbasic.3.6.0.nupkg.sha512",
+        "microsoft.codeanalysis.visualbasic.3.8.0.nupkg.sha512",
         "microsoft.codeanalysis.visualbasic.nuspec"
       ]
     },
@@ -2949,10 +3960,10 @@
         "version.txt"
       ]
     },
-    "Syncfusion.Compression.Base/18.3.0.35": {
-      "sha512": "K2rcyJoetTjuiIZ9WhSXD7gC8FRUKeIFYI1k8aIvH4aCaroLADCRFBaBIvqeGzApusUCFfWvdkxp8uPhO0U9JQ==",
+    "Syncfusion.Compression.Base/19.2.0.44": {
+      "sha512": "V/sklQviCUXkiyJqtXZ4errVwscZt9F53hYWTha+Kc7PMkv8WwYHd5SRlnBeefQ1qHiQhp7PWIEsVdxm+/tWsQ==",
       "type": "package",
-      "path": "syncfusion.compression.base/18.3.0.35",
+      "path": "syncfusion.compression.base/19.2.0.44",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2968,18 +3979,18 @@
         "lib/net451/Syncfusion.Compression.Base.xml",
         "lib/net46/Syncfusion.Compression.Base.dll",
         "lib/net46/Syncfusion.Compression.Base.xml",
+        "lib/net5.0/Syncfusion.Compression.Base.dll",
+        "lib/net5.0/Syncfusion.Compression.Base.xml",
         "lib/netcoreapp3.1/Syncfusion.Compression.Base.dll",
         "lib/netcoreapp3.1/Syncfusion.Compression.Base.xml",
-        "lib/netcoreapp5.0/Syncfusion.Compression.Base.dll",
-        "lib/netcoreapp5.0/Syncfusion.Compression.Base.xml",
-        "syncfusion.compression.base.18.3.0.35.nupkg.sha512",
+        "syncfusion.compression.base.19.2.0.44.nupkg.sha512",
         "syncfusion.compression.base.nuspec"
       ]
     },
-    "Syncfusion.DocIO.Wpf/18.3.0.35": {
-      "sha512": "/sKvXXkuMgEVRMkgxyJbXq45hlAKMDwKyMeC/HqnWGQSgj9w7N5gldTC5/xobDCLyTGibo5zJ6ebPduqA1/EQQ==",
+    "Syncfusion.DocIO.Wpf/19.2.0.44": {
+      "sha512": "Ck4i7+jPr0Zt5PGozGdKeZqf+9mtmuWhtScPd830qxLSnqhIW4bmKXwEn4Q5z5ju1StDJXAMxnM7ouZkgddeTg==",
       "type": "package",
-      "path": "syncfusion.docio.wpf/18.3.0.35",
+      "path": "syncfusion.docio.wpf/19.2.0.44",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2993,18 +4004,18 @@
         "lib/net451/Syncfusion.DocIO.Base.xml",
         "lib/net46/Syncfusion.DocIO.Base.dll",
         "lib/net46/Syncfusion.DocIO.Base.xml",
+        "lib/net5.0-windows/Syncfusion.DocIO.Base.dll",
+        "lib/net5.0-windows/Syncfusion.DocIO.Base.xml",
         "lib/netcoreapp3.1/Syncfusion.DocIO.Base.dll",
         "lib/netcoreapp3.1/Syncfusion.DocIO.Base.xml",
-        "lib/netcoreapp5.0/Syncfusion.DocIO.Base.dll",
-        "lib/netcoreapp5.0/Syncfusion.DocIO.Base.xml",
-        "syncfusion.docio.wpf.18.3.0.35.nupkg.sha512",
+        "syncfusion.docio.wpf.19.2.0.44.nupkg.sha512",
         "syncfusion.docio.wpf.nuspec"
       ]
     },
-    "Syncfusion.Grid.WPF/18.3.0.35": {
-      "sha512": "QkW6hIU4pMnTjULUeMWJA0HQWh5TIyqrBYhVlRKo+4Esm1hzFnDMYGUAO6b4jeNbNJ8VqHOIu2HJRPfqXgzQXw==",
+    "Syncfusion.Grid.WPF/19.2.0.44": {
+      "sha512": "Y1iYWcqM31RBB17e3zdtzmQzuD2rVb0wD7CJiiPnC43kPzttX6R3eQjr+/ETqrPNIMA6mf0N50wkcAVSE9x8Zg==",
       "type": "package",
-      "path": "syncfusion.grid.wpf/18.3.0.35",
+      "path": "syncfusion.grid.wpf/19.2.0.44",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -3034,21 +4045,21 @@
         "lib/net46/Design/Syncfusion.Grid.Wpf.dll.Design.dll",
         "lib/net46/Syncfusion.Grid.WPF.dll",
         "lib/net46/Syncfusion.Grid.WPF.xml",
+        "lib/net5.0-windows/Design/Syncfusion.Grid.WPF.DesignTools.dll",
+        "lib/net5.0-windows/Syncfusion.Grid.WPF.dll",
+        "lib/net5.0-windows/Syncfusion.Grid.WPF.xml",
         "lib/netcoreapp3.1/Design/Syncfusion.Grid.WPF.DesignTools.dll",
         "lib/netcoreapp3.1/Syncfusion.Grid.WPF.dll",
         "lib/netcoreapp3.1/Syncfusion.Grid.WPF.xml",
-        "lib/netcoreapp5.0/Design/Syncfusion.Grid.WPF.DesignTools.dll",
-        "lib/netcoreapp5.0/Syncfusion.Grid.WPF.dll",
-        "lib/netcoreapp5.0/Syncfusion.Grid.WPF.xml",
-        "syncfusion.grid.wpf.18.3.0.35.nupkg.sha512",
+        "syncfusion.grid.wpf.19.2.0.44.nupkg.sha512",
         "syncfusion.grid.wpf.nuspec",
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
-    "Syncfusion.GridCommon.Wpf/18.3.0.35": {
-      "sha512": "1hDAT7Bau2VnpCNlP2xiFqwyMA+p+po6YsPglhHubkmF8FBfv3WRLPgknX1J7devguOYcZ8yZ80bLTdTeR+Sfg==",
+    "Syncfusion.GridCommon.Wpf/19.2.0.44": {
+      "sha512": "SZetQpPjbS0hte1cOX63cq3mVUuvDHxX2/y160hayYYR/QNrRFgUpN07Kt3RWOmVZVysq0D2uUNDoKwlfxkgwg==",
       "type": "package",
-      "path": "syncfusion.gridcommon.wpf/18.3.0.35",
+      "path": "syncfusion.gridcommon.wpf/19.2.0.44",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3062,18 +4073,18 @@
         "lib/net451/Syncfusion.GridCommon.WPF.xml",
         "lib/net46/Syncfusion.GridCommon.WPF.dll",
         "lib/net46/Syncfusion.GridCommon.WPF.xml",
+        "lib/net5.0-windows/Syncfusion.GridCommon.WPF.dll",
+        "lib/net5.0-windows/Syncfusion.GridCommon.WPF.xml",
         "lib/netcoreapp3.1/Syncfusion.GridCommon.WPF.dll",
         "lib/netcoreapp3.1/Syncfusion.GridCommon.WPF.xml",
-        "lib/netcoreapp5.0/Syncfusion.GridCommon.WPF.dll",
-        "lib/netcoreapp5.0/Syncfusion.GridCommon.WPF.xml",
-        "syncfusion.gridcommon.wpf.18.3.0.35.nupkg.sha512",
+        "syncfusion.gridcommon.wpf.19.2.0.44.nupkg.sha512",
         "syncfusion.gridcommon.wpf.nuspec"
       ]
     },
-    "Syncfusion.Licensing/18.3.0.35": {
-      "sha512": "kdDvMRwDokblGzus/HxTo6FtTNgBdy5nG1iEFHQEy2JGIC5iJG/Wj9+lYljpRKgHcgPxEccZqX38ugf2aYt3dQ==",
+    "Syncfusion.Licensing/19.2.0.44": {
+      "sha512": "XekMdME0qXUzX3uJSxVV6FgeC3ydgxpETMmtjck8enzpjKhlAU692uAVtyqAkecqa4YFJmXiKV/zEkKfjdLVWA==",
       "type": "package",
-      "path": "syncfusion.licensing/18.3.0.35",
+      "path": "syncfusion.licensing/19.2.0.44",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3087,22 +4098,22 @@
         "lib/net45/Syncfusion.Licensing.dll",
         "lib/net451/Syncfusion.Licensing.dll",
         "lib/net46/Syncfusion.Licensing.dll",
+        "lib/net5.0/Syncfusion.Licensing.dll",
         "lib/netcoreapp3.1/Syncfusion.Licensing.dll",
-        "lib/netcoreapp5.0/Syncfusion.Licensing.dll",
         "lib/netstandard1.0/Syncfusion.Licensing.dll",
         "lib/netstandard1.2/Syncfusion.Licensing.dll",
         "lib/netstandard1.4/Syncfusion.Licensing.dll",
         "lib/netstandard2.0/Syncfusion.Licensing.dll",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
         "lib/uap10.0/Syncfusion.Licensing.dll",
-        "syncfusion.licensing.18.3.0.35.nupkg.sha512",
+        "syncfusion.licensing.19.2.0.44.nupkg.sha512",
         "syncfusion.licensing.nuspec"
       ]
     },
-    "Syncfusion.Linq.Base/18.3.0.35": {
-      "sha512": "+e4QKx2uI+1Kmr/ngG1aW/L68q6EnsRyy6NuJ4k2TUP9Y1lxhRFo5MGPMh1TWP9EwICuNvxUvFqdFO7+Ej1avw==",
+    "Syncfusion.Linq.Base/19.2.0.44": {
+      "sha512": "pwEzy67f8rXVemc8iHgNcujGLU2G4/ltbVnDu7h+wjipeqV1SnYppqBei0hlfrDqhb5v2CepAmNkk2JI3W3f/Q==",
       "type": "package",
-      "path": "syncfusion.linq.base/18.3.0.35",
+      "path": "syncfusion.linq.base/19.2.0.44",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3116,18 +4127,18 @@
         "lib/net451/Syncfusion.Linq.Base.xml",
         "lib/net46/Syncfusion.Linq.Base.dll",
         "lib/net46/Syncfusion.Linq.Base.xml",
+        "lib/net5.0-windows/Syncfusion.Linq.Base.dll",
+        "lib/net5.0-windows/Syncfusion.Linq.Base.xml",
         "lib/netcoreapp3.1/Syncfusion.Linq.Base.dll",
         "lib/netcoreapp3.1/Syncfusion.Linq.Base.xml",
-        "lib/netcoreapp5.0/Syncfusion.Linq.Base.dll",
-        "lib/netcoreapp5.0/Syncfusion.Linq.Base.xml",
-        "syncfusion.linq.base.18.3.0.35.nupkg.sha512",
+        "syncfusion.linq.base.19.2.0.44.nupkg.sha512",
         "syncfusion.linq.base.nuspec"
       ]
     },
-    "Syncfusion.OfficeChart.Base/18.3.0.35": {
-      "sha512": "2/SJ/ebSpf2Uh5xiu9SYNwvC4ovfd0yFkwKXdFn/0SpchO7hepk6dJSznR3naiJfwHcc44BRkbmBxluGAMNasg==",
+    "Syncfusion.OfficeChart.Base/19.2.0.44": {
+      "sha512": "SNslhF+MCKfHRxYbqQT3hgOgmkVkb/s3xZz8RSD6MvqGu+nl8nXMG0buvk0KK646Z3ZNTOTnKgUNN2R5gT9EEw==",
       "type": "package",
-      "path": "syncfusion.officechart.base/18.3.0.35",
+      "path": "syncfusion.officechart.base/19.2.0.44",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3143,18 +4154,18 @@
         "lib/net451/Syncfusion.OfficeChart.Base.xml",
         "lib/net46/Syncfusion.OfficeChart.Base.dll",
         "lib/net46/Syncfusion.OfficeChart.Base.xml",
+        "lib/net5.0/Syncfusion.OfficeChart.Base.dll",
+        "lib/net5.0/Syncfusion.OfficeChart.Base.xml",
         "lib/netcoreapp3.1/Syncfusion.OfficeChart.Base.dll",
         "lib/netcoreapp3.1/Syncfusion.OfficeChart.Base.xml",
-        "lib/netcoreapp5.0/Syncfusion.OfficeChart.Base.dll",
-        "lib/netcoreapp5.0/Syncfusion.OfficeChart.Base.xml",
-        "syncfusion.officechart.base.18.3.0.35.nupkg.sha512",
+        "syncfusion.officechart.base.19.2.0.44.nupkg.sha512",
         "syncfusion.officechart.base.nuspec"
       ]
     },
-    "Syncfusion.Pdf.Wpf/18.3.0.35": {
-      "sha512": "1oRUgXrFBKTtSjtbn2u4SyhBblSVgC0kV4nPevGsT1pEEyodROkcQSUFLHONFlaS48v8HPAdTycD0TUBobX+pA==",
+    "Syncfusion.Pdf.Wpf/19.2.0.44": {
+      "sha512": "4AxOde9239F+8k/vjJzvKPmTe90IWoTT2h/neQDX92VhsrnXsPpa28/q+ITsT6Ux7BRdtcnTDiS2yATpxe40+A==",
       "type": "package",
-      "path": "syncfusion.pdf.wpf/18.3.0.35",
+      "path": "syncfusion.pdf.wpf/19.2.0.44",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3168,18 +4179,18 @@
         "lib/net451/Syncfusion.Pdf.Base.xml",
         "lib/net46/Syncfusion.Pdf.Base.dll",
         "lib/net46/Syncfusion.Pdf.Base.xml",
+        "lib/net5.0-windows/Syncfusion.Pdf.Base.dll",
+        "lib/net5.0-windows/Syncfusion.Pdf.Base.xml",
         "lib/netcoreapp3.1/Syncfusion.Pdf.Base.dll",
         "lib/netcoreapp3.1/Syncfusion.Pdf.Base.xml",
-        "lib/netcoreapp5.0/Syncfusion.Pdf.Base.dll",
-        "lib/netcoreapp5.0/Syncfusion.Pdf.Base.xml",
-        "syncfusion.pdf.wpf.18.3.0.35.nupkg.sha512",
+        "syncfusion.pdf.wpf.19.2.0.44.nupkg.sha512",
         "syncfusion.pdf.wpf.nuspec"
       ]
     },
-    "Syncfusion.Presentation.Wpf/18.3.0.35": {
-      "sha512": "/kMJo4bDU/DkK4IaBCQ/SNrgET6BoBy+iBexFeSMkQwLFWgkkVuifcXuYSO2zn4hXL6OhO3bvXJ/RFJHNJx/1Q==",
+    "Syncfusion.Presentation.Wpf/19.2.0.44": {
+      "sha512": "8ZnEmPE/lsxWRmW7slPQD62LjEuqsy55EE83gegh4psqKYZnARyQXC/8z+8GAY4N6MgnPW7PCv5Z8P1jfxAC/w==",
       "type": "package",
-      "path": "syncfusion.presentation.wpf/18.3.0.35",
+      "path": "syncfusion.presentation.wpf/19.2.0.44",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3193,18 +4204,18 @@
         "lib/net451/Syncfusion.Presentation.Base.xml",
         "lib/net46/Syncfusion.Presentation.Base.dll",
         "lib/net46/Syncfusion.Presentation.Base.xml",
+        "lib/net5.0-windows/Syncfusion.Presentation.Base.dll",
+        "lib/net5.0-windows/Syncfusion.Presentation.Base.xml",
         "lib/netcoreapp3.1/Syncfusion.Presentation.Base.dll",
         "lib/netcoreapp3.1/Syncfusion.Presentation.Base.xml",
-        "lib/netcoreapp5.0/Syncfusion.Presentation.Base.dll",
-        "lib/netcoreapp5.0/Syncfusion.Presentation.Base.xml",
-        "syncfusion.presentation.wpf.18.3.0.35.nupkg.sha512",
+        "syncfusion.presentation.wpf.19.2.0.44.nupkg.sha512",
         "syncfusion.presentation.wpf.nuspec"
       ]
     },
-    "Syncfusion.SfMaps.WPF/18.3.0.35": {
-      "sha512": "y2g1e4pFrJ54F/4Trq75lqC22HLR9GH5H5oQShvbR65BiEMdJAFtzFyI94LbEK5715xoJMtk7STGbIFUe+rHig==",
+    "Syncfusion.SfMaps.WPF/19.2.0.44": {
+      "sha512": "MOC9zgglUXU0gCHOYHAy+pNlDEu0oncuC+xU7P5BCn6QbvxhZVsgGR43mNUV92U6ST385NUKt9nZvfugfOfAxQ==",
       "type": "package",
-      "path": "syncfusion.sfmaps.wpf/18.3.0.35",
+      "path": "syncfusion.sfmaps.wpf/19.2.0.44",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -3233,21 +4244,21 @@
         "lib/net46/Design/Syncfusion.SfMaps.WPF.VisualStudio.Design.dll",
         "lib/net46/Syncfusion.SfMaps.WPF.dll",
         "lib/net46/Syncfusion.SfMaps.WPF.xml",
+        "lib/net5.0-windows/Design/Syncfusion.SfMaps.WPF.DesignTools.dll",
+        "lib/net5.0-windows/Syncfusion.SfMaps.WPF.dll",
+        "lib/net5.0-windows/Syncfusion.SfMaps.WPF.xml",
         "lib/netcoreapp3.1/Design/Syncfusion.SfMaps.WPF.DesignTools.dll",
         "lib/netcoreapp3.1/Syncfusion.SfMaps.WPF.dll",
         "lib/netcoreapp3.1/Syncfusion.SfMaps.WPF.xml",
-        "lib/netcoreapp5.0/Design/Syncfusion.SfMaps.WPF.DesignTools.dll",
-        "lib/netcoreapp5.0/Syncfusion.SfMaps.WPF.dll",
-        "lib/netcoreapp5.0/Syncfusion.SfMaps.WPF.xml",
-        "syncfusion.sfmaps.wpf.18.3.0.35.nupkg.sha512",
+        "syncfusion.sfmaps.wpf.19.2.0.44.nupkg.sha512",
         "syncfusion.sfmaps.wpf.nuspec",
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
-    "Syncfusion.Shared.WPF/18.3.0.35": {
-      "sha512": "AnzKrnJuM0RrsqpzAqjFc7++XRQu0feDzhDnOX3eaIJNZvvVVQYzivl9nA0/ZEAG7OENaQfEBtKB7Ivx2fjtVg==",
+    "Syncfusion.Shared.WPF/19.2.0.44": {
+      "sha512": "0k4FWUo42ZmHJV47DVTBkXqQgYSNNNEmCEwi4t4tZmrKr/oqiI8UAgpoiHeqkkUrdeSlK5MDZPjWWsfuQG9dxw==",
       "type": "package",
-      "path": "syncfusion.shared.wpf/18.3.0.35",
+      "path": "syncfusion.shared.wpf/19.2.0.44",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -3287,21 +4298,46 @@
         "lib/net46/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
         "lib/net46/Syncfusion.Shared.WPF.dll",
         "lib/net46/Syncfusion.Shared.WPF.xml",
+        "lib/net5.0-windows/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net5.0-windows/Syncfusion.Shared.WPF.dll",
+        "lib/net5.0-windows/Syncfusion.Shared.WPF.xml",
         "lib/netcoreapp3.1/Design/Syncfusion.Shared.WPF.DesignTools.dll",
         "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll",
         "lib/netcoreapp3.1/Syncfusion.Shared.WPF.xml",
-        "lib/netcoreapp5.0/Design/Syncfusion.Shared.WPF.DesignTools.dll",
-        "lib/netcoreapp5.0/Syncfusion.Shared.WPF.dll",
-        "lib/netcoreapp5.0/Syncfusion.Shared.WPF.xml",
-        "syncfusion.shared.wpf.18.3.0.35.nupkg.sha512",
+        "syncfusion.shared.wpf.19.2.0.44.nupkg.sha512",
         "syncfusion.shared.wpf.nuspec",
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
-    "Syncfusion.XlsIO.Wpf/18.3.0.35": {
-      "sha512": "7i/L0aKLqsclo6NcSBkdSdzNYufEx8q0gzi0Irhu0PRJJy8w74IsBJaNfCaA23m2YI8U4lUi/Y63qP86B9FlOA==",
+    "Syncfusion.Shared.WPF.Classic/19.2.0.44": {
+      "sha512": "InlrY9Hdk3tJRvas2KnNq4ErGr2RjwJOVjde/t9oNN3aqeHJfWx/KJcESMb8EvqDM4ANrqpF6Evt0inEkE86vg==",
       "type": "package",
-      "path": "syncfusion.xlsio.wpf/18.3.0.35",
+      "path": "syncfusion.shared.wpf.classic/19.2.0.44",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Syncfusion.Shared.WPF.Classic.dll",
+        "lib/net35/Syncfusion.Shared.WPF.Classic.xml",
+        "lib/net40/Syncfusion.Shared.WPF.Classic.dll",
+        "lib/net40/Syncfusion.Shared.WPF.Classic.xml",
+        "lib/net45/Syncfusion.Shared.WPF.Classic.dll",
+        "lib/net45/Syncfusion.Shared.WPF.Classic.xml",
+        "lib/net451/Syncfusion.Shared.WPF.Classic.dll",
+        "lib/net451/Syncfusion.Shared.WPF.Classic.xml",
+        "lib/net46/Syncfusion.Shared.WPF.Classic.dll",
+        "lib/net46/Syncfusion.Shared.WPF.Classic.xml",
+        "lib/net5.0-windows/Syncfusion.Shared.WPF.Classic.dll",
+        "lib/net5.0-windows/Syncfusion.Shared.WPF.Classic.xml",
+        "lib/netcoreapp3.1/Syncfusion.Shared.WPF.Classic.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.WPF.Classic.xml",
+        "syncfusion.shared.wpf.classic.19.2.0.44.nupkg.sha512",
+        "syncfusion.shared.wpf.classic.nuspec"
+      ]
+    },
+    "Syncfusion.XlsIO.Wpf/19.2.0.44": {
+      "sha512": "OldGiwx0CjVwhey58p8ai+bI9dhs5Yk7VkYHu42qlrR/ahbN8H4blS91Wf13LSD0hpJzAOlwo+l7qTpuVyrSdg==",
+      "type": "package",
+      "path": "syncfusion.xlsio.wpf/19.2.0.44",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3315,11 +4351,11 @@
         "lib/net451/Syncfusion.XlsIO.Base.xml",
         "lib/net46/Syncfusion.XlsIO.Base.dll",
         "lib/net46/Syncfusion.XlsIO.Base.xml",
+        "lib/net5.0-windows/Syncfusion.XlsIO.Base.dll",
+        "lib/net5.0-windows/Syncfusion.XlsIO.Base.xml",
         "lib/netcoreapp3.1/Syncfusion.XlsIO.Base.dll",
         "lib/netcoreapp3.1/Syncfusion.XlsIO.Base.xml",
-        "lib/netcoreapp5.0/Syncfusion.XlsIO.Base.dll",
-        "lib/netcoreapp5.0/Syncfusion.XlsIO.Base.xml",
-        "syncfusion.xlsio.wpf.18.3.0.35.nupkg.sha512",
+        "syncfusion.xlsio.wpf.19.2.0.44.nupkg.sha512",
         "syncfusion.xlsio.wpf.nuspec"
       ]
     },
@@ -3553,15 +4589,18 @@
         "system.collections.concurrent.nuspec"
       ]
     },
-    "System.Collections.Immutable/1.5.0": {
-      "sha512": "EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
+    "System.Collections.Immutable/5.0.0": {
+      "sha512": "FXkLXiK0sVVewcso0imKQoOxjoPAj42R8HtjjbSjVPAzwDfzoyoznWxgA3c38LDbN9SJux1xXoXYAhz98j7r2g==",
       "type": "package",
-      "path": "system.collections.immutable/1.5.0",
+      "path": "system.collections.immutable/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Collections.Immutable.dll",
+        "lib/net461/System.Collections.Immutable.xml",
         "lib/netstandard1.0/System.Collections.Immutable.dll",
         "lib/netstandard1.0/System.Collections.Immutable.xml",
         "lib/netstandard1.3/System.Collections.Immutable.dll",
@@ -3570,7 +4609,7 @@
         "lib/netstandard2.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
-        "system.collections.immutable.1.5.0.nupkg.sha512",
+        "system.collections.immutable.5.0.0.nupkg.sha512",
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -5021,22 +6060,24 @@
         "system.linq.expressions.nuspec"
       ]
     },
-    "System.Memory/4.5.3": {
-      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+    "System.Memory/4.5.4": {
+      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
       "type": "package",
-      "path": "system.memory/4.5.3",
+      "path": "system.memory/4.5.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
         "lib/netcoreapp2.1/_._",
         "lib/netstandard1.1/System.Memory.dll",
         "lib/netstandard1.1/System.Memory.xml",
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
         "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.4.5.4.nupkg.sha512",
         "system.memory.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -5575,22 +6616,25 @@
         "system.reflection.extensions.nuspec"
       ]
     },
-    "System.Reflection.Metadata/1.6.0": {
-      "sha512": "COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
+    "System.Reflection.Metadata/5.0.0": {
+      "sha512": "5NecZgXktdGg34rh1OenY1rFNDCI8xSjFr+Z4OU4cU06AQHUdRnIIEeWENu3Wl4YowbzkymAIMvi3WyK9U53pQ==",
       "type": "package",
-      "path": "system.reflection.metadata/1.6.0",
+      "path": "system.reflection.metadata/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Reflection.Metadata.dll",
+        "lib/net461/System.Reflection.Metadata.xml",
         "lib/netstandard1.1/System.Reflection.Metadata.dll",
         "lib/netstandard1.1/System.Reflection.Metadata.xml",
         "lib/netstandard2.0/System.Reflection.Metadata.dll",
         "lib/netstandard2.0/System.Reflection.Metadata.xml",
         "lib/portable-net45+win8/System.Reflection.Metadata.dll",
         "lib/portable-net45+win8/System.Reflection.Metadata.xml",
-        "system.reflection.metadata.1.6.0.nupkg.sha512",
+        "system.reflection.metadata.5.0.0.nupkg.sha512",
         "system.reflection.metadata.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -5856,26 +6900,31 @@
         "system.runtime.nuspec"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/4.7.0": {
-      "sha512": "IpU1lcHz8/09yDr9N+Juc7SCgNUz+RohkCQI+KsWKR67XxpFr8Z6c8t1iENCXZuRuNCc4HBwme/MDHNVCwyAKg==",
+    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "sha512": "zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.7.0",
+      "path": "system.runtime.compilerservices.unsafe/4.7.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.7.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -7096,10 +8145,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "System.Threading.Tasks.Extensions/4.5.3": {
-      "sha512": "+MvhNtcvIbqmhANyKu91jQnvIRVSTiaOiFNfKWwXGHG48YAb4I/TyH8spsySiPYla7gKal5ZnF3teJqZAximyQ==",
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.3",
+      "path": "system.threading.tasks.extensions/4.5.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7107,6 +8156,8 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
+        "lib/net461/System.Threading.Tasks.Extensions.dll",
+        "lib/net461/System.Threading.Tasks.Extensions.xml",
         "lib/netcoreapp2.1/_._",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
@@ -7125,7 +8176,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.3.nupkg.sha512",
+        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
         "system.threading.tasks.extensions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -7468,7 +8519,9 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "BoldReports.WPF >= 3.1.32",
+      "BlackPearl.Controls.Library >= 2.0.1",
+      "BoldReports.WPF >= 3.3.23",
+      "C1.Xaml.WPF.FlexViewer >= 4.5.20213.755",
       "MaterialDesignColors >= 2.0.3",
       "MaterialDesignThemes >= 4.2.1",
       "System.Data.SqlClient >= 4.8.3"
@@ -7513,9 +8566,17 @@
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
         "dependencies": {
+          "BlackPearl.Controls.Library": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
           "BoldReports.WPF": {
             "target": "Package",
-            "version": "[3.1.32, )"
+            "version": "[3.3.23, )"
+          },
+          "C1.Xaml.WPF.FlexViewer": {
+            "target": "Package",
+            "version": "[4.5.20213.755, )"
           },
           "MaterialDesignColors": {
             "target": "Package",

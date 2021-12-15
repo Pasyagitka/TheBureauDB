@@ -11,7 +11,7 @@ namespace TheBureau.Models
         public int requestId { get; set; }
 
         [Required]
-        [StringLength(2)]
+        [StringLength(3)]
         public string equipmentId { get; set; }
 
         public int? quantity { get; set; }

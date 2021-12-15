@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Windows.Forms;
 using System.Windows.Input;
 using TheBureau.Models;
 using TheBureau.Views;
@@ -16,6 +17,7 @@ namespace TheBureau.ViewModels
     public class EmployeeViewModel : ViewModelBase
     {
         private readonly string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
+        private readonly string _exportConnectionString = ConfigurationManager.ConnectionStrings["ExportConnection"].ConnectionString;
 
         private ObservableCollection<Employee> _employees = new();
         private Brigade _employeeBrigades;
@@ -26,6 +28,7 @@ namespace TheBureau.ViewModels
         private ICommand _deleteCommand;
         private ICommand _openEditEmployeeWindowCommand;
         private ICommand _openAddEmployeeWindowCommand;
+        private ICommand _openFolder;
 
         #region Properties
 
@@ -99,7 +102,7 @@ namespace TheBureau.ViewModels
                                 conn.Close();
                             }
                             Employees.Remove(SelectedItem);
-                            if (SelectedItem != null) SelectedItem = Employees.First();
+                            if (Employees.Count != 0) SelectedItem = Employees.First();
                         }
                     }
                     catch (Exception)
@@ -164,7 +167,7 @@ namespace TheBureau.ViewModels
                         }
                         conn.Close();
                     }
-                    if (SelectedItem != null) SelectedItem = employee;
+                    if (Employees.Count != 0) SelectedItem = Employees.First();
                 }
             }
             catch (Exception)
@@ -271,5 +274,64 @@ namespace TheBureau.ViewModels
                 infoWindow.ShowDialog();
             }
         }
+        
+                     #region Export
+        
+        public ICommand ExportCommand => _openFolder ??= new RelayCommand(OpenFolder);
+          private void OpenFolder(object sender)
+        {
+            try
+            {
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog
+                {
+                    RootFolder = Environment.SpecialFolder.Desktop,
+                };
+                if (folderBrowserDialog.ShowDialog() != DialogResult.OK) return;
+                if (ExportSchedule(folderBrowserDialog.SelectedPath))
+                {
+                    InfoWindow infoWindow =
+                        new InfoWindow("Экспортировано в файл", folderBrowserDialog.SelectedPath);
+                    infoWindow.ShowDialog();
+                }
+                else
+                {
+                    InfoWindow infoWindow = new InfoWindow("Данные не были экспортированы в файл",
+                        folderBrowserDialog.SelectedPath);
+                    infoWindow.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+                InfoWindow infoWindow =
+                    new InfoWindow("Ошибка", "Ошибка при отрытии диалогового окна для выбора файла");
+                infoWindow.ShowDialog();
+            }
+        }
+
+  
+        private bool ExportSchedule(string path)
+        {
+            var success = 1;
+            string filename;
+            using var conn = new SqlConnection(_exportConnectionString);
+            conn.Open();
+            using (var cmd = new SqlCommand("ExportScheduleForEmployee", conn) {CommandType = CommandType.StoredProcedure})
+            {
+                cmd.Parameters.AddWithValue("@path", path);
+                cmd.Parameters.AddWithValue("@employeeId", SelectedItem.id);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        filename = (string) reader["filename"];
+                        success = (int) reader["success"];
+                    }
+                    ;
+                }
+            }
+            conn.Close();
+            return success == 0; //@result = 0 - success, otherwise failure
+        }
+        #endregion
     }
 }

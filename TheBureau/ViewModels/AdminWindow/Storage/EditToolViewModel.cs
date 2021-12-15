@@ -16,7 +16,7 @@ namespace TheBureau.ViewModels
 {
     public class EditToolViewModel : ViewModelBase
     {
-        private string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
+        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["AdminConnection"].ConnectionString;
         private readonly ErrorsViewModel _errorsViewModel = new();
 
         private string _name;
@@ -69,7 +69,7 @@ namespace TheBureau.ViewModels
             set
             {
                 _selectedStageId = value;
-                OnPropertyChanged("SelectedBrigadeId");
+                OnPropertyChanged("SelectedStageId");
             }
         }
         public Tool Tool
@@ -81,7 +81,7 @@ namespace TheBureau.ViewModels
                 Id = Tool.id;
                 Name = Tool.name;
                 SelectedStageId = Tool.stage;
-                OnPropertyChanged("Employee");
+                OnPropertyChanged("Tool");
             }
         }
 

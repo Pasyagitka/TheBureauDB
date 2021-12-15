@@ -177,7 +177,7 @@ namespace TheBureau.ViewModels
             }
             catch (Exception)
             {
-                InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при проверке пароля");
+                InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при попытке входа. Данные некорректны");
                 infoWindow.ShowDialog();
                 return false;
             }

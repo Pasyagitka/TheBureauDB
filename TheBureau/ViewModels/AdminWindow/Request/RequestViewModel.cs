@@ -21,110 +21,10 @@ namespace TheBureau.ViewModels
         private ObservableCollection<RequestEquipment> _requestEquipments = new();
 
         private Request _selectedItem;
-
+        private ICommand _openFolder;
         private ICommand _updateRequest;
-        //private ICommand _hideGreenRequests;
-        //private ICommand _showAllRequests;
         public ICommand UpdateRequestCommand => _updateRequest ??= new RelayCommand(OpenEditRequest);
         
-        // public ICommand HideGreenRequestsCommand =>
-        //     _hideGreenRequests ??= new RelayCommand(o =>
-        //     {
-        //         try
-        //         {
-        //             using (SqlConnection conn = new SqlConnection(_connectionString))
-        //             {
-        //                 conn.Open();
-        //                 using (SqlCommand cmd = new SqlCommand("GetToDoRequests", conn)  { CommandType = CommandType.StoredProcedure }) {
-        //                     using (SqlDataReader reader = cmd.ExecuteReader())
-        //                     {
-        //                         while (reader.Read())  
-        //                         {
-        //                             Request a = new Request();
-        //                             a.id = (int)reader["id"];
-        //                             a.clientId = (int)reader["clientId"];
-        //                             a.addressId = (int)reader["addressId"];
-        //                             a.stage = (int)reader["stageId"];
-        //                             a.status = (int)reader["statusId"];
-        //                             a.registerDate = (DateTime)reader["registerDate"];
-        //                             a.mountingDate = (DateTime)reader["mountingDate"];
-        //                             a.comment = (string)reader["comment"];
-        //                             a.brigadeId = reader["brigadeId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadeId"]);
-        //                             a.proceeds = reader["proceeds"] == DBNull.Value ? (Int32?) null : Convert.ToDecimal(reader["proceeds"]);
-        //                             Requests.Add(a);
-        //                         };
-        //                     }
-        //                 }
-        //                 conn.Close();
-        //             }
-        //             SelectedItem = Requests.First();
-        //         }
-        //         catch (Exception)
-        //         {
-        //             InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при выполнении команды");
-        //             infoWindow.ShowDialog();
-        //         } 
-        //     });
-
-        // public ICommand ShowAllRequestsCommand =>
-        //     _showAllRequests ??= new RelayCommand(o =>
-        //     {
-        //         try
-        //         {
-        //             Requests.Clear();
-        //             using (SqlConnection conn = new SqlConnection(_connectionString))
-        //             {
-        //                 conn.Open();
-        //                 using (SqlCommand cmd = new SqlCommand("GetAllRequestsForRequestView", conn)  { CommandType = CommandType.StoredProcedure }) {
-        //                     using (SqlDataReader reader = cmd.ExecuteReader())
-        //                     {
-        //                         while (reader.Read())  
-        //                         {
-        //                             Request a = new Request();
-        //                             a.id = (int)reader["id"];
-        //                             a.clientId = (int)reader["clientId"];
-        //                             a.addressId = (int)reader["addressId"];
-        //                             a.stage = (int)reader["stageId"];
-        //                             a.status = (int)reader["statusId"];
-        //                             a.registerDate = (DateTime)reader["registerDate"];
-        //                             a.mountingDate = (DateTime)reader["mountingDate"];
-        //                             a.comment = (string)reader["comment"];
-        //                             a.brigadeId = reader["brigadeId"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["brigadeId"]);
-        //                             a.proceeds = reader["proceeds"] == DBNull.Value ? (Int32?) null : Convert.ToDecimal(reader["proceeds"]);
-        //
-        //                             Client client = new Client();
-        //                             client.id = (int) reader["clientId"];
-        //                             client.firstname = (string) reader["firstname"];
-        //                             client.patronymic = (string) reader["patronymic"];
-        //                             client.surname = (string) reader["surname"];
-        //                             client.email = (string) reader["email"];
-        //                             client.contactNumber = (string)reader["contactNumber"];
-        //                             a.Client = client;
-        //
-        //                             Address address = new Address();
-        //                             address.id = (int) reader["addressId"];
-        //                             address.country = (string) reader["country"];
-        //                             address.city = (string) reader["city"];
-        //                             address.street = (string) reader["street"];
-        //                             address.house = (int) reader["house"];
-        //                             address.corpus = reader["corpus"] == DBNull.Value ? null : Convert.ToString(reader["corpus"]);
-        //                             address.flat = reader["flat"] == DBNull.Value ? (Int32?) null : Convert.ToInt32(reader["flat"]);
-        //                             a.Address = address;
-        //                             
-        //                             Requests.Add(a);
-        //                         };
-        //                     }
-        //                 }
-        //                 if (Requests!= null )SelectedItem = Requests.First();
-        //                 conn.Close();
-        //             }
-        //         }
-        //         catch (Exception)
-        //         {
-        //             InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при выполнении команды");
-        //             infoWindow.ShowDialog();
-        //         }
-        //     });
 
         public RequestViewModel()
         {
@@ -235,18 +135,48 @@ namespace TheBureau.ViewModels
             {
                 if (SelectedItem != null)
                 {
-                    var requestToEdit = SelectedItem;
-                    EditRequestView window = new(requestToEdit);
+                    EditRequestView window = new(SelectedItem);
                     if (window.ShowDialog() == true)
                     {
-                        // if (ShowAllRequestsCommand.CanExecute(null))  ShowAllRequestsCommand.Execute(null);
-
-                        //Brigades = new ObservableCollection<Brigade>(_brigadeRepository.GetAll());
-                        //SelectedItem = _requestRepository.Get(requestToEdit.id);
+                        Request request = new Request();
+                        request.id = SelectedItem.id;
+                        request.clientId = SelectedItem.clientId;
+                        request.addressId = SelectedItem.addressId;
+                        request.stage = SelectedItem.stage;
+                        request.status = SelectedItem.status;
+                        request.registerDate = SelectedItem.registerDate;
+                        request.mountingDate = SelectedItem.mountingDate;
+                        request.comment = SelectedItem.comment;
+                        request.brigadeId = SelectedItem.brigadeId;
+                        request.proceeds = SelectedItem.proceeds;
+                        request.Client = SelectedItem.Client;
+                        request.Address = SelectedItem.Address;
+                        //request = SelectedItem;
+                        
+                        using (SqlConnection conn = new SqlConnection(_connectionString))
+                        {
+                            conn.Open();
+                            using (SqlCommand cmd = new SqlCommand("GetUpdatedRequest", conn) { CommandType = CommandType.StoredProcedure })
+                            {
+                                cmd.Parameters.AddWithValue("@id", SelectedItem.id);
+                                using (SqlDataReader reader = cmd.ExecuteReader())
+                                {
+                                    while (reader.Read())
+                                    {
+                                        request.status = (int)reader["statusId"];
+                                        request.brigadeId = reader["brigadeId"] == DBNull.Value ? (Int32?)null : Convert.ToInt32(reader["brigadeId"]);
+                                        Requests[Requests.IndexOf(SelectedItem)] = request;
+                                    }
+                                    ;
+                                }
+                            }
+                            conn.Close();
+                        }
+                        SelectedItem = request;
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 InfoWindow infoWindow = new InfoWindow("Ошибка", "Ошибка при редактировании заявки");
                 infoWindow.ShowDialog();
@@ -290,5 +220,7 @@ namespace TheBureau.ViewModels
                 }
             }
         }
+        
+       
     }
 }
