@@ -61,7 +61,7 @@ namespace TheBureau.Views.AdminWindow {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TheBureau;V1.0.0.0;component/views/adminwindow/storage/editequipmentview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TheBureau;component/views/adminwindow/storage/editequipmentview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Views\AdminWindow\Storage\EditEquipmentView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

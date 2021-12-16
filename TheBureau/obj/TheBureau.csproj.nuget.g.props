@@ -7,7 +7,7 @@
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\pasyagitka\.nuget\packages\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.10.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.11.1</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\pasyagitka\.nuget\packages\" />
@@ -16,16 +16,6 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgSyncfusion_Shared_WPF Condition=" '$(PkgSyncfusion_Shared_WPF)' == '' ">C:\Users\pasyagitka\.nuget\packages\syncfusion.shared.wpf\19.2.0.44</PkgSyncfusion_Shared_WPF>
-    <PkgSyncfusion_SfMaps_WPF Condition=" '$(PkgSyncfusion_SfMaps_WPF)' == '' ">C:\Users\pasyagitka\.nuget\packages\syncfusion.sfmaps.wpf\19.2.0.44</PkgSyncfusion_SfMaps_WPF>
-    <PkgSyncfusion_Grid_WPF Condition=" '$(PkgSyncfusion_Grid_WPF)' == '' ">C:\Users\pasyagitka\.nuget\packages\syncfusion.grid.wpf\19.2.0.44</PkgSyncfusion_Grid_WPF>
-    <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\pasyagitka\.nuget\packages\newtonsoft.json\10.0.2</PkgNewtonsoft_Json>
-    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\pasyagitka\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgMaterialDesignThemes Condition=" '$(PkgMaterialDesignThemes)' == '' ">C:\Users\pasyagitka\.nuget\packages\materialdesignthemes\4.2.1</PkgMaterialDesignThemes>
-    <PkgC1_Xaml_WPF Condition=" '$(PkgC1_Xaml_WPF)' == '' ">C:\Users\pasyagitka\.nuget\packages\c1.xaml.wpf\4.5.20213.755</PkgC1_Xaml_WPF>
-    <PkgC1_Xaml_WPF_FlexChart Condition=" '$(PkgC1_Xaml_WPF_FlexChart)' == '' ">C:\Users\pasyagitka\.nuget\packages\c1.xaml.wpf.flexchart\4.5.20213.755</PkgC1_Xaml_WPF_FlexChart>
-    <PkgC1_Xaml_WPF_BarCode Condition=" '$(PkgC1_Xaml_WPF_BarCode)' == '' ">C:\Users\pasyagitka\.nuget\packages\c1.xaml.wpf.barcode\4.5.20213.755</PkgC1_Xaml_WPF_BarCode>
-    <PkgC1_Xaml_WPF_DateTimeEditors Condition=" '$(PkgC1_Xaml_WPF_DateTimeEditors)' == '' ">C:\Users\pasyagitka\.nuget\packages\c1.xaml.wpf.datetimeeditors\4.5.20213.755</PkgC1_Xaml_WPF_DateTimeEditors>
-    <PkgC1_Xaml_WPF_FlexViewer Condition=" '$(PkgC1_Xaml_WPF_FlexViewer)' == '' ">C:\Users\pasyagitka\.nuget\packages\c1.xaml.wpf.flexviewer\4.5.20213.755</PkgC1_Xaml_WPF_FlexViewer>
   </PropertyGroup>
 </Project>

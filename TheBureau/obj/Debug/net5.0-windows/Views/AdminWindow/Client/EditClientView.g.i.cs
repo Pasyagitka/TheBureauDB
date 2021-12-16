@@ -53,7 +53,7 @@ namespace TheBureau.Views.AdminWindow {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TheBureau;V1.0.0.0;component/views/adminwindow/client/editclientview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TheBureau;component/views/adminwindow/client/editclientview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Views\AdminWindow\Client\EditClientView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

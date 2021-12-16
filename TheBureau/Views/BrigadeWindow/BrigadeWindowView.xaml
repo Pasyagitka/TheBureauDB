@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:controls="clr-namespace:TheBureau.Controls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:viewModels="clr-namespace:TheBureau.ViewModels" xmlns:controls1="clr-namespace:BlackPearl.Controls.CoreLibrary;assembly=BlackPearl.Controls.CoreLibrary" xmlns:i="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic"
+        xmlns:viewModels="clr-namespace:TheBureau.ViewModels"  xmlns:i="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic"
         mc:Ignorable="d" WindowState="{Binding WindowState}"
         Title="Бригада" Height="715" Width="1000" FontSize="15" Background="Transparent" AllowsTransparency="True" WindowStartupLocation="CenterScreen"
         WindowStyle="None" ResizeMode="NoResize">

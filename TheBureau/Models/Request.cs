@@ -24,7 +24,10 @@ namespace TheBureau.Models
         public int status { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime registerDate { get; set; }
+        public DateTime registerDate { 
+            get; 
+            set; 
+        }
 
         [Column(TypeName = "date")]
         public DateTime mountingDate { get; set; }

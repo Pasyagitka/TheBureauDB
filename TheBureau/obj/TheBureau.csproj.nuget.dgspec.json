@@ -18,7 +18,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0-windows"
+          "net5.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -40,18 +40,6 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
-            "BlackPearl.Controls.Library": {
-              "target": "Package",
-              "version": "[2.0.1, )"
-            },
-            "BoldReports.WPF": {
-              "target": "Package",
-              "version": "[3.3.23, )"
-            },
-            "C1.Xaml.WPF.FlexViewer": {
-              "target": "Package",
-              "version": "[4.5.20213.755, )"
-            },
             "MaterialDesignColors": {
               "target": "Package",
               "version": "[2.0.3, )"
