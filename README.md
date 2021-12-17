@@ -7,5 +7,3 @@ Course project. 5th semester, Databases.
   - SQL Server Reporting Services (SSRS) technology.
   - JSON import/export.
   - WPF application, ADO.NET.
-  
-> Rated at 9
